@@ -1,1 +1,11 @@
 # Aurora
+## Co to je?
+Aurora (řecky Éós) byla bohyní úsvitu ranních červánků. Byla krásná a milovala všechno krásné, především krásné muže.
+## Jak mi to může pomoci?
+Člověk by se měl učit nové věci.
+## Jak to funguje?
+Stačí chtít.
+## Jak začít?
+Už se stalo. A navíc se v následujících řádcích dozvíte něco o programování v JavaScriptu.
+## A co dál?
+Když budete chtít, kontaktujte mě.
