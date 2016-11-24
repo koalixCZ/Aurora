@@ -7,5 +7,8 @@ Aurora (řecky Éós) byla bohyní úsvitu ranních červánků. Byla krásná a
 Stačí chtít.
 ## Jak začít?
 Už se stalo. A navíc se v následujících řádcích dozvíte něco o programování v JavaScriptu.
+
+* [Literatura a zdroje](Literature%20&%20sources/literature%20&%20sources.md)
+
 ## A co dál?
 Když budete chtít, kontaktujte mě.
