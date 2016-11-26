@@ -55,3 +55,28 @@ lze získat funkcí `console.log()`.
 
 ![Vložení hodnoty](img2.png)
 
+##Operátory
+Operátory představují akce s proměnnými, nebo hodnotami. Operátor rovnítko `=`
+se používá pro přiřazení hodnoty na pravé straně do proměnné uvedené na levé
+straně.
+```JavaScript
+r = 2;
+surface = 4 * 3.14159 * r * r; 
+```
+
+Mezi nejčastěji používané operátory patří:
+ * _přiřazení_ - `=`, např. `r = 2`
+ * _matematické_ - `+` (sčítání), `-` (odčítání), `*` (násobení), `/` (dělení), např. `r * 2`
+ * _porovnání_ - `==` (rovnost), `===` (striktní rovnost), `!=` (nerovnost), `!==` (striktní nerovnost), např. `r === 2`
+ * _rovnost_ - `<` (menší než), `<=` (menší nebo rovno), `>` (větší), `>=` (větší nebo rovno), např. `r > 1`
+ * _logické_ - `&&` (logický součin - AND), `||` (logický součet - OR), např. `r > 1 && r < 3`
+ * _přistup k vlasnosti objektu_ - `.`, např. `console.log()`
+ * _unární_ - `delete`, `typeof`, `instanceof`, např. `typeof r` 
+ * _podmínkové (ternární)_ - `condition ? val1 : val2`, např. `typeof r === "number" ? r : parseInt(r, 10)`
+
+Pro úplný výčet operátorů s příklady viz 
+[MDN - Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators).
+
+Priorita operátorů určuje v jakém pořadí jsou aplikovány, viz
+[MDN - Operator precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Operator_precedence).
+
