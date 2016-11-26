@@ -74,9 +74,8 @@ Mezi nejčastěji používané operátory patří:
  * _unární_ - `delete`, `typeof`, `instanceof`, např. `typeof r` 
  * _podmínkové (ternární)_ - `condition ? val1 : val2`, např. `typeof r === "number" ? r : parseInt(r, 10)`
 
-Pro úplný výčet operátorů s příklady viz 
-[MDN - Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators).
-
-Priorita operátorů určuje v jakém pořadí jsou aplikovány, viz
+Priorita operátorů určuje, v jakém pořadí jsou aplikovány, viz
 [MDN - Operator precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Operator_precedence).
 
+Pro úplný výčet operátorů s příklady viz 
+[MDN - Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators).
