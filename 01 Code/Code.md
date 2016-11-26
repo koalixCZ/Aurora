@@ -28,3 +28,16 @@ Příkaz z předchozí ukázky obsahuje několik výrazů:
  * `4 * 3.14159 * r * r` - _arithmetic expression_ - násobení
  * `surface = 4 * 3.14159 * r * r` - _assignment expression_ - přiřazuje hodnotu násobení (výsledek _arithmetic expression_) do proměnné
 
+Obecný výraz použitý samostatně se nazývá _expression statement_,
+```JavaScript
+2 * r;
+```
+
+který ovšem nemá vliv na program, hodnota výrazu není použita. Mnohem běžnější
+použití je _call expression_ - zavolání funkce.
+```JavaScript
+circumference(r);
+```
+##Spuštění programu
+JavaScript je interpretovaný jazyk. Pro spuštění tak vyžaduje běhové prostředí.
+Tím může být webový prohlížeč, nebo např. [Node.js](https://nodejs.org/).

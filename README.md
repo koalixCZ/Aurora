@@ -1,6 +1,6 @@
 # Aurora
-_Aurora (řecky Éós) byla bohyní úsvitu ranních červánků. Byla krásná a milovala 
-všechno krásné, především krásné muže._
+_Aurora (řecky Éós) byla bohyní úsvitu a ranních červánků. Byla krásná a 
+milovala všechno krásné, především krásné muže._
 
 ## Úvod
 Programování je zábavné. Začal jsem s ním na střední škole a hned po ní (ano, 
