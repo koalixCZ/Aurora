@@ -34,10 +34,24 @@ Obecný výraz použitý samostatně se nazývá _expression statement_,
 ```
 
 který ovšem nemá vliv na program, hodnota výrazu není použita. Mnohem běžnější
-použití je _call expression_ - zavolání funkce.
+použití je _call expression statement_ - zavolání funkce.
 ```JavaScript
 circumference(r);
 ```
 ##Spuštění programu
 JavaScript je interpretovaný jazyk. Pro spuštění tak vyžaduje běhové prostředí.
-Tím může být webový prohlížeč, nebo např. [Node.js](https://nodejs.org/).
+Tím může být webový prohlížeč (Internet Explorer, Firefox, Chrome...), nebo 
+jiné běhové prostředí, např. [Node.js](https://nodejs.org/).
+
+Pro otevření vývojářské konzole v prohlížeči by měla fungovat klávesová zkratka
+**F12**, anebo si prostě najděte vývojářskou konzoli v menu svého prohlížeče.
+Napište příkaz, potvrďte, a je to, první kód v JS.
+
+![První kód v JS](img1.png)
+
+Vstup uživatelských dat do konzole je možné pomocí zavolání funkce `prompt()`,
+která zobrazí dialogové okno pro zápis hodnoty. Výpis aktuálně zadané hodnoty
+lze získat funkcí `console.log()`.
+
+![Vložení hodnoty](img2.png)
+
