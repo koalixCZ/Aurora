@@ -1,0 +1,23 @@
+{
+  "name": "Aurora",
+  "version": "0.0.1",
+  "author": {
+	"name": "koalix",
+	"email": "oskeruse@gmail.com"
+  },
+  "dependencies": {},
+  "devDependencies": {
+	"eslint": "^3.10.2"
+  },
+  "repository": {
+	"type": "git",
+	"url": "https://github.com/koalixCZ/Aurora.git"
+  },
+  "keywords": [
+	"javascript"
+  ],
+  "bugs": {
+	"url": "https://github.com/koalixCZ/Aurora/issues"
+  },
+  "scripts": {}
+}
