@@ -131,7 +131,7 @@ r = Number(r);
 ```
 Způsobů může být více. Řada konverzí probíhá v JS implicitně.
 
-_Tabulka implicitních konverzí_ 
+_Tabulka implicitních konverzí_
 
 Hodnota | `number` | `string` | `boolean`
 -------- | -------- | -------- | ---------
@@ -157,3 +157,23 @@ Hodnota | `number` | `string` | `boolean`
 `{}` | `NaN` | `"[object Object]"` | `true`
 `null` | `0` | `"null"` | `false`
 `undefined` | `NaN` | `"undefined"` | `false`
+
+##Komentáře v kódu
+Kód se jednou píše a stokrát čte. Ačkoliv se názory na komentáře v kódu různí,
+pravdou je, že kód se píše pro lidi. Čas od času i sebelepší programátor
+potřebuje pochopit _proč_ je to právě tak. Komentáře jsou součástí kódu.
+
+V JS je možné použít komentáře
+ * řádkové      `// řádkový komentář`
+ * blokové      `/* blokový komentář */`
+
+Rozdíl mezi nimi spočívá v tom, že zatímco řádkový komentář komentuje oblast od
+svého zápisu až na konec řádky, blokový dokáže komentovat pouze část řádky
+stejně jako celý blok textu.
+```JavaScript
+r = 1;      // jednotková kružnice
+```
+```JavaScript
+r = /*prompt("Zadej poloměr kružnice")*/ 1;
+surface = 4 * 3.14159 * r * r;
+```
