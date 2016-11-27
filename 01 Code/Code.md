@@ -113,7 +113,23 @@ zjistíme pomocí operátoru `typeof`, že hodnota v proměnné `r` není čísl
 console.log(typeof r);    // 'string'
 ```
 Pro výpočet potřebujeme, aby hodnota byla typu `number`, čehož docílíme
-konverzí. Řada konverzí probíhá v JS implicitně.
+konverzí. 
+```JavaScript
+r = parseInt(r, 10);
+```
+Nyní je v proměnné `r` uložena hodnota typu `number`.
+```JavaScript
+console.log(typeof r);    // 'number'
+```
+Pokud bychom chtěli získat místo celého čísla desetinné, můžeme použít
+```JavaScript
+r = parseFloat(r);
+```
+anebo
+```JavaScript
+r = Number(r);
+```
+Způsobů může být více. Řada konverzí probíhá v JS implicitně.
 
 _Tabulka implicitních konverzí_ 
 
