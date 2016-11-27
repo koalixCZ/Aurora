@@ -87,7 +87,7 @@ jež lze s danou hodnotou provádět. I v reálném životě se sčítají a od�
 
 JS má typ pro každou takovou tzv. primitivní hodnotu, jimiž jsou:
  * čísla - `number`, např. `1`, `2`, `3.14159`
- * řetězce - `string`, např. `"a"`, `"abc"`, `"Ahoj slunníčko :)"` 
+ * řetězce - `string`, např. `"a"`, `"abc"`, `"Ahoj sluníčko :)"` 
  * logické - `boolean`, hodnoty `true` a `false`
 
 Jsou-li hodnoty použity napřímo, hovoříme o _literálech_. Řetězcové literály
@@ -112,5 +112,5 @@ zjistíme pomocí operátoru `typeof`, že hodnota v proměnné `r` není čísl
 ```JavaScript
 console.log(typeof r);    // 'string'
 ```
-Pro výpočet potřebujeme, aby hodnota byla typu `number`. Toho docílíme konverzí.
-Řada konverzí mezi typy probíhá v JS implicitně. 
+Pro výpočet potřebujeme, aby hodnota byla typu `number`, čehož docílíme
+konverzí.  
