@@ -99,5 +99,18 @@ r = 2;
 sphere = true;
 animal = "wombat";
 ```
-Kromě primitivních hodnot JS komplexní typy (pole, objekty, funkce...), je
-budou popsány dále.
+Kromě primitivních hodnot pracuje JS také s komplexními typy (pole, objekty,
+funkce...), které budou popsány dále.
+##Konverze typů
+Konverze typů umoňuje převádět hodnoty do formy, která je nutná pro další
+operace. Vrátíme-li se k ukázce získání vstupu  (poloměr koule) od uživatele,
+```JavaScript
+r = prompt("Zadej poloměr");
+```
+zjistíme pomocí operátoru `typeof`, že hodnota v proměnné `r` není číslo, ale
+řetězec.
+```JavaScript
+console.log(typeof r);    // 'string'
+```
+Pro výpočet potřebujeme, aby hodnota byla typu `number`. Toho docílíme konverzí.
+Řada konverzí mezi typy probíhá v JS implicitně. 
