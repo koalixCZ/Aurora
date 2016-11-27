@@ -79,3 +79,25 @@ Priorita operátorů určuje, v jakém pořadí jsou aplikovány, viz
 
 Pro úplný výčet operátorů s příklady viz 
 [MDN - Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators).
+
+##Hodnoty a typy
+Každá hodnota, s níž se v kódu pracuje, má typ. Ten pomáhá k upřesnění operací,
+jež lze s danou hodnotou provádět. I v reálném životě se sčítají a odčítají
+čísla, tvoří slova pomocí předpon a přípon, či odpovídá prostým ano/ne.
+
+JS má typ pro každou takovou tzv. primitivní hodnotu, jimiž jsou:
+ * čísla - `number`, např. `1`, `2`, `3.14159`
+ * řetězce - `string`, např. `"a"`, `"abc"`, `"Ahoj slunníčko :)"` 
+ * logické - `boolean`, hodnoty `true` a `false`
+
+Jsou-li hodnoty použity napřímo, hovoříme o _literálech_. Řetězcové literály
+`string` jsou zapisovány s dvojitými (`"a"`), nebo jednoduchými (`'a'`)
+uvozovkami. Rozdíl je pouze stylistický, lze používat oboje, z hlediska
+čitelnosti se doporučuje používat jednu formu.
+```JavaScript
+r = 2;
+sphere = true;
+animal = "wombat";
+```
+Kromě primitivních hodnot JS komplexní typy (pole, objekty, funkce...), je
+budou popsány dále.
