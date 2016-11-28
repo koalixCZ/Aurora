@@ -202,3 +202,14 @@ var r = prompt("Zadej poloměr");
 r = parseInt(r);
 console.log(typeof r);    // 'number'
 ```
+##Bloky
+Bloky představují sadu příkazů uzavřených ve složených závorkách `{...}`, které 
+jsou vykonáváný společně. V JS se samostatně nepoužívají, neboť nevytváří obor
+platnosti (o tom bude pojednádno dále), ale svoje uplatnění nachází například u
+podmínek nebo cyklů.
+
+```JavaScript
+if (typeof r === 'string') {
+    r = parseInt(r);
+}
+```
