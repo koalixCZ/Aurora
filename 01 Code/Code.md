@@ -177,3 +177,28 @@ r = 1;      // jednotková kružnice
 r = /*prompt("Zadej poloměr kružnice")*/ 1;
 surface = 4 * 3.14159 * r * r;
 ```
+Interpret komentáře ignoruje, tedy cokoliv co je uvedeno uvnitř nemá vliv na běh
+programu.
+##Proměnné
+Proměnné slouží k uložení a přenosu hodnoty. Lze na ně jednoduše pohlížet jako
+na symbolický pojmenovaný kontejner. Vzhledem k tomu, že JS je dynamicky
+typovaný jazyk, může proměnná v čase obsahovat různé typy hodnot. Naopak ve
+staticky typovaném jazyce může proměnná sice obsahovat různá data, ale vždy
+téhož typu.
+
+Proměnná je deklarována pomocí _klíčového_ slova `var`. 
+```JavaScript
+var r = 2;
+var surface;
+
+surface = 4 * 3.14159 * r * r;
+```
+Práce s proměnnými je totožná s prací s hodnotami, jejím použitím ve výrazu
+používáme hodnotu, kterou uchovává. Pro proměnné uchovávající primitivní datové
+typy platí stejná pravidla, jako pro konverzi takových hodnot.
+```JavaScript
+var r = prompt("Zadej poloměr");
+    
+r = parseInt(r);
+console.log(typeof r);    // 'number'
+```
