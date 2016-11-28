@@ -33,7 +33,7 @@ JS, protože stále platí - kdo se chce naučit psát, musí psát.
 
 ##Obsah
 * [Kód](01%20Code/Code.md)
-* [Literatura a zdroje](Literature%20&%20sources/literature%20&%20sources.md)
+* [Literatura a zdroje](Literature%20%26%20sources/Literature%20%26%20sources.md)
 
 ## Co dál?
 Najdete-li chybu, narazíte na část, která vám nebude zřejmá, nebo budete mít 
