@@ -211,7 +211,7 @@ podmínek nebo cyklů.
 ##Podmínky
 Rozhodování (větvení kódu) se děje pomocí podmínek. Nejběžněji se vyskytuje
 konstrukce `if`, která vyžaduje logický výraz s výsledkem ano/ne (`true`,
-`false`). Pokud je výraz vyhodnocen jako pravdivý (`true), provede se
+`false`). Pokud je výraz vyhodnocen jako pravdivý (`true`), provede se
 následující blok kódu.
 ```JavaScript
 if (typeof r === 'string') {
