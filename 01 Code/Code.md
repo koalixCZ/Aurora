@@ -208,8 +208,50 @@ jsou vykonáváný společně. V JS se samostatně nepoužívají, neboť nevytv
 platnosti (o tom bude pojednádno dále), ale svoje uplatnění nachází například u
 podmínek nebo cyklů.
 
+##Podmínky
+Rozhodování (větvení kódu) se děje pomocí podmínek. Nejběžněji se vyskytuje
+konstrukce `if`, která vyžaduje logický výraz s výsledkem ano/ne (`true`,
+`false`). Pokud je výraz vyhodnocen jako pravdivý (`true), provede se
+následující blok kódu.
 ```JavaScript
 if (typeof r === 'string') {
     r = parseInt(r);
+}
+```
+Volitelně může být příkaz doplněn o větev `else`, jejíž blok je vykonán
+v případě, že hodnota výrazu v podmínce byla vyhodnocena jako nepravda. 
+```JavaScript
+if (r > 0) {
+    surface = 4 * 3.14159 * r * r;
+} else {
+    console.log("Moment, zkouším ohnout kružítko.");
+}
+```
+Konstrukce `if` - `else` umožňuje složitější větvení.
+```JavaScript
+if (r < 0) {
+    console.log("Koule není záporný hrdina.");
+} else if (r === 0) {
+    console.log("Singularita");
+} else {
+	surface = 4 * 3.14159 * r * r;
+}
+```
+
+Další možností jak vytvořit podmínku s více větvemi je příkaz `switch`.
+```JavaScript
+switch (r) {
+case NaN:
+    console.log("Není číslo.");
+    break;
+case Infinity:
+    console.log("Nekonečno.");
+    break;
+case 0:
+    console.log("Singularita");
+    break;
+default:
+    surface = 4 * 3.14159 * r * r;
+    break
 }
 ```
