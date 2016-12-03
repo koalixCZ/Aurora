@@ -297,3 +297,13 @@ do {
     r = r + 1;
 } while (r < 10);
 ```
+Další možností je cyklus `for`, který obsahuje tři klauzule oddělené
+středníkem (`;`):
+ 1. inicializační (`r = 1`)
+ 2. testovací (`r < 10`)
+ 3. aktualizační (`r++`) 
+```JavaScript
+for (r = 1; r < 10; r++) {
+    console.log(4 * 3.14159 * r * r);
+}
+```
