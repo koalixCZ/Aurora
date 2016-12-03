@@ -307,3 +307,5 @@ for (r = 1; r < 10; r++) {
     console.log(4 * 3.14159 * r * r);
 }
 ```
+Z kódu je zřejmé, že `for` cyklus je co do zápisu nejkompaktnější, běžně se
+užívá například při procházení polí.
