@@ -234,7 +234,7 @@ if (r < 0) {
 } else if (r === 0) {
     console.log("Singularita");
 } else {
-	surface = 4 * 3.14159 * r * r;
+    surface = 4 * 3.14159 * r * r;
 }
 ```
 
@@ -254,4 +254,46 @@ default:
     surface = 4 * 3.14159 * r * r;
     break
 }
+```
+##Smyčky
+Projít seznam prvků, provést výpočet pro množinu čísel; smyčky slouží k
+opakování sady operací, dokud není splněna podmínka. JS disponuje několika
+způsoby jak takovou smyčku provést. Jednou z nich je konstrukce, kde se za
+klíčovým slovem `while` nachází logický výraz - podmínka - rozhodující o tom,
+zda bude cyklus pokračovat. Pokud je výraz pravidvý (`true`), provede se kód v
+bloku `{...}`. Není-li pravdivý (`false`), pokračuje program dále za cyklem.
+
+Následující kód vypíše povrch koulí o poloměrech 1 až 9. 
+```JavaScript
+r = 1;
+
+while (r < 10) {
+    console.log(4 * 3.14159 * r * r);
+    r = r + 1;
+}
+```
+Podmínku je možné napsat i jako nekonečnou a cyklus ukončit pomocí příkazu
+`break`.
+```JavaScript
+r = 1;
+
+while (true) {
+    if (r < 10) {
+        console.log(4 * 3.14159 * r * r);
+        r = r + 1;
+    } else {
+        break;
+    }
+}
+```
+Podobnou konstrukcí je `do-while`. Rozdíl mezi oběma spočívá v tom, že v případě
+`while` se blok kódu vykoná pouze pokud je podmínka splněna, zatímco u
+`do-while` se provede vždy alespoň jednou.
+```JavaScript
+r = 10;
+
+do {
+    console.log(4 * 3.14159 * r * r);   // vypíše 1256.636
+    r = r + 1;
+} while (r < 10);
 ```
