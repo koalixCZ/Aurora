@@ -322,9 +322,9 @@ function surfaceAreaOfSphere(r) {
 
 console.log(surfaceAreaOfSphere(1));
 ```
-Volitelně je funkce schopna přijímat argumenty (též parametry) a také vracet
+Volitelně je funkce schopna přijímat argumenty (_parametry_) a také vracet
 hodnotu. Funkce `surfaceAreaOfSphere` přebírá jako parametr `r` poloměr koule a
-vrací její plochu. Předchozí ukázku, v níž se vypíše plocha koulí o poloměrech
+vrací její plochu. Předchozí příklad, v němž se vypíše plocha koulí o poloměrech
 1 až 9 lze přepsat:
 
 ```JavaScript
@@ -340,3 +340,7 @@ for (r = 1; r < 10; r++) {
     console.log(surfaceAreaOfSphere(r));
 }
 ```
+V ukázce jsme také vytvořili další funkci `power`, jejímž úkolem je vypočítat
+druhou mocninu čísla předaného jako paramter. Funkce neslouží pouze k odstranění
+duplicit v kódu, ale obecněji k jeho strukturování. Správné rozdělení
+odpovědnosti vede k čitelnějšímu kódu.
