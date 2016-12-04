@@ -316,9 +316,27 @@ tutéž část použít vícekrát, byli bychom nuceni ji napsat znovu. Tím by 
 který je možné volat opakovaně. 
 
 ```JavaScript
-function circumference (r) {
-	return 4 * 3.14159 * r * r;
+function surfaceAreaOfSphere(r) {
+    return 4 * 3.14159 * r * r;
 }
 
-console.log(circumference(1));
+console.log(surfaceAreaOfSphere(1));
+```
+Volitelně je funkce schopna přijímat argumenty (též parametry) a také vracet
+hodnotu. Funkce `surfaceAreaOfSphere` přebírá jako parametr `r` poloměr koule a
+vrací její plochu. Předchozí ukázku, v níž se vypíše plocha koulí o poloměrech
+1 až 9 lze přepsat:
+
+```JavaScript
+function power(a) {
+    return a * a;
+}
+
+function surfaceAreaOfSphere(r) {
+    return 4 * 3.14159 * power(r);
+}
+
+for (r = 1; r < 10; r++) {
+    console.log(surfaceAreaOfSphere(r));
+}
 ```
