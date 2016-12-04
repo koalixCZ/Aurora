@@ -310,7 +310,15 @@ for (r = 1; r < 10; r++) {
 Z kódu je zřejmé, že `for` cyklus je co do zápisu nejkompaktnější, běžně se
 užívá například při procházení polí.
 ##Funkce
-Doposud byl náš kód sadou postupně vykonávaných příkazů. Funkce umožňuje
-vytvoření pojmenovaného bloku kódu, který je možné opakovaně zavolat, nebo jen
-využít k přehlednějšímu strukturování programu.
+Dosud byl náš kód sérií postupně vykonávaných příkazů. Pokud bychom chtěli
+tutéž část použít vícekrát, byli bychom nuceni ji napsat znovu. Tím by utrpěla
+čitelnost i udržovatelnost. Funkce umožňuje vytvoření pojmenovaného bloku kódu,
+který je možné volat opakovaně. 
 
+```JavaScript
+function circumference (r) {
+	return 4 * 3.14159 * r * r;
+}
+
+console.log(circumference(1));
+```
