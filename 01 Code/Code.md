@@ -351,3 +351,20 @@ rozsah (_scope_), technicky lexikální rozsah (_lexical scope_). V JS má každ
 funkce vlastní rozsah. Rozsah je tvořen sadou proměnných, funkcí a pravidel jak
 jsou dostupné podle svého jména a pouze kód uvnitř funkce k nim může
 přistupovat.
+
+V rámci jednoho rozsahu nemohou existovat dvě stejně pojmenované proměnné vedle 
+sebe, mohou však existovat stejně pojmenované proměnné v různých rozsazích.
+```JavaScript
+function a() {
+    var value = 1;
+    
+    console.log(value);
+}
+function b() {
+    var value = 2;
+    
+    console.log(value);
+}
+a();    // 1
+b();    // 2
+```
