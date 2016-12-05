@@ -352,14 +352,15 @@ funkce vlastní rozsah. Rozsah je tvořen sadou proměnných, funkcí a pravidel
 jsou dostupné podle svého jména a pouze kód uvnitř funkce k nim může
 přistupovat.
 
-V rámci jednoho rozsahu nemohou existovat dvě stejně pojmenované proměnné vedle 
-sebe, mohou však existovat stejně pojmenované proměnné v různých rozsazích.
+V rámci jednoho rozsahu nemohou existovat dvě stejně pojmenované proměnné, mohou
+však existovat stejně pojmenované proměnné v různých rozsazích.
 ```JavaScript
 function a() {
     var value = 1;
     
     console.log(value);
 }
+
 function b() {
     var value = 2;
     
@@ -368,3 +369,5 @@ function b() {
 a();    // 1
 b();    // 2
 ```
+Rozsah může být také uhnízděn v jiném rozsahu. V tom případě platí, že kód
+z vnitřního rozsahu může přistupovat k proměnným z vnějšího rozsahu.
