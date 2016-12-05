@@ -344,3 +344,10 @@ V ukázce jsme také vytvořili další funkci `power`, jejímž úkolem je vypo
 druhou mocninu čísla předaného jako paramter. Funkce neslouží pouze k odstranění
 duplicit v kódu, ale obecněji k jeho strukturování. Správné rozdělení
 odpovědnosti vede k čitelnějšímu kódu.
+#Rozsah
+Rozsah lze pojmout jako hřiště. Na turnaji může hrát více týmů, ale každá hra se
+odehrává na jednom konkrétním hřišti. V programování se tomuto konceptu říká
+rozsah (_scope_), technicky lexikální rozsah (_lexical scope_). V JS má každá
+funkce vlastní rozsah. Rozsah je tvořen sadou proměnných, funkcí a pravidel jak
+jsou dostupné podle svého jména a pouze kód uvnitř funkce k nim může
+přistupovat.
