@@ -394,3 +394,12 @@ function sphere() {
 }
 sphere();
 ```
+##Shrnutí
+Sebevíce komplexní program se skládá z dílků, zde jsou základní z nich: 
+
+ * _operátory_ - provádějí akce
+ * _hodnoty_ a _typy_ pro vykonávání různých druhů akcí (matematické operace s čísly, skládání vět s řetězci)
+ * _proměnné_ pro ukládání dat
+ * _podmínky_ pro rozhodování
+ * _smyčky_ k opakování úkolů, dokud není splněna podmínka
+ * _funkce_ pro organizování kódu do logických celků a k vytváření opětovně použitelných částí
