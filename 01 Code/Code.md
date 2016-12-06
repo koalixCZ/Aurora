@@ -369,5 +369,28 @@ function b() {
 a();    // 1
 b();    // 2
 ```
-Rozsah může být také uhnízděn v jiném rozsahu. V tom případě platí, že kód
-z vnitřního rozsahu může přistupovat k proměnným z vnějšího rozsahu.
+Rozsah může být také uhnízděný v jiném rozsahu. Platí, že kód z vnitřního
+rozsahu může přistupovat k proměnným z vnějšího rozsahu.
+```JavaScript
+var PI = 3.14159;
+
+function sphere() {
+    var r = 1;
+    
+    function circumference() {
+        var value = 2 * PI * r;
+
+        console.log(value);
+    }
+    
+    function surface() {
+        var value = 4 * PI * r * r;
+        
+        console.log(value);
+    }
+    
+    circumference();    // 6.28318
+    surface();          // 12.56636
+}
+sphere();
+```
