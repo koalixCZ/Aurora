@@ -32,7 +32,7 @@ kompletní průvodce, nýbrž co nejstručnější (a přitom dostatečný) pohl
 JS, protože stále platí - kdo se chce naučit psát, musí psát.
 
 ##Obsah
-* [Kód](01%20Code/Code.md)
+* [Kód](01 Up to programming/Up to programming.md)
 * [Literatura a zdroje](Literature%20%26%20sources/Literature%20%26%20sources.md)
 
 ## Co dál?

@@ -1,4 +1,4 @@
-#Kód
+#Vzhůru do programování
 Zdrojový kód se skládá ze sady instrukcí zpracovávaných počítačem. V případě 
 JavaScriptu jsou přímo vykonávány - interpretovány. 
 
