@@ -7,6 +7,7 @@ zmíněno, že v JS mají hodnoty typ. Základními (vestavěnými) typy jsou:
  * `boolean`
  * `null` a `undefined`
  * `object`
+
 Typ hodnoty je možné získat pomocí operátoru `typeof`. Hodnota vrácená
 operátorem je textový řetězec (`string`).
 ```JavaScript
