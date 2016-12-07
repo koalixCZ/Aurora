@@ -32,8 +32,9 @@ kompletní průvodce, nýbrž co nejstručnější (a přitom dostatečný) pohl
 JS, protože stále platí - kdo se chce naučit psát, musí psát.
 
 ##Obsah
-* [Kód](01 Vzhůru do programování/Vzhůru do programování.md)
-* [Literatura a zdroje](Literature%20%26%20sources/Literature%20%26%20sources.md)
+* [Vzhůru do programování](01 Vzhůru do programování/Vzhůru do programování.md)
+* [Vzhůru do JavaScriptu](02 Vzhůru do JavaScriptu/Vzhůru do JavaScriptu.md)
+* [Literatura a zdroje](Literatura a zdroje/Literatura a zdroje.md)
 
 ## Co dál?
 Najdete-li chybu, narazíte na část, která vám nebude zřejmá, nebo budete mít 
