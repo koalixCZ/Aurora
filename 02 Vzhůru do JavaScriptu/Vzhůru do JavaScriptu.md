@@ -14,7 +14,7 @@ var a;
 
 console.log(typeof a);      // "undefined"
 
-a = "Ahoj sluníčko ;)"
+a = "Ahoj sluníčko ;)";
 console.log(typeof a);      // "string"
 
 a = 6;
