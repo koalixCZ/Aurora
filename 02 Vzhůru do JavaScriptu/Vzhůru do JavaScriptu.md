@@ -66,3 +66,13 @@ var obj = {
 var b = "a";
 console.log(obj[b]);        // Ahoj sluníčko
 ```
+##Pole
+Pole (_array_) je typ objektu, v němž jsou hodnoty libovolného typu uloženy na
+číselně indexovaných pozicích.
+```JavaScript
+var array = [
+    "Ahoj sluníčko",
+    6,
+    true
+];
+```
