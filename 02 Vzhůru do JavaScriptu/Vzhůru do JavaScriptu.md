@@ -1,7 +1,7 @@
 #Vzhůru do JavaScriptu
 ##Hodnoty a typy
-V [úvodní kapitole](../01 Vzhůru do programování/Vzhůru do programování.md) bylo
-zmíněno, že v JS mají hodnoty typ. Základními (vestavěnými) typy jsou:
+V [úvodní kapitole](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#hodnoty-a-typy)
+bylo zmíněno, že v JS mají hodnoty typ. Základními (vestavěnými) typy jsou:
  * `string`
  * `number`
  * `boolean`
