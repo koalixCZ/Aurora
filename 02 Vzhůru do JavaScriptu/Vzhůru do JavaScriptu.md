@@ -231,6 +231,7 @@ Kráce lze vyjádřit, že v JS jsou hodnoty:
  * `null`, `undefined`
  * `false`
 považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_truthy_).
+
 ##Rovnost
 JS poskytuje čtyři operátory pro porovnání rovnosti, a to: `==`, `===`, `!=`,
 `!==`, kde znak `!` představuje negaci (_ne-rovnost_).
