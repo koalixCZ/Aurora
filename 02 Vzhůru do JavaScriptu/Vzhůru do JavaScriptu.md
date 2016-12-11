@@ -235,9 +235,9 @@ považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_trut
 JS poskytuje čtyři operátory pro porovnání rovnosti, a to: `==`, `===`, `!=`,
 `!==`, kde znak `!` představuje negaci (_ne-rovnost_).
 
-Rozdíl mezi rovností (`==`) a identitou (`===`) spočívá v tom, že při použití
-operátoru rovnosti (`==`) se pro odlišné typů provádí implicitní konverze,
-zatímco v případě striktního porovanání (`===`) nikoliv.
+Rozdíl mezi rovností `==` a identitou (striktní rovnost) `===` spočívá v tom, že
+při použití `==` se pro odlišné typů provádí implicitní konverze, zatímco v
+případě striktního porovanání `===` nikoliv.
 ```JavaScript
 var a = 1;
 var b = "1";
@@ -246,17 +246,17 @@ console.log(a == b);        // true
 console.log(a === b);       // false
 ```
 V případě porovnání pomocí `==` JS zjistí nerovnost typů a provede sérii kroků
-ke konverzi jedné, nebo obou hodnot tak, aby bylo možné porovnat hodnoty.
-V tomto konkrétním případě jsou možné dva scénáře, a to buď `42 == 42`, nebo
-`"42" == "42"`, zde dojde k porovnání čísel, tedy `42 == 42`. Přesná pravidla
-jakým způsobem se provádí typová konverze je k dispozici ve specifikaci
+ke konverzi jedné, nebo obou hodnot tak, aby je bylo možné porovnat.
+V našem případě jsou možné dva scénáře, a to buď `42 == 42`, anebo
+`"42" == "42"`. Zde dojde k porovnání čísel, tedy `42 == 42`. Přesná pravidla
+jakým způsobem se provádí typová konverze jsou k dispozici ve specifikaci
 [ES5, kap. 11.9.3](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3).
 
-Výraz `a === b` končí hodnout `false`, protože typová konverze není povolena.
-V současnosti se značně prosazuje používání striktního porovnání (`===`),
-neboť je pro programátory predikovatelnější.
+Výraz `a === b` končí hodnotou `false`, protože typová konverze není povolena.
+V současnosti se značně prosazuje používání striktního porovnání `===`, neboť je
+pro programátory predikovatelnější.
 
-Důvod proč naopak v určitých případech preferovat operátor `==` před `===` je,
-že keho použití může vést k čitelnějšímu kódu. Obecně, názory na programovací
-techniky a přístupy jak psát kód se v čase mění a zvláště v tak expresivní
-jazyce, jakým JS je.
+Důvod proč v určitých případech naopak preferovat `==` před `===` je, že jeho 
+použití může vést k čitelnějšímu kódu. Obecně, názory na programovací techniky a
+přístupy jak psát kód se v čase mění, zvláště pak v tak expresivní jazycem,
+jakým JS je.
