@@ -194,3 +194,28 @@ primitivní typ (`number`, `string`, `boolean`) má odpovídající objektovou o
 s primitvní hodnotou začne pracovat jako s objektem, JS ji automaticky převede
 do konkrétního objektového protějšku a poté, co je metoda zavolána, ji vrátí
 zpět do jejího literálního typu.
+##Porovnávání hodnot
+Dva hlavní typy porovnávání jsou ověřovíní na _rovnost_ a _nerovnost_. Výsledkem
+provnávání je, bez ohledu na typ porovnávaných hodnot, logická (`boolean`)
+hodnota (`true`, nebo `false`).
+###Typová konverze (přetypování)
+V první kapitole již byla [typová konverze](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#konverze-typů)
+stručně zmíněna. V JS se vyskytuje dvojí, a to _implicitní_ a _explicitní_.
+Explicitní typová konverze znamená, že z kódu je jasně čitelné z jakého typu na
+jaký se hodnota převádí.
+```JavaScript
+var a = "3.14159";
+var b = Number(a);
+
+console.log(typeof a);      // "string"
+console.log(typeof b);      // "number"
+```
+Implicitní konverzí se rozumí situace, kdy změna typu nastává jako vedlejší
+efekt nějaké operace.
+```JavaScript
+var a = "3.14159";
+var b = a * 2;
+
+console.log(typeof a);      // "string"
+console.log(typeof b);      // "number"
+```
