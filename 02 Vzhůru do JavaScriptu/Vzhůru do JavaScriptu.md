@@ -66,7 +66,7 @@ var obj = {
 var b = "a";
 console.log(obj[b]);        // Ahoj sluníčko
 ```
-##Pole
+###Pole
 Pole (_array_) je typ objektu, v němž jsou hodnoty libovolného typu uloženy na
 číselně indexovaných pozicích.
 ```JavaScript
@@ -76,3 +76,30 @@ var array = [
     true
 ];
 ```
+První položka v poli je dostupná na indexu 0.
+```JavaScript
+console.log(array[0]);      // Ahoj sluníčko
+console.log(array[1]);      // 6
+```
+Mimo ostatních vlastností poskytuje objekt typu _pole_ vlastnost `length`
+vracející počet prvků uložených v poli. Nejrychlejší způsob jak procházet 
+prvky je potom použití cyklu `for`.
+```JavaScript
+for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+}
+```
+Ačkoliv je _pole_ speciální objekt, vrací operátor `typeof` hodnotu `"object"`.
+```JavaScript
+console.log(typeof array);      // "object"
+```
+Může se to jevit matoucí, novější implementace JS poskytují metodu 
+[Array.isArray()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
+pro zjištění, zda se jedná o `object` nebo `array`.
+```JavaScript
+console.log(Array.isArray({}));     // false
+console.log(Array.isArray([]));     // true
+```
+V JS je objekt _asociativní_ pole. Bylo by proto možné použít jména vlastností
+numerické hodnoty (`0, 1, 2`), nicméně přirozený způsob používání je takový, že
+`object` se používá pro pojmenované vlastnosti a `array` pro číselně pozicované.
