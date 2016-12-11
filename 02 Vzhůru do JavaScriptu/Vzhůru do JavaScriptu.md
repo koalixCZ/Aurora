@@ -179,3 +179,18 @@ Objekt typu `object` je vhodný k ukládání struktur nebo jako mapa
 práci s jejími vlastnostmi je spíše doménou řízení toku programu než ukládání
 uživatelských dat.
 ##Metody vestavěných typů
+Vestavěné typy mají k dispozici metody a vlastnosti umožňující operace nad daty.
+```JavaScript
+var a = "Ahoj sluníčko :)";
+var b = 3.14159;
+
+console.log(a.length);          // 16
+console.log(a.toUpperCase());   // "AHOJ SLUNÍČKO :)"
+console.log(b.toFixed(4));      // 3
+```
+Způsob, jakým hodnoty získají tyto schopnosti se nazývá _boxing_. Každý
+primitivní typ (`number`, `string`, `boolean`) má odpovídající objektovou obálku
+(_wrapper_, `Number`, `String`, `Boolean`), která tyto metody definuje. Když se
+s primitvní hodnotou začne pracovat jako s objektem, JS ji automaticky převede
+do konkrétního objektového protějšku a poté, co je metoda zavolána, ji vrátí
+zpět do jejího literálního typu.
