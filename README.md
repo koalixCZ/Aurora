@@ -32,9 +32,9 @@ kompletní průvodce, nýbrž co nejstručnější (a přitom dostatečný) pohl
 JS, protože stále platí - kdo se chce naučit psát, musí psát.
 
 ##Obsah
-* [Vzhůru do programování](01 Vzhůru do programování/Vzhůru do programování.md)
-* [Vzhůru do JavaScriptu](02 Vzhůru do JavaScriptu/Vzhůru do JavaScriptu.md)
-* [Literatura a zdroje](Literatura a zdroje/Literatura a zdroje.md)
+* [Vzhůru do programování](01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md)
+* [Vzhůru do JavaScriptu](02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md)
+* [Literatura a zdroje](Literatura%20a%20zdroje/Literatura%20a%20zdroje.md)
 
 ## Co dál?
 Najdete-li chybu, narazíte na část, která vám nebude zřejmá, nebo budete mít 
