@@ -167,3 +167,15 @@ function circumference(r) {
 
 console.log(typeof circumference);      // "function"
 ```
+Stejně jako v případě objektu a pole lze i funkci přiřazovat vlastnosti, ovšem
+podobně jako u pole je to záležitost úzkého okruhu použití.
+```JavaScript
+circumference.a = 6;
+console.log(circumference.a);       // 6
+```
+Objekt typu `object` je vhodný k ukládání struktur nebo jako mapa
+(klíč-hodnota). Pole se hodí v případech, kdy je vyžadován přístup podle indexu
+(prvky pole je také možné řadit). Funkce slouží coby pojmenovaný blok kódu,
+práci s jejími vlastnostmi je spíše doménou řízení toku programu než ukládání
+uživatelských dat.
+##Metody vestavěných typů
