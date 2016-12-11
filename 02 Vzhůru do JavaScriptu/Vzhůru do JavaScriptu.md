@@ -103,3 +103,39 @@ console.log(Array.isArray([]));     // true
 V JS je objekt _asociativní_ pole. Bylo by proto možné použít jména vlastností
 numerické hodnoty (`0, 1, 2`), nicméně přirozený způsob používání je takový, že
 `object` se používá pro pojmenované vlastnosti a `array` pro číselně pozicované.
+###Mazání prvků - operátor `delete`
+Odstranit prvek z objektu, nebo pole, je možné pomocí operátoru `delete`.
+```JavaScript
+var obj = {
+    a: true
+}
+
+delete obj.a;
+console.log(obj.a);         // undefined
+```
+Při pokusu o získání smazaného prvku je vrácena hodnota `undefined`, stejně jako
+při snaze o získání neexistujícího prvku. Teoreticky je možné odstranit prvek
+nastavením hodnoty vlastnosti na `undefined`, není to však přesně totéž, protože
+`undefined` je ve skutečnosti globální proměnná s hodnotou `undefined`, takže
+bychom vlastnost neodstravili, pouze jí nastavili hodnotu, která se tak navenek
+jeví.
+
+Velmi zjednodušeně lze koncept `null` a `undefined` popsat:
+ * `null` - nevím
+ * `undefined` - cože?
+
+Pokud je při dotazu na objekt (nebo jeho vlastnost) vrácena hodnota `null`,
+znamená to, ano, takový objekt existuje, ale nemá zatím nastavanou žádnou
+hodnotu. Naopak hodnota `undefined` říká - o ničem takovém nevím, že by mělo
+existovat. Důvodem odlišování obou stavů je skutečnost, že JS je dynamický
+jazyk a vlastnosti objektů mohou vznikat za běhu programu. 
+
+Nedoporučuje se nastavovat vlastnosti na hodnotu `undefined`.
+
+Stejně jako lze odstranit vlastnost objektu, lze odstranit i prvek z pole.
+```JavaScript
+var array = ["a", "b", "c"];
+
+delete array[1];
+console.log(array[1]);      // undefined
+```
