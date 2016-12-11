@@ -138,4 +138,23 @@ var array = ["a", "b", "c"];
 
 delete array[1];
 console.log(array[1]);      // undefined
+console.log(array.length);  // 3
 ```
+Při vymazání prvku z pole se zbývající prvky za vymazaným nepřesouvají,
+zůstávají na svých pozicích a nemění se ani délka pole. V poli vznikne _"díra"_,
+při dotazu na hodnotu se vrátí `undefined`. U objektu se s tím nesetkáme,
+protože `object` je v tomto pojetí mapa klíč - hodnota. Pokud bychom chtěli
+odstranit prvek z pole a zajistit, že se změní délka pole, museli bychom
+vytvořit nové a překopírovat do něj zbývající hodnoty.
+
+Vzhledem tomu, že se `array` v JS chová spíše jako _asociativní pole_, je možné
+do něj přidávat prvky libovolně bez nutnosti stanovit jeho délku. Pole se
+automaticky zvětší.
+```JavaScript
+var array = [];
+
+console.log(array.length);      // 0
+array[9] = "j";
+console.log(array.length);      // 10
+```
+##Funkce
