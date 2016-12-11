@@ -231,3 +231,26 @@ Kráce lze vyjádřit, že v JS jsou hodnoty:
  * `null`, `undefined`
  * `false`
 považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_truthy_).
+##Rovnost
+JS poskytuje čtyři operátory pro porovnání rovnosti, a to: `==`, `===`, `!=`,
+`!==`, kde znak `!` představuje negaci (_ne-rovnost_).
+
+Rozdíl mezi rovností (`==`) a identitou (`===`) spočívá v tom, že při použití
+operátoru rovnosti (`==`) se pro odlišné typů provádí implicitní konverze,
+zatímco v případě striktního porovanání (`===`) nikoliv.
+```JavaScript
+var a = 1;
+var b = "1";
+
+console.log(a == b);        // true
+console.log(a === b);       // false
+```
+V případě porovnání pomocí `==` JS zjistí nerovnost typů a provede sérii kroků
+ke konverzi jedné, nebo obou hodnot tak, aby bylo možné porovnat hodnoty.
+V tomto konkrétním případě jsou možné dva scénáře, a to buď `42 == 42`, nebo
+`"42" == "42"`, zde dojde k porovnání čísel, tedy `42 == 42`.
+
+Výraz `a === b` končí hodnout `false`, protože typová konverze není povolena.
+V současnosti se značně prosazuje úzus používání striktního porovnání (`===`),
+neboť je pro programátory predikovatelnější.
+
