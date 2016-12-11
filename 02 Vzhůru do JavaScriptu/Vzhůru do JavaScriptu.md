@@ -219,3 +219,15 @@ var b = a * 2;
 console.log(typeof a);      // "string"
 console.log(typeof b);      // "number"
 ```
+###Pravdivé & nepravdivé
+V [první kapitole](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#konverze-typů)
+se v tabulce implicitních konverzí objevila pravdivá a nepravdivá (_truthy_ a
+_falsy_) povaha hodnot, tedy jakým způsobem jsou v logických operacích chápány
+hodnoty jiných typů než `boolean`.
+
+Kráce lze vyjádřit, že v JS jsou hodnoty:
+ * `""` (prázdný řetězec)
+ * `0`, `-0`, `NaN` (nevalidní číslo)
+ * `null`, `undefined`
+ * `false`
+považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_truthy_).
