@@ -157,4 +157,13 @@ console.log(array.length);      // 0
 array[9] = "j";
 console.log(array.length);      // 10
 ```
-##Funkce
+###Funkce
+Dalším podtypem typu `object` je funkce (`function`). Operátor `typeof` vrací v
+jejím případě správně `"function"`.
+```JavaScript
+function circumference(r) {
+    return 2 * 3.14159 * r;
+}
+
+console.log(typeof circumference);      // "function"
+```
