@@ -251,6 +251,13 @@ V tomto konkrétním případě jsou možné dva scénáře, a to buď `42 == 42
 `"42" == "42"`, zde dojde k porovnání čísel, tedy `42 == 42`.
 
 Výraz `a === b` končí hodnout `false`, protože typová konverze není povolena.
-V současnosti se značně prosazuje úzus používání striktního porovnání (`===`),
+V současnosti se značně prosazuje používání striktního porovnání (`===`),
 neboť je pro programátory predikovatelnější.
 
+Přesná pravidla zakým způsobem se provádí typová konverze je k dispozici
+ve specifikaci [ES5, kap. 11.9.3](http://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3).
+
+Důvod proč naopak v určitých případech preferovat operátor `==` před `===` je,
+že keho použití může vést k čitelnějšímu kódu. Obecně, názory na programovací
+techniky a přístupy jak psát kód se v čase mění a zvláště v tak expresivní
+jazyce, jakým JS je.
