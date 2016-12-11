@@ -233,7 +233,7 @@ Kráce lze vyjádřit, že v JS jsou hodnoty:
 považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_truthy_).
 
 ##Rovnost
-JS poskytuje čtyři operátory pro porovnání rovnosti, a to: `==`, `===`, `!=`,
+JS poskytuje čtyři operátory rovnosti, a to: `==`, `===`, `!=`,
 `!==`, kde znak `!` představuje negaci (_ne-rovnost_).
 
 Rozdíl mezi rovností `==` a identitou (striktní rovnost) `===` spočívá v tom, že
