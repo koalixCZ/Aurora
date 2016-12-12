@@ -299,14 +299,19 @@ Platí zde podobná (ne stejná!) pravidla jako při porovnávání pomocí `==`
 [ES5, kap. 11.8.5](http://www.ecma-international.org/ecma-262/5.1/#sec-11.8.5).
 Neexistuje žádný "striktní" operátor nerovnosti, který by umožnil zákaz typové
 konverze podobně jako to dělá `===`.
-```JavaScript
-var a = 1;
-var b = "2";
-var c = "3";
-
-console.log(a < b);         // true
-console.log(b < c);         // true
-```
+)
 Specifikace stanovuje, jsou-li dva oba operadny řetězce (`string`), probíhá
 porovnání lexikograficky. Pokud jeden (nebo oba) nejsou řetězec, obě hodnoty
 jsou převedeny na čísla a takto porovnány.
+
+Pokud není možné převést hodnotu na platné číslo, je převedena na hodnotu `NaN`
+(nevalidní číslo). Platí, že `NaN` není ani větší ani menší, než jiná hodnota.
+```JavaScript
+var a = 1;
+var b = "ahoj";
+
+console.log(a < b);         // false
+console.log(a > b);         // false
+console.log(a == b);        // false
+```
+Porovnáné `==` selže, protože ani `1 == NaN`, ani `"1" == "ahoj"` není pravdivé.
