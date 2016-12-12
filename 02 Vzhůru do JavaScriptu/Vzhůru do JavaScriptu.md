@@ -315,3 +315,13 @@ console.log(a > b);         // false
 console.log(a == b);        // false
 ```
 Porovnáné `==` selže, protože ani `1 == NaN`, ani `"1" == "ahoj"` není pravdivé.
+
+##Pojmenování proměnných
+V JS musí být jména proměnných (a funkcí) validními identifikátory. Při zahrnutí
+netradičních znaků z Unicode sady jsou pravidla komplexní, pokud uvažujeme pouze
+typické ASCII alfanumerické znaky, musí identifikátor začínat `a-z`, `A-Z`, `$`,
+nebo `_` a obsahovat může kterýkoliv z těchto znaků včetně číslic `0-9`.
+
+Stejná pravidla platí i pro názvy vlastností s tou výjimkou, že zatímco název
+vlastnosti může být i klíčové slovo (např. `for`, `in`, `delete`...), stejně
+jako `null`, `true`, `false`, název proměnné nikoliv.
