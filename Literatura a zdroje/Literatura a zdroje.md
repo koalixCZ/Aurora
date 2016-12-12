@@ -6,5 +6,6 @@
 * [SIMPSON, Kyle: _You don't know JS: Up & going_, 2015](http://shop.oreilly.com/product/0636920039303.do)
 
 ## Odkazy
+* [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/)
 * Specifikace [ES 5.1](http://www.ecma-international.org/ecma-262/5.1/)
 * Série [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) na GitHub
