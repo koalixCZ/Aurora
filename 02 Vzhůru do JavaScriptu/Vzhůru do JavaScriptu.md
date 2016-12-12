@@ -261,3 +261,30 @@ Důvod proč v určitých případech naopak preferovat `==` před `===` je, že
 použití může vést k čitelnějšímu kódu. Obecně, názory na programovací techniky a
 přístupy jak psát kód se v čase mění, zvláště pak v tak expresivní jazycem,
 jakým JS je.
+
+Jednoduché pravidlo pro použití `==` zní:
+ * je-li kterákoliv hodnota výrazu `true` nebo `false`, použijte `===`
+ * je-li kterákoliv hodnota výrazu `0`, `""`, `{}`, nebo `[]` , použijte `===`
+ * ve všech ostatních případech je bezpečné použít `==` a kód bude navíc i čitelnější
+
+Pokud jste si jisti hodnotami, použijte `==`, pokud ne, `===`.
+
+Všechna uvedená pravidla platí symetricky i pro operátory nerovnosti. Operátor
+`!=` páruje s `==` a operátor `!==` s `===`.
+
+Při porovnávání dvou ne-primitivních hodnot (`object`, `function`, `array`)
+je ověřováno, zda odpovídají reference obou objektů. Není proto žádný rozdíl
+mezi použitím `==` a `===`.
+```JavaScript
+var a = [1,2,3];
+var b = [1,2,3];
+var c = "1,2,3";
+
+console.log(a == c);        // true
+console.log(b == c);        // true
+console.log(a == b);        // true
+```
+Standardně je `array` při porovnávání s primitivní hodnotou převedena na textový
+řetězec (`string`), přičemž jednotlivé položky pole jsou odděleny `,`. Mohlo by
+se zdát, že dvě identická pole se v tom případě budou navzájem rovnat, ale není
+tomu tak. Důvodem je ověřování referencí objektů.
