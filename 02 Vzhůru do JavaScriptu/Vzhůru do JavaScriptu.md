@@ -234,7 +234,7 @@ považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_trut
 
 ##Rovnost
 JS poskytuje čtyři operátory rovnosti, a to: `==`, `===`, `!=`,
-`!==`, kde znak `!` představuje negaci (_ne-rovnost_).
+`!==`, kde znak `!` představuje negaci (_ne-rovnost_, nezaměňovat s nerovností).
 
 Rozdíl mezi rovností `==` a identitou (striktní rovnost) `===` spočívá v tom, že
 při použití `==` se pro odlišné typy provádí implicitní konverze, zatímco v
@@ -288,3 +288,13 @@ Standardně je `array` při porovnávání s primitivní hodnotou převedena na 
 řetězec (`string`), přičemž jednotlivé položky pole jsou odděleny `,`. Mohlo by
 se zdát, že dvě identická pole se v tom případě budou navzájem rovnat, ale není
 tomu tak. Důvodem je ověřování referencí objektů.
+
+##Nerovnost
+Relační operátory `<`, `>`, `<=` a `>=` se typicky používají pro porovnávání
+ordinální hodnot - čísel (`3 < 4`).
+
+V JS ovšem mohou být porovnávány i textové řetězce (`"abc" < "def"`).
+
+Platí zde podobná (ne stejná!) pravidla jako při porovnávání pomocí `==`.
+Neexistuje žádný "striktní" operátor nerovnosti, který by umožnil zákaz typové
+konverze podobně jako to dělá `===`.
