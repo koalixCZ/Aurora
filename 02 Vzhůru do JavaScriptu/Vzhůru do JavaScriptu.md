@@ -385,3 +385,54 @@ chování v závislosti na použití
 [`"strict mode"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 V případě `"strict mode"` nastane chyba, jinak se proměnná stává globální
 proměnnou (chyba!), proto je nutné ji vždy formálně deklarovat.
+##Podmínky
+Stručný úvod do podmínek přinesla
+[první kapitola](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#podmínky),
+v níž byly zmíněny konstrukce `if` - `else`, `switch` a [podmínkový (_ternární_)
+operátor](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#operátory)
+`? :`.
+
+V případech, kdy vzniká podobná série `if` - `else` - `if` příkazů:
+```JavaScript
+if (a === 0) {
+    zero();
+} else if (a === 1) {
+    one();
+} else if (a === 2) {
+    two();
+} else {
+    any();
+}
+```
+je možné provést zápis pomocí `switch`
+```JavaScript
+switch (a) {
+case 0:
+    zero();
+    break;
+case 1:
+    one();
+    break;
+case 2:
+    two();
+    break;
+default:
+    any();
+    break;
+}
+```
+Pozor, při vynecházní `break` se provedou všechny následující `case` za tím,
+který byl vyhodnocen jako pravdivý bez ohledu na to, zda se přiřadí, či nikoliv.
+Toho ovšem lze i cíleně využít při ověřování sérií očekávaných hodnot:
+```JavaScript
+switch (a) {
+case 0:
+case 1:
+case 2:
+    knownValue();
+    break;
+default:
+    reportUnknown();
+    break;
+}
+```
