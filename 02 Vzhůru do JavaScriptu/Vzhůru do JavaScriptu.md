@@ -325,3 +325,37 @@ nebo `_` a obsahovat může kterýkoliv z těchto znaků včetně číslic `0-9`
 Stejná pravidla platí i pro názvy vlastností s tou výjimkou, že zatímco název
 vlastnosti může být i klíčové slovo (např. `for`, `in`, `delete`...), stejně
 jako `null`, `true`, `false`, název proměnné nikoliv.
+##Rozsahy funkce
+Klíčovým slovem `var` se deklaruje proměnná, která patří do aktuálního oboru
+funkce, nebo do globálního, je-li vně jakékoliv funkce.
+
+###Vyzvedávání
+Kdekoliv se objeví deklarace `var`, je vztažena k aktuálnímu rozsahu a je v něm
+odkudkoliv dostupná. Tomuto chování, kdy je deklarace `var` "přesunuta" na
+vrchol obalujícího rozsahu, se říká vyzvedávání (_hoisting_).
+```JavaScript
+var r = 2;
+
+circumference();
+
+function circumference() {
+    r = 0;
+    console.log(2 * 3.14159 * r);       // 0
+
+    var r;
+}
+
+console.log(r);                         // 2
+```
+Je zvykem při psaní kódu, že by deklarace měla být uvedena před prvním použitím.
+V předchozím případě byly v globálním rozsahu definovány proměnná `r = 2` a
+funkce `circumference()`. Ta byla zavolána před vlastní deklarací a stejně tak i
+v ní byla použita proměnná `r = 1` deklarovaná na konci funkce.
+##Vnořené rozsahy
+S rozsahy jsme se setkali již v
+[první kapitole](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#rozsah).
+Proměnná je dostupná kdekoliv uvnitř rozsahu, v němž je deklarována, a ve všech
+jeho vnitřních rozsazích.
+```JavaScript
+
+```
