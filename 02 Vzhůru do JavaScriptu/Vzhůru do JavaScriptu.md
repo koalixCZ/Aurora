@@ -329,7 +329,7 @@ jako `null`, `true`, `false`, název proměnné nikoliv.
 Klíčovým slovem `var` se deklaruje proměnná, která patří do aktuálního oboru
 funkce, nebo do globálního, je-li vně jakékoliv funkce.
 
-###Vyzvedávání
+###Vyzvedávání deklarace
 Kdekoliv se objeví deklarace `var`, je vztažena k aktuálnímu rozsahu a je v něm
 odkudkoliv dostupná. Tomuto chování, kdy je deklarace `var` "přesunuta" na
 vrchol obalujícího rozsahu, se říká vyzvedávání (_hoisting_).
@@ -357,5 +357,31 @@ S rozsahy jsme se setkali již v
 Proměnná je dostupná kdekoliv uvnitř rozsahu, v němž je deklarována, a ve všech
 jeho vnitřních rozsazích.
 ```JavaScript
+function a() {
+	var x = 1;
+	
+	function b() {
+		var y = 2;
+		
+		function c () {
+			var z = 3;
+			
+			console.log(x, y, z);       // 1 2 3
+		}
 
+		c();
+		console.log(x, y);              // 1 2
+	}
+	
+	b();
+	console.log(x);                     // 1
+}
+
+a();
 ```
+Při použití hodnoty proměnné v rozsahu, v němž není tato proměnná dostupná, je
+vyvolána výjimka `ReferenceError`. Není-li proměnná formálně deklarována, liší se
+chování v závislosti na použití
+[`"strict mode"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+V případě `"strict mode"` nastane chyba, jinak se proměnná stává globální
+proměnnou (chyba!), proto je nutné ji vždy formálně deklarovat.
