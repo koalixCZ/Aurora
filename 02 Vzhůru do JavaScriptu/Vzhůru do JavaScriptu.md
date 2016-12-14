@@ -451,3 +451,52 @@ var o = r > 0 ? circumference(r) : 0;
 //    o = 0;
 // }
 ```
+##Strict mode
+Od verze jazyka ES5 je v JS dostupný ["strict mode"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+Jedná se o režim, kdy jsou aktivní některé restrikce, jejichž úkolem je pomáhat
+držet kód bezpečnější a snáze optimalizovatelný pro běhové prostředí.
+
+Volba režimu se děje pomocí vložení pragma `"use strict"` do kódu. Režim lze
+zapnout jak pro jednu funkci, tak pro celý soubor v závislosti na tom, kam byla
+vložena.
+
+Porovnej:
+```JavaScript
+function a() {
+    "use strict";
+    
+    // this code is in strict mode
+    
+    function b() {
+        // this code is in strict mode
+    }
+}
+
+// this code is not in strict mode
+```
+versus
+```JavaScript
+"use strict";
+
+function a() {
+
+    // this code is in strict mode
+    
+    function b() {
+        // this code is in strict mode
+    }
+}
+
+// this code is in strict mode
+```
+Mezi omezení, jež "strict mode" přínáší patří kontrola zabraňující implicitní
+deklaraci globální proměnné, která nastává při neuvedení formální deklarace.
+```JavaScript
+function circumference() {
+    "use strict";
+    r = 2;      // chybí var - vyvolá výjimku ReferenceError      
+}
+
+circumference();
+```
+Používejte "strict mode". Je to další prostředek k lepšímu a rychlejšímu kódu.
