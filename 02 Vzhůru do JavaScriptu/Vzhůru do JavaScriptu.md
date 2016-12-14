@@ -436,3 +436,18 @@ default:
     break;
 }
 ```
+Podmínkový (_ternární_) operátor `? :` je forma podmínky podobné konstrukci
+`if` - `else`. Pro svůj úsporný zápis se často používá k přiřazení hodnot.
+```JavaScript
+var r = 1;
+
+var o = r > 0 ? circumference(r) : 0;
+
+// nahrazuje:
+
+// if (r > 0) {
+//     o = circumference(r);
+// } else {
+//    o = 0;
+// }
+```
