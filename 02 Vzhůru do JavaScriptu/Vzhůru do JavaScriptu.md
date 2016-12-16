@@ -499,4 +499,5 @@ function circumference() {
 
 circumference();
 ```
-Používejte "strict mode". Je to další prostředek k lepšímu a rychlejšímu kódu.
+Používejte "strict mode". Není to jen další prostředek k lepšímu a rychlejšímu
+kódu, je také předzvěstí budoucího směru jazyka, kam se bude rozvíjet.
