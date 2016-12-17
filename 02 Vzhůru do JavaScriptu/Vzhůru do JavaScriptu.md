@@ -575,3 +575,8 @@ function circumference(r) {
     return 2 * PI * r;
 }
 ```
+##Uzávěra
+Uzávěra je důležitý koncept v JS přirovnatelný k časové schránce. Je to způsob,
+jak si _"zapamatovat"_ a umožnit přístup k proměnným z rozsahu funkce, a to
+dokonce i poté, kdy tato funkce ukončila svůj běh.
+
