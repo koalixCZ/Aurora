@@ -545,14 +545,13 @@ Existuje však další způsob, jak to provést.
 })();
 ```
 Obalující závorky `(...)` zabraňují, aby byl výraz zpracován jako běžná
-deklarace funkce. Závorky na konci výrazu `})();` pak zajistí okamžité spuštění
-výrazu.
+deklarace funkce. Závorky `()` na konci `})();` zajistí okamžité spuštění.
 
 Ačkoliv to vypadá podivně, jediným rozdílem jsou pouze obalující závorky:
 ```JavaScript
 function x() {
     // ...
-};
+}
 
 x();
 ```
@@ -562,9 +561,17 @@ versus
     // ...
 })();
 ```
-Protože IIFE je funkce (a funkce vytváří vlastní rozsah), používá se IIFE k
-_izolaci_ proměnných, které nechceme propagovat do zbytku kódu. V případě
-potřeby nám takto izolovaný kód například usnadní v budoucnu změnu implementace.
-
+Protože je IIFE funkce (a ta vytváří vlastní rozsah), používá se k _izolaci_
+proměnných, které nechceme propagovat do zbytku kódu. V případě potřeby nám
+takto izolovaný kód například v budoucnu usnadní změnu implementace. IIFE také
+umí vracet hodnotu. 
 ```JavaScript
+function circumference(r) {
+    var PI = (function () {
+        //return 355 / 113;
+        return 48 * Math.atan(1/18) + 32 * Math.atan(1/57) - 20 * Math.atan(1/239);
+    })();
+
+    return 2 * PI * r;
+}
 ```
