@@ -535,4 +535,36 @@ lepší čitelnosti výpisu volání (_callstack_) při ladění programu. Pojme
 funkce také usnadňuje některé pokročilé programovací techniky.
 ###Immediately Invoked Function Expression (IIFE)
 Pod pojmem IIFE se rozumí výraz, v němž je funkce provedena ihned poté, co byla
-definována.
+definována. V předchozích případech, pokud jsme chtěli vykonat funkci, bylo
+nutné vložit například `circumference()`.
+
+Existuje však další způsob, jak to provést.
+```JavaScript
+(function hello() {
+    console.log("Ahoj sluníčko");
+})();
+```
+Obalující závorky `(...)` zabraňují, aby byl výraz zpracován jako běžná
+deklarace funkce. Závorky na konci výrazu `})();` pak zajistí okamžité spuštění
+výrazu.
+
+Ačkoliv to vypadá podivně, jediným rozdílem jsou pouze obalující závorky:
+```JavaScript
+function x() {
+    // ...
+};
+
+x();
+```
+versus
+```JavaScript
+(function y() {
+    // ...
+})();
+```
+Protože IIFE je funkce (a funkce vytváří vlastní rozsah), používá se IIFE k
+_izolaci_ proměnných, které nechceme propagovat do zbytku kódu. V případě
+potřeby nám takto izolovaný kód například usnadní v budoucnu změnu implementace.
+
+```JavaScript
+```
