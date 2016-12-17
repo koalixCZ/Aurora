@@ -501,22 +501,22 @@ circumference();
 ```
 Používejte "strict mode". Není to jen další prostředek k lepšímu a rychlejšímu
 kódu, je také předzvěstí budoucího směru jazyka, kam se bude rozvíjet.
-##Funkce jako hodnoty
-Zatím bylo funkcích v JS pojednáno jako o pojmenovaném opakovatelně volaném
-bloku kódu, který vytváří vlastní rozsah platnosti. Doposud jsme deklatovali
-funkci následujícím způsobem:
+##Funkce jako hodnota
+Zatím bylo o funkci v JS pojednáno jako o pojmenovaném opakovatelně volaném
+bloku kódu, který vytváří vlastní rozsah platnosti. Doposud jsme také
+deklarovali funkci následujícím způsobem:
 ```JavaScript
 function circumference(r) {
     return 2 * 3.14159 * r;
 }
 ```
-Ačkoliv to ze zápisu není patrné, `circumference` je proměnná deklarovaná v
-globálním rozsahu, jíž je přiřazena refernce na funkci. Funkce sama je tedy
-hodnota, stejně jako třeba číslo `2`, nebo `[1, 2, 3]`.
+Ačkoliv to není ze zápisu patrné, `circumference` je proměnná deklarovaná v
+globálním rozsahu, jíž je přiřazena reference na funkci. Funkce sama je tedy
+hodnotou, stejně jako třeba číslo `2`, nebo `[1, 2, 3]`.
 
 Co z toho plyne? Nemusíte předávat pouze hodnoty (_argumenty_) do funkce, ale
-funkce je hodnota, která může být přiřazena do proměnné, přdána do funkce nebo
-vrácena funkcí.
+funkce je hodnota, jež může být přiřazena do proměnné, předána jako argument do
+funkce nebo vrácena funkcí.
 ```JavaScript
 var x = function () {
     // ...
@@ -527,9 +527,12 @@ var y = function z () {
 ```
 První výraz (_anonymous function expression_) přiřazuje do proměnné `x`
 nepojmenovanou (_anonymní_) funkci. V druhém (_named function expression_) se do
-proměnné `y` přiřazuje funkce pojmenovaná funkce `z`.
+proměnné `y` přiřazuje pojmenovaná funkce `z`.
 
 Ačkoliv je _anonymous function expression_ běžný a používá se velmi často,
 doporučuje se používat _named function expression_, a to například z důvodu
-lepší čitelnosti výpisu volání funkcí (_callstack_) při ladění programu.
-Pojmenování funkce také usnadňuje některé pokročilé programovací techniky.
+lepší čitelnosti výpisu volání (_callstack_) při ladění programu. Pojmenování
+funkce také usnadňuje některé pokročilé programovací techniky.
+###Immediately Invoked Function Expression (IIFE)
+Pod pojmem IIFE se rozumí výraz, v němž je funkce provedena ihned poté, co byla
+definována.
