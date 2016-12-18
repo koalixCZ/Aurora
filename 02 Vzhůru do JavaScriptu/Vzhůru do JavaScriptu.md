@@ -579,4 +579,29 @@ function circumference(r) {
 Uzávěra je důležitý koncept v JS přirovnatelný k časové schránce. Je to způsob,
 jak si _"zapamatovat"_ a umožnit přístup k proměnným z rozsahu funkce, a to
 dokonce i poté, kdy tato funkce ukončila svůj běh.
+```JavaScript
+function counter(value) {
+    function next() {
+        return value++;
+	}
 
+	return next;
+}
+```
+Funkce `counter` dostane hodnotu a vrátí referenci na funkci `next`. Ta vytvoří
+uzávěru a po každém zavolání uchovanou hodnotu navýší o jedna.
+```JavaScript
+var a = counter(0);
+
+console.log(a);         // 1
+console.log(a);         // 2
+
+var b = counter(6);
+
+console.log(b);         // 7
+console.log(a);         // 3
+```
+Jakkoliv může vypadat předcházející příklad složitě, koncept uzávěry je
+jednoduchý a souvisí s rozsahem (_scope_), respektive jejich řetězem
+(_scope chain_). Ten je dán při definici a vytváří se tak ještě před zavoláním
+funkce.
