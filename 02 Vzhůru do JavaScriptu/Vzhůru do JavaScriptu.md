@@ -623,5 +623,16 @@ function circumference() {
 circumference();     // 6.28318
 ```
 V příkladu výše, protože není použit "strict mode", je hodnota `this` reference
-na globální objekt. V opačném případě ("strict mode") by `this` mělo hodnotu
-`undefined`.
+na globální objekt. V opačném případě by `this` mělo hodnotu `undefined`.
+
+```JavaScript
+var sphere = {
+    r: 2,
+    circumference: circumference
+};
+
+sphere.circumference();     // 12.56636
+```
+Nyní jsme vytvořili objekt `sphere` s dvěma vlasnosti - hodnotou `r` a metodou
+`circumference` (pokud je _funkce_ vlastností objektu, nazývá se _metodou_).
+V tomto případě je hodnota `this` reference na objekt `sphere`.
