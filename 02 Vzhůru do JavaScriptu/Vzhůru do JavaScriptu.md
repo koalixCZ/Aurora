@@ -640,5 +640,6 @@ V tomto případě je hodnota `this` reference na objekt `sphere`.
 Kontext lze i nastavit, a to pomocí například pomocí funkce `apply`, která je
 jednou z metod objektu
 [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function).
-Metoda `apply` přebírá jako první parametr objekt kontextu, další parametry
-odpovídají parametrům volané funkce.
+Metoda [`apply`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+přebírá jako první parametr objekt kontextu, další parametry odpovídají
+parametrům volané funkce.
