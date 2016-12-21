@@ -610,3 +610,15 @@ Dalším důležitým a stejně tak málo pochopeným konceptem v JS je `this`.
 
 Klíčové slovo `this` představuje referenci na objekt, v jehož kontextu funkce
 operuje. Jeho hodnotu určuje, jak byla funkce zavolána.
+
+Mějme funkci `circumference` (tohle matematikům závidím), v níž říkáme - z
+_tohoto_ `this` kontextu použij proměnnou `r`. 
+```JavaScript
+var r = 1;
+
+function circumference() {
+    return 2 * 3.14159 * this.r;
+}
+
+circumference();     // 6.28318
+```
