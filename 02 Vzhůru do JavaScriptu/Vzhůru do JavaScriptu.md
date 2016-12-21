@@ -606,13 +606,13 @@ jednoduchý a souvisí s rozsahem (_scope_), respektive jejich řetězem
 (_scope chain_). Ten je dán při definici a vytváří se tak ještě před zavoláním
 funkce.
 ##`this`
-Dalším důležitým a stejně tak málo pochopeným konceptem v JS je `this`.
+Dalším důležitým a stejně tak i málo pochopeným konceptem v JS je `this`.
 
 Klíčové slovo `this` představuje referenci na objekt, v jehož kontextu funkce
 operuje. Jeho hodnotu určuje, jak byla funkce zavolána.
 
-Mějme funkci `circumference` (tohle matematikům závidím), v níž říkáme - z
-_tohoto_ `this` kontextu použij proměnnou `r`. 
+Mějme funkci `circumference` (tohle matematikům závidím), v níž z _tohoto_
+(`this`) kontextu použij proměnnou `r`. 
 ```JavaScript
 var r = 1;
 
@@ -622,3 +622,6 @@ function circumference() {
 
 circumference();     // 6.28318
 ```
+V příkladu výše, protože není použit "strict mode", je hodnota `this` reference
+na globální objekt. V opačném případě ("strict mode") by `this` mělo hodnotu
+`undefined`.
