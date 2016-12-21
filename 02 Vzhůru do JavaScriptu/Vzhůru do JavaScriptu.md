@@ -642,4 +642,11 @@ jednou z metod objektu
 [`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function).
 Metoda [`apply`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 přebírá jako první parametr objekt kontextu, další parametry odpovídají
-parametrům volané funkce.
+parametrům volané funkce. Hodnota `this` je reference na objekt `circle`.
+```JavaScript
+var circle = {
+    r: 0.5
+};
+
+circumference.apply(circle);    // 3.14159
+```
