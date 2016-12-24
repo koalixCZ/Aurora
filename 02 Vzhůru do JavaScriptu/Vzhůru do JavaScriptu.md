@@ -665,6 +665,6 @@ mySphere.r;                     // 1
 mySphere.circumference();       // 6.28318
 ```
 Název konstrukční funkce by měl začínat velkým písmenem, aby bylo na první
-pohled zřejmé, že má být volána s operátorem `new`. Pokud byste na něj
-zapomněli, místo vytvoření nové instance objektu by se normálně zavolala funkce,
-v níž by `this` bylo referencí na globální objekt.
+pohled zřejmé, že má být volána s operátorem `new`. Neuvedete-li jej, místo
+vytvoření nové instance objektu se zavolá funkce, v níž je `this` reference na
+globální objekt.
