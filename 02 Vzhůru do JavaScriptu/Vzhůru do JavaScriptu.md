@@ -650,3 +650,21 @@ var circle = {
 
 circumference.apply(circle);    // 3.14159
 ```
+Čtvrtým způsobem je operátor `new` vytvářející novou instanci objektu. To se
+používá ve spojení s _konstruční_ funkcí. Hodnota `this` je potom reference na
+nově vznikající objekt.  
+```JavaScript
+function Sphere(r) {
+    this.r = r;
+    this.circumference = circumference;
+}
+
+var mySphere = new Sphere(1);
+
+mySphere.r;                     // 1
+mySphere.circumference();       // 6.28318
+```
+Název konstrukční funkce by měl začínat velkým písmenem, aby bylo na první
+pohled zřejmé, že má být volána s operátorem `new`. Pokud byste na něj
+zapomněli, místo vytvoření nové instance objektu by se normálně zavolala funkce,
+v níž by `this` bylo referencí na globální objekt.
