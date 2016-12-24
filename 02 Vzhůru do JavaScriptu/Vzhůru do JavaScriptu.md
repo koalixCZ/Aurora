@@ -664,7 +664,16 @@ var mySphere = new Sphere(1);
 mySphere.r;                     // 1
 mySphere.circumference();       // 6.28318
 ```
-Název konstrukční funkce by měl začínat velkým písmenem, aby bylo na první
-pohled zřejmé, že má být volána s operátorem `new`. Neuvedete-li jej, místo
-vytvoření nové instance objektu se zavolá funkce, v níž je `this` reference na
-globální objekt.
+Název konstrukční funkce by měl začínat velkým písmenem, aby bylo zřejmé, že má
+být volána s operátorem `new`. Neuvedete-li jej, místo vytvoření nové instance
+objektu se zavolá funkce, v níž je `this` reference na globální objekt.
+```JavaScript
+function Sphere(r) {
+	this.r = r;
+}
+
+var mySphere = Sphere(1);
+
+console.log(mySphere);          // undefined
+console.log(r);                 // 1
+```
