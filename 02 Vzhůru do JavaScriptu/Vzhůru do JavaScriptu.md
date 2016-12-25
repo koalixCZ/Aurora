@@ -733,7 +733,7 @@ Pro jednoduchost lze využít například existující
 [ES6-Shim](https://github.com/es-shims/es6-shim).
 ###Transpilace
 Možnosti polyfilů jsou limitovány novou syntaxí. Řešením jak ji umožnit v kódu
-používat _transpilace_ (transformace + kompilace), kdy nástroj (_transpiler)
+používat _transpilace_ (transformace + kompilace), kdy nástroj (_transpiler_)
 převede kód napsaný novou syntaxí do staré, aby byl srozumitelný pro běhové
 prostředí. Takový krok se pak typicky stává součástí sestavovacího procesu
 programu.
