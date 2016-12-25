@@ -745,3 +745,17 @@ Důvody proč používat novou syntaxi jsou:
 
 Populárními transpilery jsou dnes například [Babel](https://babeljs.io/) nebo
 [Traceur](https://github.com/google/traceur-compiler).
+##Globální objekt a hostující prostředí
+JS kód musí být obsažen uvnitř objektu, proto běhové prostředí na pozadí vytváří
+globální objekt. Jeho součástí je i tzv. _hostující_ objekt pro interakci mezi
+vlastním JS strojem a zbytkem světa.
+
+Globálním objektem v prohlížeči je 
+[`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window),
+hostujícím například
+[`document`](https://developer.mozilla.org/en-US/docs/Web/API/document)
+pro práci s DOM (_Document Object Model_). Technicky vzato je to
+`window.document`, globální objekt se ovšem obvykle neuvádí. Mezi další metody
+hostujícího prostředí patří také `console.log()`. Tyto metody nejsou součástí JS
+stroje ani specifikace jazyka. Vyskytují se však v každém kódu, který budete
+psát.

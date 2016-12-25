@@ -14,3 +14,4 @@
 * Série [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) na GitHub
 * Transpiler [Babel](https://babeljs.io/)
 * Transpiler [Traceur](https://github.com/google/traceur-compiler)
+* [MDN - Web API - window ](https://developer.mozilla.org/en-US/docs/Web/API/Window)
