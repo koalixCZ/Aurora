@@ -713,9 +713,9 @@ JavaScript je jednou z implementací skriptovacího jazyka ECMAScript, který je
 průběžně vyvíjen a následně standardizován v jednotlivých edicích. V současnosti
 je plně podporována verze ES5.1 a existuje specifikace ES6, jejíž podpora se
 implementuje. Již nyní však lze používat některé nové rysy jazyka, a to pomocí
-dvou technik - _polyfilling_ a _transpilling_.
+dvou technik - polyfily (_polyfilling_) a transpilace (_transpilling_).
 
-###Polyfilling
+###Polyfy
 Technika polyfilů spočívá v převzetí definice nové funkcionality a její
 přenesení do staršího běhového prostředí JS. Příkladem budiž metoda
 `Number.isNaN()` z ES6, která nahrazuje původní `isNaN()`.
@@ -731,3 +731,17 @@ vlastnost je tímto způsobem plně zastupitelná, mohou se vyskytovat rozdíly.
 Pro jednoduchost lze využít například existující
 [ES5-Shim](https://github.com/es-shims/es5-shim) a
 [ES6-Shim](https://github.com/es-shims/es6-shim).
+###Transpilace
+Možnosti polyfilů jsou limitovány novou syntaxí. Řešením jak ji umožnit v kódu
+používat _transpilace_ (transformace + kompilace), kdy nástroj (_transpiler)
+převede kód napsaný novou syntaxí do staré, aby byl srozumitelný pro běhové
+prostředí. Takový krok se pak typicky stává součástí sestavovacího procesu
+programu.
+
+Důvody proč používat novou syntaxi jsou:
+ * Nová syntaxe umožňuje čitelnější a čistší kód.
+ * Transpilovaný kód může být distribuován pouze pro starší prostředí, novější
+ může využívat optimalizací spojených s novou syntaxí.
+
+Populárními transpilery jsou dnes například [Babel](https://babeljs.io/) nebo
+[Traceur](https://github.com/google/traceur-compiler).

@@ -12,3 +12,5 @@
 * Polyfily [ES6-Shim](https://github.com/es-shims/es6-shim)
 * Specifikace [ES 5.1](http://www.ecma-international.org/ecma-262/5.1/)
 * Série [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) na GitHub
+* Transpiler [Babel](https://babeljs.io/)
+* Transpiler [Traceur](https://github.com/google/traceur-compiler)
