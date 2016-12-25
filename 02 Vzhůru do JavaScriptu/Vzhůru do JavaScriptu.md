@@ -708,3 +708,23 @@ b.z = 6;
 
 console.log(b.z);               // 6
 ```
+##Vývoj jazyka
+JavaScript je jednou z implementací skriptovacího jazyka ECMAScript, který je
+průběžně vyvíjen a následně standardizován v jednotlivých edicích. V současnosti
+je plně podporována verze ES5.1 a existuje specifikace ES6, jejíž podpora se
+implementuje. Již nyní však lze používat některé nové rysy jazyka, a to pomocí
+dvou technik - _polyfilling_ a _transpilling_.
+
+###Polyfilling
+Technika polyfilů spočívá v převzetí definice nové funkcionality a její
+přenesení do staršího běhového prostředí JS. Příkladem budiž metoda
+`Number.isNaN()` z ES6, která nahrazuje původní `isNaN()`.
+```JavaScript
+if (!Number.isNaN) {
+    Number.isNaN = function isNaN(x) {
+        return x !== x;
+    };
+}
+```
+Podmínka hlídá vytvoření polyfilu v prostředí s podporou ES6. Ne každá nová
+vlastnost je tímto způsobem plně zastupitelná, mohou se vyskytovat rozdíly.
