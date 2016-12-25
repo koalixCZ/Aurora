@@ -677,3 +677,34 @@ var mySphere = Sphere(1);
 console.log(mySphere);          // undefined
 console.log(r);                 // 1
 ```
+##Prototypy
+Mechanismus prototypu slouží v JS k sdílení vlastností mezi objekty, proto se v
+této souvislosti hovoří také o _prototypové dědičnosti_.
+
+Pokud není na objektu nalezena vlastnost, JS automaticky použije vnitřní
+referenci na _prototyp_ k nalezení jiného objektu, na němž je požadovaná
+vlastnost hledána (_řetěz prototypů_).
+```JavaScript
+var a = {
+    x: 1
+};
+
+var b = Object.create(a);       // vytvoří objekt sváže jej s 'a'
+
+console.log(b.x);               // 1 - vlastnost nalezena na 'a'
+```
+K svázání objektu s prototypem jsme použili vestavěnou metodu `Object.create()`.
+
+Přibude-li do prototypu nová vlasnost, je dostupná všem instancím. 
+```JavaScript
+a.y = 3;
+
+console.log(b.y);               // 3
+```
+Řetěz prototypů vrací první nalezenou hodnotu.
+```JavaScript
+a.z = 4;
+b.z = 6;
+
+console.log(b.z);               // 6
+```
