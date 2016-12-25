@@ -715,7 +715,7 @@ je plně podporována verze ES5.1 a existuje specifikace ES6, jejíž podpora se
 implementuje. Již nyní však lze používat některé nové rysy jazyka, a to pomocí
 dvou technik - polyfily (_polyfilling_) a transpilace (_transpilling_).
 
-###Polyfy
+###Polyfily
 Technika polyfilů spočívá v převzetí definice nové funkcionality a její
 přenesení do staršího běhového prostředí JS. Příkladem budiž metoda
 `Number.isNaN()` z ES6, která nahrazuje původní `isNaN()`.
@@ -759,3 +759,4 @@ pro práci s DOM (_Document Object Model_). Technicky vzato je to
 hostujícího prostředí patří také `console.log()`. Tyto metody nejsou součástí JS
 stroje ani specifikace jazyka. Vyskytují se však v každém kódu, který budete
 psát.
+##Shrnutí
