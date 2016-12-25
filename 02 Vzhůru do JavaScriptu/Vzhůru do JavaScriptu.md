@@ -728,3 +728,6 @@ if (!Number.isNaN) {
 ```
 Podmínka hlídá vytvoření polyfilu v prostředí s podporou ES6. Ne každá nová
 vlastnost je tímto způsobem plně zastupitelná, mohou se vyskytovat rozdíly.
+Pro jednoduchost lze využít například existující
+[ES5-Shim](https://github.com/es-shims/es5-shim) a
+[ES6-Shim](https://github.com/es-shims/es6-shim).
