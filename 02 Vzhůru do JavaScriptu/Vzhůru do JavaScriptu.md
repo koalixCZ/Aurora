@@ -780,8 +780,5 @@ V následujících kapitolách budou tyto oblasti detailněji rozebrány.
 Doporučení?
 
 1. Používejte linter, pomůže vám k lepšímu kódu.
-2. Deklarujte proměnné pouze na začátku funkce.
-3. Nejste-li si při porovnávání hodnot jisti, striktní operátory `===`, `!==`
-vás ušetří překvapení typové konverze.
-4. Zkuste pojmenovávat "_anonymní_" funkce, oceníte to při ladění programu.
-5. Nenechte si namluvit, že koncepty jako je `this`, uzávěry je nějaká věda
+2. Zkuste pojmenovávat "_anonymní_" funkce, oceníte to při ladění programu.
+3. Nenechte si namluvit, že koncepty `this` nebo uzávěry jsou nějaká věda.
