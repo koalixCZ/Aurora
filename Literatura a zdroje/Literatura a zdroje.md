@@ -7,6 +7,7 @@
 
 ## Odkazy
 * [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/#Constants)
+* [ESLint](http://eslint.org/) - nástroj pro statickou kontrolu kódu
 * [MDN JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/)
 * Polyfily [ES5-Shim](https://github.com/es-shims/es5-shim)
 * Polyfily [ES6-Shim](https://github.com/es-shims/es6-shim)

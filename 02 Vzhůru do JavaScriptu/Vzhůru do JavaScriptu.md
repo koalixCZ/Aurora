@@ -759,4 +759,29 @@ pro práci s DOM (_Document Object Model_). Technicky vzato je to
 hostujícího prostředí patří také `console.log()`. Tyto metody nejsou součástí JS
 stroje ani specifikace jazyka. Vyskytují se však v každém kódu, který budete
 psát.
+##Statická kontrola kódu
+Důležitým pomocníkem je nástroj pro statickou kontrolu kódu (_linter_), jehož
+úkolem je upozorňovat na potencionální chyby a odchylky od dohodnutého stylu,
+které sice nemusí vést přímo k chybě, ale mohou podstatným způsobem snižovat
+čitelnost a udržovatelnost kódu.
+
+Mezi populární dnes patří například [ESLint](http://eslint.org/).
+
 ##Shrnutí
+Tato část prošla základní rysy JS
+ * Typy, hodnoty a jejich porovnávání
+ * Rozsahy funkce a předávání funkce jako hodnoty
+ * Uzávěry (_closures_)
+ * Koncept `this`
+ * Mechanismus prototypů
+
+V následujících kapitolách budou tyto oblasti detailněji rozebrány.
+
+Doporučení?
+
+1. Používejte linter, pomůže vám k lepšímu kódu.
+2. Deklarujte proměnné pouze na začátku funkce.
+3. Nejste-li si při porovnávání hodnot jisti, striktní operátory `===`, `!==`
+vás ušetří překvapení typové konverze.
+4. Zkuste pojmenovávat "_anonymní_" funkce, oceníte to při ladění programu.
+5. Nenechte si namluvit, že koncepty jako je `this`, uzávěry je nějaká věda
