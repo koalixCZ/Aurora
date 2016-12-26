@@ -34,6 +34,7 @@ JS, protože stále platí - kdo se chce naučit psát, musí psát.
 ##Obsah
 * [Vzhůru do programování](01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md)
 * [Vzhůru do JavaScriptu](02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md)
+* [Rozsahy a uzávěry](03%20Rozsahy%20a%20uzávěry/Rozsahy%20a%20uzávěry.md)
 * [Literatura a zdroje](Literatura%20a%20zdroje/Literatura%20a%20zdroje.md)
 
 ## Co dál?
