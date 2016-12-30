@@ -37,3 +37,10 @@ Následně _kompilátor_ vyprodukuje kód pro _stroj_ pro pozdější provedení
 přiřazení `a = 2`. _Stroj_ pak při jeho vykonání nejprve ověří, zda je proměnná
 dostupná v kolekci daného rozsahu. Pokud ano, použije ji. Pokud ne, podívá se
 jinam (do _vnořeného rozsahu_).
+
+Nalezne-li _stroj_ proměnnou, přiřadí ji hodnotu `2`. Pokud ne, vyhlásí chybu.
+
+Shrnutí: pro přiřazení hpdnoty proměnné se vykonají dvě odlišné akce.
+1. _Kompilátor_ deklaruje proměnnou (pokud již nebyla dříve) v aktálním rozsahu.
+2. _Stroj_ vyhledá proměnnou v aktuálním rozsahu a je-li nalezena, přiřadí ji
+hodnotu.
