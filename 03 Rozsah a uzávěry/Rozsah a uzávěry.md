@@ -21,8 +21,19 @@ dohromady představují gramatickou strukturu programu. Strom je nazýván AST
 Všechny tyto operace dohromady zaberou JS stroji mikrosekundy.
 
 ##Porozumění _rozsahu_
-Pro porozumění toho co _rozsah_ představuje je třeba hlouběji pochopit jak
-funguje JS pracuje. Ačkoliv se nám `var a = 2;` jeví jako jeden příkaz, JS stroj
-to tak nevidí. Pro něj jsou to dva, jeden, který _kompilátor_ zpracuje během
-fáze kompilace a druhý, který vykoná _stroj_  při provádění.
+Vezměme následující příklad:
+```JavaScript
+var a = 2;
+```
+Ačkoliv nám se kód jeví jako jeden příkaz, pro JS jsou to dva; jeden, který
+zpracuje _kompilátor_ a druhý, který vykoná _stroj_.
 
+Kompilátor udělá  _tokenizaci/lexing_ kódu do _tokenů_, z nichž sestaví AST
+strom. Jakmile narazí na `var a`, ověří, zda proměnná `a` existuje pro
+konkrétním rozsah. Pokud ano, ignoruje deklaraci a pokračuje dál. V opačném
+případě se v kolekci pro daný rozsah deklaruje proměnná `a`.
+
+Následně _kompilátor_ vyprodukuje kód pro _stroj_ pro pozdější provedení - 
+přiřazení `a = 2`. _Stroj_ pak při jeho vykonání nejprve ověří, zda je proměnná
+dostupná v kolekci daného rozsahu. Pokud ano, použije ji. Pokud ne, podívá se
+jinam (do _vnořeného rozsahu_).
