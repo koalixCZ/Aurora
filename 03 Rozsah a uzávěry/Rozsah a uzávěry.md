@@ -97,3 +97,16 @@ Tak jako může být blok nebo funkce vnořena uvnitř jiného bloku nebo funkce
 může být vnořen i rozsah uvnitř jiného rozsahu. Tedy, není-li být proměnná 
 nalezena v bezprostředním rozsahu, ověřuje _stroj_ další nadřazený (vnější)
 rozsah a tak pokračuje, dokud nedosáhne nejvzdálenějšího (t.j. globálního).
+
+Uvažujme násleudjící:
+```JavaScript
+function x(a) {
+    console.log(a + b);
+}
+
+var b = 1;
+
+x(2);
+```
+RHS reference pro proměnnou `b` nemůže být vyřešena uvnitř funkce `x`, může však
+být vyřešena v obalujícím rozsahu (v tomto případě globálním).
