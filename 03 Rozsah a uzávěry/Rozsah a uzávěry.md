@@ -110,3 +110,9 @@ x(2);
 ```
 RHS reference pro proměnnou `b` nemůže být vyřešena uvnitř funkce `x`, může však
 být vyřešena v obalujícím rozsahu (v tomto případě globálním).
+
+Jednoduché pravidlo pro přecházení vnořených rozsahů zní: _stroj_ začíná v
+aktuálně vykonávaném rozsahu, kde hledá proměnnou. Není-li nalezena, pokračuje v
+nadřazeném a takto postupuje, dokud není dosažen globální rozsah. Zde končí bez
+ohledu na to, zda byla proměnná nalezena, nebo ne.
+ 
