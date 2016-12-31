@@ -69,5 +69,19 @@ Naproti tomu:
 ```JavaScript
 a = 2;
 ```
-Reference na `a` je je LHS, protože se nestaráme o hodnotu proměnné, ale chceme
+Reference na `a` je LHS, protože se nestaráme o hodnotu proměnné, ale chceme
 najít proměnnou jako cíl pro přiřazení hodnoty.
+
+Uvažujme následující program:
+```JavaScript
+function hello(a) {
+    console.log(a);
+}
+
+hello(2);               // RHS vrať hello, LHS a = 2
+```
+1. Zavolání funkce `hello()` vyžaduje RHS referenci na `hello` ve smyslu "najdi"
+hodnotu `hello` a vrať mi ji. Operátor `()` napovídá, že se jedná o funkci.
+
+2. Je tu také málo patrné (implicitní) přiřazení `a = 2`, které nastane, když je
+hodnota `2` předána jako argument funkci `hello`.
