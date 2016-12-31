@@ -92,3 +92,8 @@ potřebuje RHS referenci pro objekt `console` a další pro jeho metodu `log`.
 4. Konečně je zde také LHS/RHS výměna předávané hodnoty `2` do metody `log`,
 uvnitř jejíž nativní implementace lze předpokládat přiřazení hodnoty `2` do
 nějakého parametru (například `arg1`).
+##Vnořený rozsah
+Tak jako může být blok nebo funkce vnořena uvnitř jiného bloku nebo funkce,
+může být vnořen i rozsah uvnitř jiného rozsahu. Tedy, není-li být proměnná 
+nalezena v bezprostředním rozsahu, ověřuje _stroj_ další nadřazený (vnější)
+rozsah a tak pokračuje, dokud nedosáhne nejvzdálenějšího (t.j. globálního).
