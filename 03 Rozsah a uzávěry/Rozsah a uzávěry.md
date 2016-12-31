@@ -44,3 +44,13 @@ Shrnutí: pro přiřazení hpdnoty proměnné se vykonají dvě odlišné akce.
 1. _Kompilátor_ deklaruje proměnnou (pokud již nebyla dříve) v aktálním rozsahu.
 2. _Stroj_ vyhledá proměnnou v aktuálním rozsahu a je-li nalezena, přiřadí ji
 hodnotu.
+
+##V řeči kompilátoru
+Když _stroj_ provádí kód vyprodukovaný _kompilátorem_, musí vyhledat proměnnou
+`a`, aby ověřil, zda byla deklarována. Způsob vyhledávání ovlivňuje výsledek.
+
+V tomto případě _stroj_ provádí LHS (_lefthand side_) vyhledávání a je tím
+míněma strana operace přiřazení. Druhý typ se nazývá RHS.
+
+Jinými slovy, LHS vyhledávání je provedeno když se proměnná vyskytuje na levé
+straně operace přiřazení, RHS na pravé.
