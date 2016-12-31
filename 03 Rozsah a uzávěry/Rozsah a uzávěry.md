@@ -54,3 +54,20 @@ míněma strana operace přiřazení. Druhý typ se nazývá RHS.
 
 Jinými slovy, LHS vyhledávání je provedeno když se proměnná vyskytuje na levé
 straně operace přiřazení, RHS na pravé.
+
+Přesněji řečeno, RHS je pro naše účely těžko odlišitelné od hledání hodnoty
+proměnné, zatímco LHS se se pokouší nalézt vlastní kontejner proměnné.
+
+Řekneme-li:
+```JavaScript
+console.log(a);
+```
+Reference na `a` je RHS, protože zde není přiřazení, namísto toho se snažíme o
+získání hodnot proměnné `a`, která je předána do metody `console.log()`.
+
+Naproti tomu:
+```JavaScript
+a = 2;
+```
+Reference na `a` je je LHS, protože se nestaráme o hodnotu proměnné, ale chceme
+najít proměnnou jako cíl pro přiřazení hodnoty.
