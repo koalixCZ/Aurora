@@ -75,13 +75,20 @@ najít proměnnou jako cíl pro přiřazení hodnoty.
 Uvažujme následující program:
 ```JavaScript
 function hello(a) {
-    console.log(a);
+    console.log(a);     // 3. RHS a, RHS console, RHS log, 4. LHS/RHS a, LHS arg1 = 2
 }
 
-hello(2);               // RHS vrať hello, LHS a = 2
+hello(2);               // 1. RHS vrať hello, 2. LHS a = 2
 ```
 1. Zavolání funkce `hello()` vyžaduje RHS referenci na `hello` ve smyslu "najdi"
 hodnotu `hello` a vrať mi ji. Operátor `()` napovídá, že se jedná o funkci.
 
 2. Je tu také málo patrné (implicitní) přiřazení `a = 2`, které nastane, když je
 hodnota `2` předána jako argument funkci `hello`.
+
+3. RHS reference vrací hodnotu parametru `a` do metody `console.log()`. Ta sama
+potřebuje RHS referenci pro objekt `console` a další pro jeho metodu `log`.
+
+4. Konečně je zde také LHS/RHS výměna předávané hodnoty `2` do metody `log`,
+uvnitř jejíž nativní implementace lze předpokládat přiřazení hodnoty `2` do
+nějakého parametru (například `arg1`).
