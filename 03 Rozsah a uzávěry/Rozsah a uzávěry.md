@@ -146,3 +146,11 @@ Jednou z odlišností chování programu ve "strict mode" je zákaz automatické
 implicitního vytváření globálních proměnných. Není-li tedy při LHS vyhledávání
 nalezena proměnná ani v globálním rozsahu, _stroj_ podobně jako v případě RHS
 vrátí `ReferenceError`.
+
+Pokud je proměnná při RHS vyhledávání nalezena, ale s její hodnotou je provedena
+nepodporovaná operace (například zavolání funkce na hodnotě, která není funkcí,
+získání vlastnosti na `null` nebo `undefined`), _stroj_ vrátí `TypeError`.
+
+`ReferenceError` je chyba vázaná k operacím s rozsahem, zatímco `TypeError`
+říká, že _rozsah_ je v pořádku, ale byla provedena zakázaná/neproveditelná
+operace nad výsledkem.
