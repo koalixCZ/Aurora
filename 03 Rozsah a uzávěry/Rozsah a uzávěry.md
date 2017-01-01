@@ -141,3 +141,8 @@ Naproti tomu pokud _stroj_ provádí LHS vyhledávání a dospěje k nejvyšší
 (globálnímu) rozsahu bez toho, aniž by proměnnou nalezl, pak neběží-li ve
 "strict mode", je v globálním rozsahu vytvořena nová proměnná toho jména a
 vrácena _stroji_.
+
+Jednou z odlišností chování programu ve "strict mode" je zákaz automatického/
+implicitního vytváření globálních proměnných. Není-li tedy při LHS vyhledávání
+nalezena proměnná ani v globálním rozsahu, _stroj_ podobně jako v případě RHS
+vrátí `ReferenceError`.
