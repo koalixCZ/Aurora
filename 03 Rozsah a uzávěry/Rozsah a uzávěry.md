@@ -115,4 +115,29 @@ Jednoduché pravidlo pro přecházení vnořených rozsahů zní: _stroj_ začí
 aktuálně vykonávaném rozsahu, kde hledá proměnnou. Není-li nalezena, pokračuje v
 nadřazeném a takto postupuje, dokud není dosažen globální rozsah. Zde končí bez
 ohledu na to, zda byla proměnná nalezena, nebo ne.
- 
+
+##Chyby
+Proč je důležité, jestli voláme LHS, nebo RHS?
+
+Neboť oba principy se zachovají odlišně v případě, kdy proměnná nebyla
+deklarována (tedy nebyla nalezena v aktuálním rozsahu).
+
+Mějme:
+```JavaScript
+function x(a) {
+    console.log(a + b);
+}
+
+var b = 1;
+
+x(2);
+```
+Když dojde poprvé l RHS vyhledávání proměnné `b`, není nalezena. Je to tedy
+"nedeklarovaná" proměnná, protože nebyla nalezena v rozsahu a selže-li RHS
+vyhledávání proměnné i v nadřazených rozsazích, je výsledkem `ReferenceError`.
+Je důležité poznamenat, že tato chyba je typu `ReferenceError`.
+
+Naproti tomu pokud _stroj_ provádí LHS vyhledávání a dospěje k nejvyššímu
+(globálnímu) rozsahu bez toho, aniž by proměnnou nalezl, pak neběží-li ve
+"strict mode", je v globálním rozsahu vytvořena nová proměnná toho jména a
+vrácena _stroji_.
