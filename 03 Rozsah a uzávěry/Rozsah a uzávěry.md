@@ -158,3 +158,13 @@ operace nad výsledkem.
 Rozsah je sada pravidel určujících kde a jak může být proměnná hledána. Toto
 vyhledávání může být z důvodu přiřazení hodnoty do proměnné (LHS rerence),
 nebo z důvodu vrácení její hodnoty (RHS reference).
+
+LHS referencuje výsledek z operace přiřazení. Přiřazení k rozsahu může nastávat
+buď s operátorem `=`, nebo předáním argumentu do funkce (a tím jeho přiřazením
+parametru).
+
+JS _stroj_ nejprve zkompiluje kód a přitom rozdělí příkaz `var a = 2;` na dva
+oddělené kroky.
+
+1. Deklaruje `a` v rozsahu (toto je provedeno na začátku před vykonáním kódu).
+2. Vyhledá proměnnou (LHS reference) a přiadí do ní hodnotu `a = 2`.
