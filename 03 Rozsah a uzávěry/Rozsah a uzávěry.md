@@ -176,4 +176,12 @@ nedosáhnou globálního, kde skončí, ať našly, nebo ne.
 Nenaplněná RHS vrací `ReferenceError`. Nenaplněná LHS vrací automatickou, v
 globálním rozsahu vytvořenou referenci toho jména (není-li "strict mode"),
 nebo `ReferenceError` (v případě "strict mode").
+
 ##Lexikální rozsah
+V první kapitole jsme definovali _"rozsah"_ jako sadu pravidel určující jak
+_stroj_ může vyhledávat proměnnou podle jejího jmína buď v aktuálním rozsahu,
+nebo v některém z nadřazených, v nichž je umístěn.
+
+Existují dva hlavní modely fungování rozsahu. První z nich, používaný většinou
+programovacích jazyků, se nazývá _lexikální rozsah_. Druhý se nazývá _dynamický
+rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
