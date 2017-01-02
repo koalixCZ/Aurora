@@ -168,3 +168,12 @@ oddělené kroky.
 
 1. Deklaruje `a` v rozsahu (toto je provedeno na začátku před vykonáním kódu).
 2. Vyhledá proměnnou (LHS reference) a přiadí do ní hodnotu `a = 2`.
+
+Obě hledání - LHS i RHS, začínají v aktuálním rozsahu a pokud je potřeba (a to
+je, pokud zde nenaleznou, co hledají), pokračují v nadřazeném rozsahu, dokud
+nedosáhnou globálního, kde skončí, ať našly, nebo ne.
+
+Nenaplněná RHS vrací `ReferenceError`. Nenaplněná LHS vrací automatickou, v
+globálním rozsahu vytvořenou referenci toho jména (není-li "strict mode"),
+nebo `ReferenceError` (v případě "strict mode").
+##Lexikální rozsah
