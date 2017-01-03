@@ -185,3 +185,7 @@ v některém z nadřazených, v nichž je umístěn.
 Existují dva hlavní modely fungování rozsahu. První z nich, používaný většinou
 programovacích jazyků, se nazývá _lexikální rozsah_, druhý se nazývá _dynamický
 rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
+
+###Čas lexu
+Jak bylo řečeno v [první kapitole](#co-je-rozsah), první tradiční fáze
+standardního překladače se nazývá lexing (také tokenizace).
