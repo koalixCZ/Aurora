@@ -178,14 +178,17 @@ globálním rozsahu vytvořenou referenci toho jména (není-li "strict mode"),
 nebo `ReferenceError` (v případě "strict mode").
 
 ##Lexikální rozsah
-V první kapitole jsme definovali _"rozsah"_ jako sadu pravidel určujících jak
-_stroj_ vyhledává proměnnou podle jejího jména buď v aktuálním rozsahu, nebo
-v některém z nadřazených, v nichž je umístěn.
+V [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah) jsme
+definovali _"rozsah"_ jako sadu pravidel určujících jak _stroj_ vyhledává
+proměnnou podle jejího jména buď v aktuálním rozsahu, nebo v některém
+z nadřazených, v nichž je umístěn.
 
 Existují dva hlavní modely fungování rozsahu. První z nich, používaný většinou
 programovacích jazyků, se nazývá _lexikální rozsah_, druhý se nazývá _dynamický
 rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
 
 ###Čas lexu
-Jak bylo řečeno v [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah), první tradiční fáze
-standardního překladače se nazývá _lexing_ (také _tokenizace_).
+Jak bylo řečeno v [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah),
+první tradiční fáze standardního překladače se nazývá _lexing_ (také
+_tokenizace_). Pro zopakování, _lexing_ přezkoumá textové řetězce zdrojového
+kódu a přiřadí semantický význam tokenům jako výsledek stavové analýzy.
