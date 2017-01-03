@@ -1,7 +1,7 @@
 #Rozsah a uzávěry
 ##Co je _rozsah_
 Jedním z paradigmat téměř všech programovacích jazyků je schopnost ukládat
-hodnoty v proměnných a pozdější je použít. Tato činnost vytváří _stav_ programu.
+hodnoty v proměnných a později je použít. Tato činnost vytváří _stav_ programu.
 
 Zařazení proměnných do jazyka otevírá problém - kde jsou uloženy a jak je
 nalézt - což hovoří pro potřebu sady pravidel, kterou nazýváme _rozsah_.
@@ -13,7 +13,7 @@ spuštění provede JS stroj několik kroků, aby porozuměl tomu, co má vykona
 smyslupných (z hlediska jazyka) kousků. které jsou nazývány tokeny.
 
 2. **Parsování** - Řetěz tokenů je převeden do stromu vnořených elementů, které
-dohromady představují gramatickou strukturu programu. Strom je nazýván AST
+dohromady představují gramatickou strukturu programu - AST strom
 (_abstract syntax tree_).
 
 3. **Generování kódu** - AST strom je převeden do spustitelného kódu.
@@ -178,10 +178,10 @@ globálním rozsahu vytvořenou referenci toho jména (není-li "strict mode"),
 nebo `ReferenceError` (v případě "strict mode").
 
 ##Lexikální rozsah
-V první kapitole jsme definovali _"rozsah"_ jako sadu pravidel určující jak
-_stroj_ může vyhledávat proměnnou podle jejího jmína buď v aktuálním rozsahu,
-nebo v některém z nadřazených, v nichž je umístěn.
+V první kapitole jsme definovali _"rozsah"_ jako sadu pravidel určujících jak
+_stroj_ vyhledává proměnnou podle jejího jména buď v aktuálním rozsahu, nebo
+v některém z nadřazených, v nichž je umístěn.
 
 Existují dva hlavní modely fungování rozsahu. První z nich, používaný většinou
-programovacích jazyků, se nazývá _lexikální rozsah_. Druhý se nazývá _dynamický
+programovacích jazyků, se nazývá _lexikální rozsah_, druhý se nazývá _dynamický
 rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
