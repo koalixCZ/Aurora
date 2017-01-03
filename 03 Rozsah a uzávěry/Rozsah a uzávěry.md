@@ -187,5 +187,5 @@ programovacích jazyků, se nazývá _lexikální rozsah_, druhý se nazývá _d
 rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
 
 ###Čas lexu
-Jak bylo řečeno v [první kapitole](#co-je-rozsah), první tradiční fáze
+Jak bylo řečeno v [první kapitole](Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah), první tradiční fáze
 standardního překladače se nazývá lexing (také tokenizace).
