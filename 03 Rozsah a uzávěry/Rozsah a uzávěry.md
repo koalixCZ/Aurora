@@ -192,3 +192,9 @@ Jak bylo řečeno v [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-
 první tradiční fáze standardního překladače se nazývá _lexing_ (také
 _tokenizace_). Pro zopakování, _lexing_ přezkoumá textové řetězce zdrojového
 kódu a přiřadí semantický význam tokenům jako výsledek stavové analýzy.
+
+Definováno kruhem, _lexikální rozsah_ je rozsah definovaný v čase _lexingu_.
+Jinými slovy, lexikální rozsah je založen na tom, kde jsou proměnné a bloky
+autorsky v době vzniku kódu zapsány, a jako takové jsou (většinou), vytesány do
+kamene v době, kdy _lexer_ zpracovává kód.
+
