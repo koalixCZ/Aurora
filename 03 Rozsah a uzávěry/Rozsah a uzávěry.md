@@ -187,7 +187,7 @@ Existují dva hlavní modely fungování rozsahu. První z nich, používaný v�
 programovacích jazyků, se nazývá _lexikální rozsah_, druhý se nazývá _dynamický
 rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
 
-###Čas lexu
+###Čas lexingu
 Jak bylo řečeno v [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah),
 první tradiční fáze standardního překladače se nazývá _lexing_ (také
 _tokenizace_). Pro zopakování, _lexing_ přezkoumá textové řetězce zdrojového
@@ -217,4 +217,6 @@ Objevují se v něm tři vnořené rozsahy.
 2. Zahrnuje rozsah funkce `x`, který zahrnuje: `a`, `y` a `b`.
 3. Zahrnuje rozsah funkce `y` s jedn9m identifikátorem: `c`
 
-Rozsahy jsou definovány bloky kódu, jeden je vložen do druhého.
+Rozsahy jsou definovány bloky kódu, jeden je vložen do druhého. Žádný rozsah
+nemůže souběžně existovat (částečně) ve dvou vnějších rozsazích stejně tak, jako
+funkce nemůže být uvnitř dvou rodičovských funkcích.
