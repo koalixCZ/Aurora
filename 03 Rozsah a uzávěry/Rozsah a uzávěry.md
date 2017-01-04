@@ -213,6 +213,7 @@ function x(a) {
 x(2);                           // 2, 4, 12
 ```
 Objevují se v něm tři vnořené rozsahy.
+
 1. Zahrnuje globální rozsah a obsahuje identifikátor: `x`.
 2. Zahrnuje rozsah funkce `x`, který zahrnuje: `a`, `y` a `b`.
 3. Zahrnuje rozsah funkce `y` s jedn9m identifikátorem: `c`
@@ -220,3 +221,5 @@ Objevují se v něm tři vnořené rozsahy.
 Rozsahy jsou definovány bloky kódu, jeden je vložen do druhého. Žádný rozsah
 nemůže souběžně existovat (částečně) ve dvou vnějších rozsazích stejně tak, jako
 funkce nemůže být uvnitř dvou rodičovských funkcích.
+
+### Vyhledávání
