@@ -198,3 +198,23 @@ Jinými slovy, lexikální rozsah je založen na tom, kde jsou proměnné a blok
 autorsky v době vzniku kódu zapsány, a jako takové jsou (většinou), vytesány do
 kamene v době, kdy _lexer_ zpracovává kód.
 
+Mějme následující příklad:
+```JavaScript
+function x(a) {
+    var b = a * 2;
+
+    function y(c) {
+        console.log(a, b, c);
+    }
+
+    y(b * 3);
+}
+
+x(2);                           // 2, 4, 12
+```
+Objevují se v něm tři vnořené rozsahy.
+1. Zahrnuje globální rozsah a obsahuje identifikátor: `x`.
+2. Zahrnuje rozsah funkce `x`, který zahrnuje: `a`, `y` a `b`.
+3. Zahrnuje rozsah funkce `y` s jedn9m identifikátorem: `c`
+
+Rozsahy jsou definovány bloky kódu, jeden je vložen do druhého.
