@@ -230,10 +230,19 @@ Zde nalezne `a`, a to stejné platí i pro `b`. Proměnnou `c` nalezne přímo u
 `y`.
 
 Pokud by se stalo, že by proměnná `c` byla jak v rozsahu `y`, tak `x`, příkaz
-`console.log()` by vždy použil tu z `y`.
+`console.log()` by vždy použil proměnnou z `y`.
 
-Prohledávání se vždy zastaví na prvním výsledku. Stejný identifikátor může být
-specifikován v ruzných vrstvách vnořených rozsahů, tomu se říká _překrývání_
-(vnitřní identifikátor překrývá vnější). Bez ohledu na _překrývání_, vyhledávání
-začíná vždy v právě prováděném rozsahu a pokračuje směrem vzhůru, dokud není
-nalezen první záznam.
+Prohledávání se vždy zastaví na prvním nalezeném výsledku. Stejný identifikátor
+může být uveden v ruzných vrstvách rozsahů. Bez ohledu na takové _překrývání_
+začíná vyhledávání vždy v právě prováděném rozsahu a pokračuje směrem vzhůru,
+dokud není nalezen záznam.
+
+Nezáleží na tom odkud je funkce zavolána, ani jak je zavolána, její lexikální
+rozsah je definován pouze tím, kde byla deklarována.
+
+Vyhledávání v lexikálním rozsahu je aplikováno pouze na identifikátory první
+třídy (_first class citizens_), jako je `a`, `b` a `c`. Existuje-li v nějaké
+části kódu nap59kald reference `x.y.z`, lexikální rozsah je aplikován pouze k
+nalezení identifikátoru `x`. Jakmile je nalezen, jsou pro `y` a `z` aplikována
+pravidla pro pro přístup k vlastnostem.
+   
