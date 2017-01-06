@@ -228,3 +228,12 @@ proměnné `a`, `b` a `c`. Začne v nejvnitřnějším rozsahu funkce `y`,
 kde proměnnou `a` nenajde, pokračuje proto do nadřazeného rozsahu funkce `x`.
 Zde nalezne `a`, a to stejné platí i pro `b`. Proměnnou `c` nalezne přímo uvnitř
 `y`.
+
+Pokud by se stalo, že by proměnná `c` byla jak v rozsahu `y`, tak `x`, příkaz
+`console.log()` by vždy použil tu z `y`.
+
+Prohledávání se vždy zastaví na prvním výsledku. Stejný identifikátor může být
+specifikován v ruzných vrstvách vnořených rozsahů, tomu se říká _překrývání_
+(vnitřní identifikátor překrývá vnější). Bez ohledu na _překrývání_, vyhledávání
+začíná vždy v právě prováděném rozsahu a pokračuje směrem vzhůru, dokud není
+nalezen první záznam.
