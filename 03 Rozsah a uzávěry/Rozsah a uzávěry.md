@@ -223,3 +223,8 @@ nemůže souběžně existovat ve dvou vnějších rozsazích stejně tak, jako 
 nemůže být uvnitř dvou rodičovských funkcích.
 
 ### Vyhledávání
+V předcházející ukázce vykonává _stroj_ příkaz `console.log()` a hledá tři
+proměnné `a`, `b` a `c`. Začne v nejvnitřnějším rozsahu funkce `y`,
+kde proměnnou `a` nenajde, pokračuje proto do nadřazeného rozsahu funkce `x`.
+Zde nalezne `a`, a to stejné platí i pro `b`. Proměnnou `c` nalezne přímo uvnitř
+`y`.
