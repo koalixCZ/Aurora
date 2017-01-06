@@ -245,4 +245,12 @@ třídy (_first class citizens_), jako je `a`, `b` a `c`. Existuje-li v nějaké
 části kódu nap59kald reference `x.y.z`, lexikální rozsah je aplikován pouze k
 nalezení identifikátoru `x`. Jakmile je nalezen, jsou pro `y` a `z` aplikována
 pravidla pro pro přístup k vlastnostem.
-   
+
+###Podvádění lexikálního rozsahu
+Je-li lexikální rozsah definován pouze tam, kde je deklarována funkce, což je
+pouze v době autorova návrhu, jak je možné podvádět klexikální rozsah za běhu?
+
+JS má dva takové mechanismy, oba jsou širokou komunitou přijímány s nevraživostí
+jakožto špatný zvyk v kódu. Typický protiargument však obvykle postrádá pointu:
+podvádění lexikálního rozsahu vede k horšímu výkonu kódu.
+
