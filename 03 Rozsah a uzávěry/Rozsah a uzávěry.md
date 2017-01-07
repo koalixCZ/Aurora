@@ -250,7 +250,11 @@ pravidla pro pro přístup k vlastnostem.
 Je-li lexikální rozsah definován pouze tam, kde je deklarována funkce, což je
 pouze v době autorova návrhu, jak je možné podvádět klexikální rozsah za běhu?
 
-JS má dva takové mechanismy, oba jsou širokou komunitou přijímány s nevraživostí
-jakožto špatný zvyk v kódu. Typický protiargument však obvykle postrádá pointu:
+JS má dva takové mechanismy, oba jsou velkou částí komunitou přijímány s
+nelibostí coby špatný zvyk. Typický protiargument však obvykle postrádá pointu -
 podvádění lexikálního rozsahu vede k horšímu výkonu kódu.
 
+####eval
+Funkce `eval()` dostává jako argument textový řetězec a s jeho obsahem zachází,
+jakoby to byl programátorem zapsaný kus kódu. Jinými slovy, je možné generovat
+kód uvnitř uvnitř napsaného kódu a spouštět jej, jako by vznikl jž v době psaní.
