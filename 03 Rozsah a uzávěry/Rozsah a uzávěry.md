@@ -342,3 +342,42 @@ with (obj) {
     c = 5;
 }
 ```
+Nicméně, jde o mnohem více než o praktickou zkratku pro přístup k vlastnostem
+objektu:
+```JavaScript
+function x(obj) {
+    with (obj) {
+        a = 2;
+    }
+}
+
+var o1 = {
+    a: 3
+};
+
+var o2 = {
+    b: 3
+};
+
+x(o1);
+console.log(o1.a);      // 2
+
+x(o2);
+console.log(o2.a);      // undefined
+console.log(a);         // 2 - změněn globální rozsah!
+```
+V uvedeném příkladu byly vytvořeny objekty `o1` a `o2` z nichž jeden měl
+vlastnost `a`. Funkce `x` bere jako argument referenci na objekt (`obj`) a
+zavolá na ní `with`. Uvnitř bloku `with` provedeme něco, co se zdá být jako
+přiřazení hodnoty `2` proměnné `a` (LHS).
+
+Když předáme `o1`, příkaz `a = 2` najde vlastnost `o1.a` a přiřadí jí hodnotu
+`2`. Jakmile předáme `o2`, které nemá vlastnost `a`, žádná vlasnost není
+vytvořena a `o2.a1 vrátí `undefined`.
+
+Poté můžeme sledovat svérázný vedlejší efekt - vytvoření globální proměnné `a`
+příkazem `a = 2`. Jak k tomu došlo?
+
+Příkaz `with` vezme objekt zachází s ním jako když se jedná a samostatný
+lexikální rozsah a tak je zacházeno i s jeho vlastnostmi jako s lexikálně
+definovanými identifikátory v tomto rozsahu.
