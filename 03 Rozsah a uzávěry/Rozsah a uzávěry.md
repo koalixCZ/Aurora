@@ -315,3 +315,30 @@ v kódu vyhýbat.
 
 Případy použití dynamicky generovaného kódu v programu jsou vzácné, jelikož
 dopad na výkon za tuto schopnost téměř nikdy nestojí.
+
+####with
+Další dnes již zastaralou konstrukcí v JS švindlující s lexikálním rozsahem je
+klíčové slovo `with`.
+
+Typicky je `with` vysvětlován jako zkratka pro vícenásobné referencování
+vlastností objektu bez nutnosti pokaždé opakovat jeho referenci.
+
+Například:
+```JavaScript
+var obj = {
+    a: 1,
+    b: 2
+};
+
+// "zdlouhavější" zápis s opakováním "obj"
+obj.a = 3;
+obj.b = 4;
+obj.c = 5;
+
+// "snadnější" zkratka
+with (obj) {
+    a = 3;
+    b = 4;
+    c = 5;
+}
+```
