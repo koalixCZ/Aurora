@@ -395,3 +395,9 @@ jsme nebyli v "strict mode").
 Je to poněkud zvláštní vidět `with` měnící za běhu programu objekt a jeho
 vlastnosti do rozsahu s identifikátory, ovšem je to nejsrozumitelnější
 vysvětlení toho, co lze sledovat.
+###Výkon
+Oba - `eval()` i `with` podvádí v době psaní programu definovaný lexikální
+rozsah modifikací, nebo vytvořením nového lexikální rozsahu za běhu programu.
+
+Co je ze problém, přináší-li propracovanější funkcionalitu a flexibilitu v kódu?
+Nejsou to dobré vlasnosti? Nejsou.
