@@ -385,3 +385,13 @@ definovanými identifikátory v tomto rozsahu.
 Zatímco `eval()` může pozměnit existující lexikální rozsah tehdy, dostane-li
 textový řetězec s kódem obsahujícím deklaraci, příkaz `with` vytváří zčistajasna
 celý nový lexikální rozsah z objektu, který mu byl předán.
+
+Chápáno takto, rozsah deklarovaný příkazem `with` byl po předání `o1` - `o1` a
+tento rozsah obsahoval identifikátor korespondující s vlasností `o1.a`. Když
+jsme však použili jako rozsah `o2`, který neměl žádný takový identifikátor,
+provedení `a = 2` automaticky vyústilo ve vytvoření globální proměnné (pokud
+jsme nebyli v "strict mode"). 
+
+Je to poněkud zvláštní vidět `with` měnící za běhu programu objekt a jeho
+vlastnosti do rozsahu s identifikátory, ovšem je to nejsrozumitelnější
+vysvětlení toho, co lze sledovat.
