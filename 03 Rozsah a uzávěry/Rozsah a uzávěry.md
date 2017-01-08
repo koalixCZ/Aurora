@@ -381,3 +381,7 @@ příkazem `a = 2`. Jak k tomu došlo?
 Příkaz `with` vezme objekt zachází s ním jako když se jedná a samostatný
 lexikální rozsah a tak je zacházeno i s jeho vlastnostmi jako s lexikálně
 definovanými identifikátory v tomto rozsahu.
+
+Zatímco `eval()` může pozměnit existující lexikální rozsah tehdy, dostane-li
+textový řetězec s kódem obsahujícím deklaraci, příkaz `with` vytváří zčistajasna
+celý nový lexikální rozsah z objektu, který mu byl předán.
