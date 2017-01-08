@@ -282,3 +282,23 @@ stejnojmenné proměnné deklarované ve vnějším (globálním) rozsahu.
 Když dojde na zavolání `console.log()`, jsou `a` i `b` nalezeny v rozsahu funkce
 `x` a nikdy tak nedojde k hledání `b` ve vnějším rozsahu. Proto je na výstupu
 hodnota "1, 3" místo "1, 2", jak by tomu bylo v normálním případě.
+
+Standardně, pokud řetezec, který `eval()` provádí, obsahuje jednu nebo více
+deklarací (ať proměnných, či funkcí), tato operace upravuje lexikální stávající
+rozsah v němž `eval()` přebývá. Technicky může být `eval()` vykonán různými
+způsoby, které místo úpravy aktuálního rozsahu zapříčiní změnu globálního.
+V obou případech však `eval()` za běhu mění lexikální rozsah ustanovený v době
+psaní kódu.
+
+Je-li `eval()` použit v "strict mode", kód operuje ve vlastním lexikálním
+rozsahu. To znamená, že deklarace jsou omezeny uvnitř `eval()` a nedochází tak
+k modifikaci obalujícího rozsahu.
+```JavaScript
+function x(str) {
+    "use strict";
+    eval(str);
+    console.log(a);     // ReferenceError: a is not defined
+}
+
+x("var a = 2;");
+```
