@@ -302,3 +302,16 @@ function x(str) {
 
 x("var a = 2;");
 ```
+V JS existují i jiná zařízeni umožňující dosáhnout podobnéh účinku, jako
+`eval()`. Funkce `setTimeout()` a `setInterval()` mohou vzít textový řetězec
+jako první argument, jeho hodnota je pak vyhodnocena jako kód dynamicky
+vytvořené funkce. Tento hřích minulosti je již dlouhou dobu zastaralý a neměl by
+být využíván.
+
+Podobně konstrukční funkce `new Function()` přebírá textový řetězec jako
+poslední argument a převádí jej do dynamicky generované funkce. Ačkoliv je tato
+konstrukční funkce o něco bezpečnější než `eval()`, mělo by se jejímu používání
+v kódu vyhýbat.
+
+Případy použití dynamicky generovaného kódu v programu jsou vzácné, jelikož
+dopad na výkon za tuto schopnost téměř nikdy nestojí.
