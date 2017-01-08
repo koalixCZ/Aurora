@@ -242,7 +242,7 @@ rozsah je definován pouze tím, kde byla deklarována.
 
 Vyhledávání v lexikálním rozsahu je aplikováno pouze na identifikátory první
 třídy (_first class citizens_), jako je `a`, `b` a `c`. Existuje-li v nějaké
-části kódu nap59kald reference `x.y.z`, lexikální rozsah je aplikován pouze k
+části kódu například reference `x.y.z`, lexikální rozsah je aplikován pouze k
 nalezení identifikátoru `x`. Jakmile je nalezen, jsou pro `y` a `z` aplikována
 pravidla pro pro přístup k vlastnostem.
 
@@ -258,3 +258,27 @@ podvádění lexikálního rozsahu vede k horšímu výkonu kódu.
 Funkce `eval()` dostává jako argument textový řetězec a s jeho obsahem zachází,
 jakoby to byl programátorem zapsaný kus kódu. Jinými slovy, je možné generovat
 kód uvnitř uvnitř napsaného kódu a spouštět jej, jako by vznikl jž v době psaní.
+
+Je zřejmé jak `eval()` umožňuje měnit prostředí lexikální rozsah předstíráním,
+že se jedná o autorský kód, který tam je po celou dobu.
+
+Na řádcích po `eval()` JS stroj neví (nestará se), že byl předcházející kód
+dynamický a ovlivnil lexikální rozsah. Prohledává jej jako vždy.
+```JavaScript
+function x(str, a) {
+	eval(str);
+	console.log(a, b);
+}
+
+var b = 2;
+
+x("var b = 3;", 1);     // 1, 3
+```
+S řetězcem `"var b=3;"` se zachází, z pohledu zavolání `eval()`, jako s kódem,
+který zde byl po celou dobu, a protože kód deklaruje novou proměnnou `b`, mění
+lexikální rozsah funkce `x`. Vytvořením nové proměnné `b` dojde k překrytí
+stejnojmenné proměnné deklarované ve vnějším (globálním) rozsahu.
+
+Když dojde na zavolání `console.log()`, jsou `a` i `b` nalezeny v rozsahu funkce
+`x` a nikdy tak nedojde k hledání `b` ve vnějším rozsahu. Proto je na výstupu
+hodnota "1, 3" místo "1, 2", jak by tomu bylo v normálním případě.
