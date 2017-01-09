@@ -10,7 +10,7 @@ JS je _dynamický_, nebo také _interpretovaný_ jazyk. Znamená to, že při ka
 spuštění provede JS stroj několik kroků, aby porozuměl tomu, co má vykonat.
 
 1. **Tokenizace/lexing** - Jednotlivé textové řetězce jsou rozlámány do
-smyslupných (z hlediska jazyka) kousků. které jsou nazývány tokeny.
+(z hlediska jazyka) smysluplných kousků zvaných tokeny.
 
 2. **Parsování** - Řetěz tokenů je převeden do stromu vnořených elementů, které
 dohromady představují gramatickou strukturu programu - AST strom
@@ -33,15 +33,15 @@ strom. Jakmile narazí na `var a`, ověří, zda proměnná `a` existuje pro
 konkrétním rozsah. Pokud ano, ignoruje deklaraci a pokračuje dál. V opačném
 případě se v kolekci pro daný rozsah deklaruje proměnná `a`.
 
-Následně _kompilátor_ vyprodukuje kód pro _stroj_ pro pozdější provedení - 
-přiřazení `a = 2`. _Stroj_ pak při jeho vykonání nejprve ověří, zda je proměnná
-dostupná v kolekci daného rozsahu. Pokud ano, použije ji. Pokud ne, podívá se
-jinam (do _vnořeného rozsahu_).
+Následně _kompilátor_ vyprodukuje kód pro _stroj_ pro pozdější přiřazení
+`a = 2`. _Stroj_ pak při jeho vykonání nejprve ověří, zda je proměnná dostupná
+v kolekci daného rozsahu. Pokud ano, použije ji. Pokud ne, podívá se jinam (do
+_vnořeného rozsahu_).
 
 Nalezne-li _stroj_ proměnnou, přiřadí ji hodnotu `2`. Pokud ne, vyhlásí chybu.
 
 Shrnutí: pro přiřazení hpdnoty proměnné se vykonají dvě odlišné akce.
-1. _Kompilátor_ deklaruje proměnnou (pokud již nebyla dříve) v aktálním rozsahu.
+1. _Kompilátor_ deklaruje proměnnou v aktálním rozsahu.
 2. _Stroj_ vyhledá proměnnou v aktuálním rozsahu a je-li nalezena, přiřadí ji
 hodnotu.
 
@@ -94,8 +94,8 @@ uvnitř jejíž nativní implementace lze předpokládat přiřazení hodnoty `2
 nějakého parametru (například `arg1`).
 ###Vnořený rozsah
 Tak jako může být blok nebo funkce vnořena uvnitř jiného bloku nebo funkce,
-může být vnořen i rozsah uvnitř jiného rozsahu. Tedy, není-li být proměnná 
-nalezena v bezprostředním rozsahu, ověřuje _stroj_ další nadřazený (vnější)
+může být vnořen i rozsah uvnitř jiného rozsahu. Tedy, není-li proměnná nalezena
+v bezprostředním rozsahu, ověřuje _stroj_ další nadřazený (vnější)
 rozsah a tak pokračuje, dokud nedosáhne nejvzdálenějšího (t.j. globálního).
 
 Uvažujme násleudjící:
@@ -132,13 +132,13 @@ var b = 1;
 
 x(2);
 ```
-Když dojde poprvé l RHS vyhledávání proměnné `b`, není nalezena. Je to tedy
+Když dojde poprvé k RHS vyhledávání proměnné `b`, není nalezena. Je to tedy
 "nedeklarovaná" proměnná, protože nebyla nalezena v rozsahu a selže-li RHS
 vyhledávání proměnné i v nadřazených rozsazích, je výsledkem `ReferenceError`.
 Je důležité poznamenat, že tato chyba je typu `ReferenceError`.
 
 Naproti tomu pokud _stroj_ provádí LHS vyhledávání a dospěje k nejvyššímu
-(globálnímu) rozsahu bez toho, aniž by proměnnou nalezl, pak neběží-li ve
+(globálnímu) rozsahu bez toho, aniž by proměnnou nalezl, potom, neběží-li v
 "strict mode", je v globálním rozsahu vytvořena nová proměnná toho jména a
 vrácena _stroji_.
 
@@ -156,8 +156,8 @@ získání vlastnosti na `null` nebo `undefined`), _stroj_ vrátí `TypeError`.
 operace nad výsledkem.
 ### Shrnutí
 Rozsah je sada pravidel určujících kde a jak může být proměnná hledána. Toto
-vyhledávání může být z důvodu přiřazení hodnoty do proměnné (LHS rerence),
-nebo z důvodu vrácení její hodnoty (RHS reference).
+vyhledávání může být buď z důvodu přiřazení hodnoty do proměnné (LHS rerence),
+nebo vrácení její hodnoty (RHS reference).
 
 LHS referencuje výsledek z operace přiřazení. Přiřazení k rozsahu může nastávat
 buď s operátorem `=`, nebo předáním argumentu do funkce (a tím jeho přiřazením
@@ -191,11 +191,11 @@ rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaSc
 Jak bylo řečeno v [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah),
 první tradiční fáze standardního překladače se nazývá _lexing_ (také
 _tokenizace_). Pro zopakování, _lexing_ přezkoumá textové řetězce zdrojového
-kódu a přiřadí semantický význam tokenům jako výsledek stavové analýzy.
+kódu a přiřadí semantický význam tokenům jakožto výsledek stavové analýzy.
 
 Definováno kruhem, _lexikální rozsah_ je rozsah definovaný v čase _lexingu_.
 Jinými slovy, lexikální rozsah je založen na tom, kde jsou proměnné a bloky
-autorsky v době vzniku kódu zapsány, a jako takové jsou (většinou), vytesány do
+v době vzniku kódu zapsány, a jako takové jsou (většinou), vytesány do
 kamene v době, kdy _lexer_ zpracovává kód.
 
 Mějme následující příklad:
@@ -237,8 +237,8 @@ může být uveden v ruzných vrstvách rozsahů. Bez ohledu na takové _překr�
 začíná vyhledávání vždy v právě prováděném rozsahu a pokračuje směrem vzhůru,
 dokud není nalezen záznam.
 
-Nezáleží na tom odkud je funkce zavolána, ani jak je zavolána, její lexikální
-rozsah je definován pouze tím, kde byla deklarována.
+Nezáleží na tom odkud ani jak je je funkce zavolána, její lexikální rozsah je
+definován pouze tím, kde byla deklarována.
 
 Vyhledávání v lexikálním rozsahu je aplikováno pouze na identifikátory první
 třídy (_first class citizens_), jako je `a`, `b` a `c`. Existuje-li v nějaké
@@ -248,19 +248,20 @@ pravidla pro pro přístup k vlastnostem.
 
 ###Podvádění lexikálního rozsahu
 Je-li lexikální rozsah definován pouze tam, kde je deklarována funkce, což je
-pouze v době autorova návrhu, jak je možné podvádět klexikální rozsah za běhu?
+pouze v době autorova návrhu, jak je možné podvádět lexikální rozsah za běhu?
 
-JS má dva takové mechanismy, oba jsou velkou částí komunitou přijímány s
+JS má dva takové mechanismy, oba jsou velkou částí komunity přijímány s
 nelibostí coby špatný zvyk. Typický protiargument však obvykle postrádá pointu -
 podvádění lexikálního rozsahu vede k horšímu výkonu kódu.
 
 ####eval
-Funkce `eval()` dostává jako argument textový řetězec a s jeho obsahem zachází,
-jakoby to byl programátorem zapsaný kus kódu. Jinými slovy, je možné generovat
-kód uvnitř uvnitř napsaného kódu a spouštět jej, jako by vznikl jž v době psaní.
+Funkce `eval()` dostává jako argument textový řetězec a s jeho obsahem zachází
+tak, jako by to byl programátorem zapsaný kus kódu. Jinými slovy, je možné
+generovat kód uvnitř napsaného kódu a spouštět jej, jako by vznikl již v době
+psaní.
 
 Je zřejmé jak `eval()` umožňuje měnit prostředí lexikální rozsah předstíráním,
-že se jedná o autorský kód, který tam je po celou dobu.
+že se jedná o kód, který tam je po celou dobu.
 
 Na řádcích po `eval()` JS stroj neví (nestará se), že byl předcházející kód
 dynamický a ovlivnil lexikální rozsah. Prohledává jej jako vždy.
@@ -284,8 +285,8 @@ Když dojde na zavolání `console.log()`, jsou `a` i `b` nalezeny v rozsahu fun
 hodnota "1, 3" místo "1, 2", jak by tomu bylo v normálním případě.
 
 Standardně, pokud řetezec, který `eval()` provádí, obsahuje jednu nebo více
-deklarací (ať proměnných, či funkcí), tato operace upravuje lexikální stávající
-rozsah v němž `eval()` přebývá. Technicky může být `eval()` vykonán různými
+deklarací (ať proměnných, či funkcí), tato operace upravuje stávající lexikální
+rozsah, v němž `eval()` přebývá. Technicky může být `eval()` vykonán různými
 způsoby, které místo úpravy aktuálního rozsahu zapříčiní změnu globálního.
 V obou případech však `eval()` za běhu mění lexikální rozsah ustanovený v době
 psaní kódu.
@@ -311,7 +312,7 @@ být využíván.
 Podobně konstrukční funkce `new Function()` přebírá textový řetězec jako
 poslední argument a převádí jej do dynamicky generované funkce. Ačkoliv je tato
 konstrukční funkce o něco bezpečnější než `eval()`, mělo by se jejímu používání
-v kódu vyhýbat.
+v kódu také vyhýbat.
 
 Případy použití dynamicky generovaného kódu v programu jsou vzácné, jelikož
 dopad na výkon za tuto schopnost téměř nikdy nestojí.
@@ -366,20 +367,20 @@ x(o2);
 console.log(o2.a);      // undefined
 console.log(a);         // 2 - změněn globální rozsah!
 ```
-V uvedeném příkladu byly vytvořeny objekty `o1` a `o2` z nichž jeden měl
-vlastnost `a`. Funkce `x` bere jako argument referenci na objekt (`obj`) a
-zavolá na ní `with`. Uvnitř bloku `with` provedeme něco, co se zdá být jako
-přiřazení hodnoty `2` proměnné `a` (LHS).
+V uvedeném příkladu byly vytvořeny objekty `o1` a `o2` z nichž první měl
+vlastnost `a`. Funkce `x` bere jako argument referenci na objekt `obj` a zavolá
+na ní `with`. Uvnitř bloku `with` provedeme něco, co se zdá být jako přiřazení
+hodnoty `2` proměnné `a` (LHS).
 
 Když předáme `o1`, příkaz `a = 2` najde vlastnost `o1.a` a přiřadí jí hodnotu
-`2`. Jakmile předáme `o2`, které nemá vlastnost `a`, žádná vlasnost není
-vytvořena a `o2.a1 vrátí `undefined`.
+`2`. Jakmile předáme `o2`, které nemá vlastnost `a`, žádná není vytvořena a
+`o2.a1 vrátí `undefined`.
 
 Poté můžeme sledovat svérázný vedlejší efekt - vytvoření globální proměnné `a`
 příkazem `a = 2`. Jak k tomu došlo?
 
-Příkaz `with` vezme objekt zachází s ním jako když se jedná a samostatný
-lexikální rozsah a tak je zacházeno i s jeho vlastnostmi jako s lexikálně
+Příkaz `with` vezme objekt a zachází s ním jako když se jedná o samostatný
+lexikální rozsah, a tak je zacházeno i s jeho vlastnostmi - jako s lexikálně
 definovanými identifikátory v tomto rozsahu.
 
 Zatímco `eval()` může pozměnit existující lexikální rozsah tehdy, dostane-li
@@ -394,10 +395,10 @@ jsme nebyli v "strict mode").
 
 Je to poněkud zvláštní vidět `with` měnící za běhu programu objekt a jeho
 vlastnosti do rozsahu s identifikátory, ovšem je to nejsrozumitelnější
-vysvětlení toho, co lze sledovat.
+vysvětlení toho, co lze prakticky sledovat.
 ###Výkon
-Oba - `eval()` i `with` podvádí v době psaní programu definovaný lexikální
-rozsah modifikací, nebo vytvořením nového lexikálního rozsahu za běhu programu.
+Oba - `eval()` i `with` podvádí lexikální rozsah modifikací, nebo rovnou
+vytvořením nového lexikálního rozsahu za běhu programu.
 
 Co je ze problém, přináší-li propracovanější funkcionalitu a flexibilitu v kódu?
 Nejsou to dobré vlasnosti? Nejsou.
