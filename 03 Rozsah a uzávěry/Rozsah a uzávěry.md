@@ -402,3 +402,20 @@ vytvořením nového lexikálního rozsahu za běhu programu.
 
 Co je ze problém, přináší-li propracovanější funkcionalitu a flexibilitu v kódu?
 Nejsou to dobré vlasnosti? Nejsou.
+
+JS stroj totiž provádí řadu optimalizací, které provádí při kompilaci. Některé z
+nich dokáží staticky analyzovat kód podle lexů a určit tak, kde jsou všechny
+deklarace proměnných a funkcí, takže vyřešení identifikátorů při spuštění potom
+zabere mnohem méně času.
+
+Pokud stroj nalezne `eval()`, nebo `with`, musí předpokládat, že všechny
+poznatky o umístění identifikátorů mohou být neplatné, protože v době lexingu
+neví, jaký kód se může dostat do `eval()` a jak ovlivní lexikální rozsah, nebo
+obsah objektu, který lze poslat do `with` k vytvoření nového lexikálního
+rozsahu. Mnoho optimalizací, které by mohly být provedeny, se tak stává
+bezpředmětnými, je-li použit `eval()` nebo `with`, takže se neprovádí
+optimalizace vůbec.
+
+Kód má tendenci běžet pomaleji pouze samotnnou přítomností `eval()` nebo `with` 
+a nezáleží na tom jak chytrý může být stroj ve zkoušení omezovat vedlejší efekty
+pesimistických předpokladů.
