@@ -396,6 +396,7 @@ jsme nebyli v "strict mode").
 Je to poněkud zvláštní vidět `with` měnící za běhu programu objekt a jeho
 vlastnosti do rozsahu s identifikátory, ovšem je to nejsrozumitelnější
 vysvětlení toho, co lze prakticky sledovat.
+
 ###Výkon
 Oba - `eval()` i `with` podvádí lexikální rozsah modifikací, nebo rovnou
 vytvořením nového lexikálního rozsahu za běhu programu.
@@ -419,3 +420,20 @@ optimalizace vůbec.
 Kód má tendenci běžet pomaleji pouze samotnnou přítomností `eval()` nebo `with` 
 a nezáleží na tom jak chytrý může být stroj ve zkoušení omezovat vedlejší efekty
 pesimistických předpokladů.
+
+###Shrnutí
+Lexikální rozsah znamená rozsah definovaný v době vzniku kódu na základě
+rozhodnutí jeho autora, kde jsou funkce deklarovány. Lexikální fáze kompilace
+(_lexing_) je schopná poznat kde a jak jsou identifikátory deklarovány, a tak
+predikovat, jak budou vyhledávány za běhu.
+
+Dva mechanismy v JS mohou švindlovat s lexikálním rozsahem - `eval()` a `with`.
+První dokáže za běhu měnit stávající lexikální rozsah vyhodnocováním řetězce
+kódu s jednou nebo více deklaracemi. Druhý v podstatě vytvoří celý nový
+lexikální rozsah (opět za běhu) nakládáním s referencí na objekt jako s rozsahem
+a s jeho vlastnostmi jako s identifikátory.
+
+Nevýhodou je, že obě konstrukce maří schopnost provádět optimalizace v době
+kompilace týkající se rozsahu a vyhledávání, protože stroj musí pesimisticky
+předpokládat, že takové optimalizace budou neplatné. V důsledku toho poběží kód
+pomaleji. Jednoznačné doporučení je tyto kosntrukce nepoužívat.
