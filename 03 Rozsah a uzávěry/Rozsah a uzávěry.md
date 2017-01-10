@@ -481,7 +481,7 @@ proměnných v celé funkci může vést k nečekaným pastem.
 Tradiční pojetí funkcí spočívá v tom, že ji deklarujete a následně napíšete její
 kód. Opačné myšlení je srovnatelně silné a užitečné; vezměte část kódu, který
 jste napsali a zabalte jej do funkce. Praktickým dopadem je vytvoření nového
-rozsahu který ukrytí deklarací.
+rozsahu a ukrytí deklarací.
 
 Proč může být ukrývání proměnných a funkcí užitečná technika?
 
@@ -492,7 +492,6 @@ založený na tom, že v designu software (jako je API pro modul/objekt), by mě
 být vystaveno pouze nutné minimum a vše ostatní by mělo být ukryto.
 
 Tento princip se vztahuje na výběr, který rozsah má obsahovat proměnné a funkce.
-Pokud by všechny byly v globálním rozsahu, byly by samozřejmě dostupné z
-jakéhokoliv vnořeného rozsahu, což by porušovalo zmiňovaný princip nejnižších
-privilegií vystavením mnoha proměnnžch nebo funkcí, jež by měly být udržovány
-coby privátní.
+Pokud by všechny byly v globálním, byly by samozřejmě dostupné z jakéhokoliv
+vnořeného, což by zmiňovaný princip nejnižších privilegií porušovalo vystavením
+mnoha proměnných nebo funkcí, jež by měly být udržovány coby privátní.
