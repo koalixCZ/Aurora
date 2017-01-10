@@ -482,3 +482,11 @@ Tradiční pojetí funkcí spočívá v tom, že ji deklarujete a následně nap
 kód. Opačné myšlení je srovnatelně silné a užitečné; vezměte část kódu, který
 jste napsali a zabalte jej do funkce. Praktickým dopadem je vytvoření nového
 rozsahu který ukrytí deklarací.
+
+Proč může být ukrývání proměnných a funkcí užitečná technika?
+
+Existuje mnoho různých motivací pro skrývání založené na rozsahu, které mají
+tendenci vznikat z designového principu nejnižších privilegií (_Principle of
+Least Privilege_, též _Least Authority_ či _Least Exposure_). Tento princip je
+založený na tom, že v designu software (jako je API pro modul/objekt), by mělo
+být vystaveno pouze nutné minimum a vše ostatní by mělo být ukryto.
