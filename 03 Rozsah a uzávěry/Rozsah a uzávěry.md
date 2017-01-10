@@ -476,3 +476,9 @@ Na funkcích založený rozsah podporuje myšlenku, že všechny proměnné nál
 funkci a mohou být využity v celém jejím rozsahu. Tento přístup na jedné straně
 umožňuje využít dynamických vlastností jazyka, na druhou stranu existence
 proměnných v celé funkci může vést k nečekaným pastem.
+
+###Skrývání v rozsahu
+Tradiční pojetí funkcí spočívá v tom, že ji deklarujete a následně napíšete její
+kód. Opačné myšlení je srovnatelně silné a užitečné; vezměte část kódu, který
+jste napsali a zabalte jej do funkce. Praktickým dopadem je vytvoření nového
+rozsahu který ukrytí deklarací.
