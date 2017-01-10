@@ -437,3 +437,42 @@ Nevýhodou je, že obě konstrukce maří schopnost provádět optimalizace v do
 kompilace týkající se rozsahu a vyhledávání, protože stroj musí pesimisticky
 předpokládat, že takové optimalizace budou neplatné. V důsledku toho poběží kód
 pomaleji. Jednoznačné doporučení je tyto kosntrukce nepoužívat.
+
+## Rozsah funkce versus rozsah bloku
+Co vytváří nový rozsah? Je to pouze funkce, nebo mohou i další struktury v JS
+vytvářet nový rozsah?
+
+###Rozsah od funkcí
+Nejběžnější odpoveď na tuto otázku je, že JavaScript má na funkcích založený
+rozsah, tedy každá deklarovaná funkce pro sebe vytváří svůj vlastní rozsah.
+Není to však úplně pravda.
+
+Mějme následující příklad:
+```JavaScript
+function x(a) {
+    var b = 2;
+
+    // nějaký kód
+	
+    function y() {
+        // nějaký kód
+    }
+	// nějaký kód
+	
+	var c = 3;
+}
+```
+Rozsah funkce `x` obsahuje identifikátory `a`, `b`, `c` a `y`. Nezáleží na tom
+kde se v něm nachází deklarace, proměnná, nebo funkce náleží rozsahu bez ohledu
+na to.
+
+Funkce `y` má svůj vlastní rozsah, stejně tak globální, který má jeden
+identifikátor - `x`.
+
+Vzhledem k tomu, že `a`, `b`, `c` a `y` patří do rozsahu funkce `x`, nejsou
+dostupné vně a při pokusu o jejich použití z globálního rozsahu dojde k chybě.
+
+Na funkcích založený rozsah podporuje myšlenku, že všechny proměnné náleží
+funkci a mohou být využity v celém jejím rozsahu. Tento přístup na jedné straně
+umožňuje využít dynamických vlastností jazyka, na druhou stranu existence
+proměnných v celé funkci může vést k nečekaným pastem.
