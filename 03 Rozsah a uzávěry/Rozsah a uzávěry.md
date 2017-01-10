@@ -490,3 +490,9 @@ tendenci vznikat z designového principu nejnižších privilegií (_Principle o
 Least Privilege_, též _Least Authority_ či _Least Exposure_). Tento princip je
 založený na tom, že v designu software (jako je API pro modul/objekt), by mělo
 být vystaveno pouze nutné minimum a vše ostatní by mělo být ukryto.
+
+Tento princip se vztahuje na výběr, který rozsah má obsahovat proměnné a funkce.
+Pokud by všechny byly v globálním rozsahu, byly by samozřejmě dostupné z
+jakéhokoliv vnořeného rozsahu, což by porušovalo zmiňovaný princip nejnižších
+privilegií vystavením mnoha proměnnžch nebo funkcí, jež by měly být udržovány
+coby privátní.
