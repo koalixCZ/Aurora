@@ -532,3 +532,8 @@ x(2);
 Nyní jsou `b` i `y()` ukryté před vnějšími vlivy a jsou kontrolovány pouze
 funkcí `x`. Funkcionalita ani výsledek nejsou dotčeny, ale návrh udržuje
 soukromé informace ukryté, což je považováno za lepší řešení.
+
+###Vyhýbání se kolizím
+Další výhodou skrývání proměnných a funkcí uvnitř rozsahu je vyhýbání se
+bezděčným kolizím mezi dvěma identifikátory se stejným názvem, ale různě
+zamýšleným použitím. Kolize ústí v často neočekávané přepisování hodnot.
