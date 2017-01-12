@@ -495,3 +495,40 @@ Tento princip se vztahuje na výběr, který rozsah má obsahovat proměnné a f
 Pokud by všechny byly v globálním, byly by samozřejmě dostupné z jakéhokoliv
 vnořeného, což by zmiňovaný princip nejnižších privilegií porušovalo vystavením
 mnoha proměnných nebo funkcí, jež by měly být udržovány coby privátní.
+```JavaScript
+function x(a) {
+    b = a + y(a * 2);
+    console.log(b * 3);
+}
+
+function y(a) {
+    return a - 1;
+}
+
+var b;
+
+x(2);
+```
+V příkladu výše, proměnná `b` a funkce `y` jsou spíše soukromými detaily funkce
+`x`. Poskytnutí přítupu `b` tak není pouze zbytečné, ale v některých případech
+může být i nebezpečné, neboť může být, ať záměrně či omylem, použita
+neočekávaným způsobem. Přístupnost funkce `y` takové riziko nepředstavuje, ovšem
+z hlediska ukrytí implementačních detailů představuje rovněž porušení tohoto
+pravidla. Vhodnější návrh by měl skrýt tyto implementační detaily dovnitř
+rozsahu `x()`.
+```JavaScript
+function x(a) {
+    function y(a) {
+        return a - 1;
+    }
+    var b;
+    
+    b = a + y(a * 2);
+    console.log(b * 3);
+}
+
+x(2);
+```
+Nyní jsou `b` i `y()` ukryté před vnějšími vlivy a jsou kontrolovány pouze
+funkcí `x`. Funkcionalita ani výsledek nejsou dotčeny, ale návrh udržuje
+soukromé informace ukryté, což je považováno za lepší řešení.
