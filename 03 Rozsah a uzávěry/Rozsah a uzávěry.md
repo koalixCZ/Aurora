@@ -554,7 +554,7 @@ function isFibonacciNumber(num) {
 		numbers = [0, 1];
 
 	do {
-		fibonacciNumber = fibonacci(i++);
+		fibonacciNumber = fibonacci(i++);   // nekonečná smyčka
 	} while (fibonacciNumber < num);
 
 	return fibonacciNumber === num;
@@ -562,3 +562,6 @@ function isFibonacciNumber(num) {
 
 console.log(isFibonacciNumber(1000));
 ```
+Předcházející příklad představuje funkci, která ověřuje, zda číslo náleží do
+[Fibonacciho posloupnosti](https://cs.wikipedia.org/wiki/Fibonacciho_posloupnost),
+u níž platí: _F(n) = F(n-1) + F(n-2) s F(0) = 0 a F(1) = 1_.
