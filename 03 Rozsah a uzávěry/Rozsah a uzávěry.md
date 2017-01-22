@@ -539,25 +539,25 @@ bezděčným kolizím mezi dvěma identifikátory se stejným názvem, ale různ
 zamýšleným použitím. Kolize ústí v často neočekávané přepisování hodnot.
 ```JavaScript
 function isFibonacciNumber(num) {
-	function fibonacci(n) {
-		if (n > 1) {
-			i = numbers[n - 1] + numbers[n - 2];
-			numbers[n] = i;
-		} else {
-			i = numbers[n];     // mění 'i' v nadřazeném rozsahu
-		}
-		return i;
-	}
+    function fibonacci(n) {
+        if (n > 1) {
+            i = numbers[n - 1] + numbers[n - 2];
+            numbers[n] = i;
+        } else {
+            i = numbers[n];     // mění 'i' v nadřazeném rozsahu
+        }
+        return i;
+    }
 
-	var i = 0,
-		fibonacciNumber,
-		numbers = [0, 1];
+    var i = 0,
+        fibonacciNumber,
+        numbers = [0, 1];
 
-	do {
-		fibonacciNumber = fibonacci(i++);   // nekonečná smyčka
-	} while (fibonacciNumber < num);
+    do {
+        fibonacciNumber = fibonacci(i++);   // nekonečná smyčka
+    } while (fibonacciNumber < num);
 
-	return fibonacciNumber === num;
+    return fibonacciNumber === num;
 }
 
 console.log(isFibonacciNumber(1000));
