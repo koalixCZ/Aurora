@@ -538,28 +538,27 @@ Další výhodou skrývání proměnných a funkcí uvnitř rozsahu je vyhýbán
 bezděčným kolizím mezi dvěma identifikátory se stejným názvem, ale různě
 zamýšleným použitím. Kolize ústí v často neočekávané přepisování hodnot.
 ```JavaScript
-function fibonacci(n) {
-    switch (n) {
-    case 0:
-        return 0;
-    case 1:
-    case 2:
-        return 1;
-    default:
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-}
-
 function isFibonacciNumber(num) {
-    var i = 0,
-        fibonacciNumber;
+	function fibonacci(n) {
+		if (n > 1) {
+			i = numbers[n - 1] + numbers[n - 2];
+			numbers[n] = i;
+		} else {
+			i = numbers[n];     // mění 'i' v nadřazeném rozsahu
+		}
+		return i;
+	}
 
-    do {
-        fibonacciNumber = fibonacci(i++);
-    } while (fibonacciNumber < num);
+	var i = 0,
+		fibonacciNumber,
+		numbers = [0, 1];
 
-    return fibonacciNumber === num;
+	do {
+		fibonacciNumber = fibonacci(i++);
+	} while (fibonacciNumber < num);
+
+	return fibonacciNumber === num;
 }
 
-console.log(isFibonacciNumber(89));
+console.log(isFibonacciNumber(1000));
 ```
