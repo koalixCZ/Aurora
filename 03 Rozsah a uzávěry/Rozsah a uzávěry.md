@@ -562,6 +562,29 @@ function isFibonacciNumber(num) {
 
 console.log(isFibonacciNumber(1000));
 ```
-Předcházející příklad představuje funkci, která ověřuje, zda číslo náleží do
+Předcházející příklad představuje funkci ověřující, zda číslo náleží do
 [Fibonacciho posloupnosti](https://cs.wikipedia.org/wiki/Fibonacciho_posloupnost),
 u níž platí: _F(n) = F(n-1) + F(n-2) s F(0) = 0 a F(1) = 1_.
+
+Nejjednodušší implementace výpočtu čísla této posloupnosti může vypadat takto:
+```JavaScript
+function fibonacci(n) {
+    switch (n) {
+    case 0:
+    case 1:
+    	return n;
+	default:
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+```
+nevýhodou je extrémní neefektivita. Určitým řešením je pamatovat si dvě poslední
+čísla. V našem případě se v poli pamatuje celá řada počítaná v cyklu
+`do - while` postupným voláním funkce `fibonacci`. Kód však nefunguje - skončí
+v nekonečné smyčce. Proč?
+
+Důvodem je, že v funkci `fibonacci` dojde k "neočekávanému" přepsání proměnné
+`i` deklarované v obalující funkci `isFibonacciNumber`. Jednoduchým řešením je
+buď nová deklarace proměnné `var i;` uvnitř funkce `fibonacci`, čímž dojde k
+jejímu překrytí, nebo pojmenování proměnné jiným identifikátorem.
+
