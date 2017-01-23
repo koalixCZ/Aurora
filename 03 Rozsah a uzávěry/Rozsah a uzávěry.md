@@ -592,3 +592,20 @@ jejímu překrytí, nebo pojmenování proměnné jiným identifikátorem.
 Ukázkovým místem kolize názvů se může stát globální rozsah, kde mohou různé
 knihovny použité v programu snadno navzájem kolidovat, pokud vhodně neskryjí
 svoje vnitřní funkce a proměnné.
+
+Takové knihovny často vytvoří jedinou deklaraci proměnné (typicky objekt), jež
+je dostatečně unikátním jménem v globálním rozsahu. Tento objekt ja pak použit
+pro tuto knihovnu coby jmenný prostor (_namespace_). Funkcionalita určená k
+zveřejnění je pak realizována jako vlastnosti tohoto objektu spíše než
+identifikátory na nejvyšším lexikálním rozsahu.
+```JavaScript
+var Library = {
+    version: "1.2.3",
+    a: function () {
+        // ...
+    },
+    b: function () {
+        // ...
+    }
+}
+```
