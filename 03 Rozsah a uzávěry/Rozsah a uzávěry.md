@@ -588,3 +588,7 @@ Důvodem je, že v funkci `fibonacci` dojde k "neočekávanému" přepsání pro
 buď nová deklarace proměnné `var i;` uvnitř funkce `fibonacci`, čímž dojde k
 jejímu překrytí, nebo pojmenování proměnné jiným identifikátorem.
 
+###Globální jmenné prostory
+Ukázkovým místem kolize názvů se může stát globální rozsah, kde mohou různé
+knihovny použité v programu snadno navzájem kolidovat, pokud vhodně neskryjí
+svoje vnitřní funkce a proměnné.
