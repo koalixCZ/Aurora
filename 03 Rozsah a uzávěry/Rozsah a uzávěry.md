@@ -599,13 +599,13 @@ pro tuto knihovnu coby jmenný prostor (_namespace_). Funkcionalita určená k
 zveřejnění je pak realizována jako vlastnosti tohoto objektu spíše než
 identifikátory na nejvyšším lexikálním rozsahu.
 ```JavaScript
-var Library = {
+var MathLibrary = {
     version: "1.2.3",
-    a: function () {
-        // ...
+    addition: function (a, b) {
+        return a + b;
     },
-    b: function () {
-        // ...
+    subtraction: function (a, b) {
+        return a - b;
     }
 }
 ```
