@@ -644,3 +644,15 @@ var r = 2;
 
 console.log(r);         // 2
 ```
+Namísto zacházení s funkcí jako se standardní deklarací je s ní naloženo jako s
+výrazem - _function expression_, viz
+[Immediately Invoked Function Expression (IIFE)](../02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md#immediately-invoked-function-expression-iife).
+
+Hlavní rozdíl mezi deklarací a výrazem je k čemu směřuje jméno coby
+identifikátor. V prvním případě je to k vnějšímu rozsahu, můžeme přímo zavolat
+`a()`. Ve druhém pouze k vnitřku vlastní funkce. Ukrytí jména v sobě samém
+znamená, že nedochází k zanášení vnějšího rozsahu.
+
+Nejjednodušší cesta jak rozlišit mezi deklarací a výrazem je pozice slova
+`function` v příkazu (nikoliv na řádku). Je-li `function` první věc v příkazu,
+jde o deklaraci, jinak se jedná o výraz.
