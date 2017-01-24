@@ -609,3 +609,38 @@ var MathLibrary = {
     }
 }
 ```
+##Funkce jako rozsahy
+Obalením jakékoliv části kódu funkcí ukryje deklarace proměnných, nebo funkcí z
+vnějšího rozsahu do vnitřního rozsahu funkce.
+```JavaScript
+var r = 2;
+
+function a() {          // <-- obalující funkce
+	var r = 1;
+	
+	console.log(r);     // 1
+}                       // <-- obalující funkce
+a();                    // <-- zavolání obalující funkce
+
+console.log(r);         // 2
+```
+Jakoliv je tato tecnika funkční, není ideální, neboť se tu vyskytuje několik
+problémů. Za prvé, deklarování funkce `a` samo o sobě zanáší uzavírající (v
+tomto případě globální) rozsah. Za druhé, je nutné explicitně zavolat funkci
+`a();`, aby došlo k provedení zabaleného kódu.
+
+Bylo by ideální, pokud by funkce nepotřebovala jméno (či spíše aby její jméno 
+nezanášelo vnější rozsah) a pokud by bylo provedena automaticky.
+
+Naštěstí má JS řešení pro oba problémy.
+```JavaScript
+var r = 2;
+
+(function a() {
+    var r = 1;
+
+    console.log(r);     // 1
+})();
+
+console.log(r);         // 2
+```
