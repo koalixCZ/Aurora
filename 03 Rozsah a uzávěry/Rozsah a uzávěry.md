@@ -684,3 +684,16 @@ setTimeout(function timeoutHandler() {
     console.log("Počkali jste jednu minutu a... svět se změnil.");
 }, 60000);
 ```
+###Bezprostřední vykonání výrazu funkce
+Zabalením výrazu funkce do závorek `( )` je možné funkci provést přidáním
+dalšího páru `()` na konec.
+```JavaScript
+(function a() {
+    console.log("Ahoj");
+})();
+```
+První pár vytváří funkci jako výraz, druhý ji zavolá. Tomuto vzoru se říká IIFE
+([_Immediately Invoked Function Expression_](../02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md#immediately-invoked-function-expression-iife)).
+Jak již bylo uvedeno, IIFE nepotřebuje název, obvyklejší forma je anonymní,
+nicméně její pojmenování přináší výše uvedené výhody, je tedy dobrým postupem si
+ji osvojit.
