@@ -610,7 +610,7 @@ var MathLibrary = {
 }
 ```
 ##Funkce jako rozsahy
-Obalením jakékoliv části kódu funkcí ukryje deklarace proměnných, nebo funkcí z
+Obalením jakékoliv části kódu funkcí ukryje deklarace proměnných nebo funkcí z
 vnějšího rozsahu do vnitřního rozsahu funkce.
 ```JavaScript
 var r = 2;
@@ -624,13 +624,13 @@ a();                    // <-- zavolání obalující funkce
 
 console.log(r);         // 2
 ```
-Jakoliv je tato tecnika funkční, není ideální, neboť se tu vyskytuje několik
+Jakoliv je tato technika funkční, není ideální, neboť se tu vyskytuje několik
 problémů. Za prvé, deklarování funkce `a` samo o sobě zanáší uzavírající (v
 tomto případě globální) rozsah. Za druhé, je nutné explicitně zavolat funkci
 `a();`, aby došlo k provedení zabaleného kódu.
 
 Bylo by ideální, pokud by funkce nepotřebovala jméno (či spíše aby její jméno 
-nezanášelo vnější rozsah) a pokud by bylo provedena automaticky.
+nezanášelo vnější rozsah) a pokud by byla provedena automaticky.
 
 Naštěstí má JS řešení pro oba problémy.
 ```JavaScript
@@ -645,7 +645,7 @@ var r = 2;
 console.log(r);         // 2
 ```
 Namísto zacházení s funkcí jako se standardní deklarací je s ní naloženo jako s
-výrazem - _function expression_, viz
+výrazem funkce - _function expression_, viz
 [Immediately Invoked Function Expression (IIFE)](../02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md#immediately-invoked-function-expression-iife).
 
 Hlavní rozdíl mezi deklarací a výrazem je k čemu směřuje jméno coby
@@ -656,3 +656,31 @@ znamená, že nedochází k zanášení vnějšího rozsahu.
 Nejjednodušší cesta jak rozlišit mezi deklarací a výrazem je pozice slova
 `function` v příkazu (nikoliv na řádku). Je-li `function` první věc v příkazu,
 jde o deklaraci, jinak se jedná o výraz.
+###Anonymní versus pojmenované
+Pravděpodobně vám není cizí _function expression_ použitý jako parametr pro
+zpětné volání:
+```JavaScript
+setTimeout(function () {
+    console.log("Počkali jste jednu minutu a... svět se změnil.");
+}, 60000);
+```
+Říká se tomu anonymní výraz funkce (_anonymous function expression_), protože
+`function() {...` nemá jmenný identifikátor. Výraz může být anonymní, deklarace
+naopak musí mít jméno. Anonymní výrazy funkce jsou jednoduché a snadné na psaní
+a řada knihoven tíhne k tomuto stylu kódu, který má však také několik nevýhod k
+uvážení:
+ 1. Anonymní funkce nemají jméno k zobrazení v zásobníku volání, což činí ladění
+ programu složitějším.
+ 2. Pokud je třeba aby funkce odkazovala sama na sebe (rekurze, odhlášení sebe
+ sama jako handleru události po jejím zpracování), je v případě nepojmenované
+ funkce nutno použít zastaralou a odmítanou konstrukci `arguments.callee`.
+ 3. Chybějící jméno snižuje čitelnost a pochopitelnost kódu.
+
+Výrazy funkce jsou užitečným nástrojem a otázka zda anonymní, či pojmenované,
+na tom nic nemění. Pojmenování vyřeší všechny uvedené nevýhody a nemá žádné
+stinné stránky. Doporučení zní, vždy pojmenovávat výrazy funkce.
+```JavaScript
+setTimeout(function timeoutHandler() {
+    console.log("Počkali jste jednu minutu a... svět se změnil.");
+}, 60000);
+```
