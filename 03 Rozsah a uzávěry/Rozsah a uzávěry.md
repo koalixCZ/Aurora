@@ -694,6 +694,15 @@ dalšího páru `()` na konec.
 ```
 První pár vytváří funkci jako výraz, druhý ji zavolá. Tomuto vzoru se říká IIFE
 ([_Immediately Invoked Function Expression_](../02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md#immediately-invoked-function-expression-iife)).
-Jak již bylo uvedeno, IIFE nepotřebuje název, obvyklejší forma je anonymní,
-nicméně její pojmenování přináší výše uvedené výhody, je tedy dobrým postupem si
+Jak již bylo uvedeno, IIFE nepotřebuje název. Obvyklejší forma je anonymní,
+nicméně její pojmenování přináší výše uvedené výhody a je tedy dobrým postupem
 ji osvojit.
+
+Existuje nepatrný rozdíl mezi formou zápisu IIFE:
+```JavaScript
+(function a () {})();
+
+(function b () {}());
+```
+Obě formy jsou identické co se funkcionality týče a a jejich volba je čistě
+záležitostí stylu.
