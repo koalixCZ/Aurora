@@ -704,5 +704,18 @@ Existuje nepatrný rozdíl mezi formou zápisu IIFE:
 
 (function b () {}());
 ```
-Obě formy jsou identické co se funkcionality týče a a jejich volba je čistě
+Obě formy jsou identické co se funkcionality týče a jejich volba je čistě
 záležitostí stylu.
+
+Další vcelku běžnou variací je využití skutečnosti, že se v podstatě jedná o
+zavolání funkce a je tedy možné předat argumenty.
+```JavaScript
+var x = 1;
+
+(function a(global) {
+    var x = 2;
+    
+    console.log(x);             // 2
+    console.log(global.x);      // 1
+})(window);
+```
