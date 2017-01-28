@@ -719,3 +719,24 @@ var x = 1;
     console.log(global.x);      // 1
 })(window);
 ```
+##Bloky jako rozsahy
+Ačkoliv jsou funkce nejrozšířenějšími jednotkami rozsahu, existují i další a
+jejich použití může vést dokonce k lepšímu kódu.
+
+Mnoho jazyků (narozdíl od JS) podporuje blokový rozsah, a tak jsou na ně
+vývojáři zvyklí, zatímco ti, kdo se setkali pouze s JS mohou tento koncept
+považovat za cizí.
+
+Ani kdybyste nenapsali jediný řádek kódu v tomto stylu, jste pravděpodobně
+seznámeni s tímto běžným způsobem psaní v JS:
+```JavaScript
+for (var i = 0; i < 10; i++) {
+    console.log(i);
+}
+```
+Deklarovali jsme proměnnou `i` přímo uvnitř `for` cyklu, protože naším záměrem
+bylo využít ji pouze ve smyčce, ignorujíce skutečnost, že proměnná náleží
+obalujícímu rozsahu (funkce, nebo globální).
+
+O tom je blokový rozsah - deklarovat proměnnou co nejblíže místu, kde je
+použita.
