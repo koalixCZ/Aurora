@@ -740,3 +740,22 @@ obalujícímu rozsahu (funkce, nebo globální).
 
 O tom je blokový rozsah - deklarovat proměnnou co nejblíže místu, kde je
 použita.
+```JavaScript
+var r = 1;
+
+if (r > 0) {
+    var circumference = 2 * 3.14159 * r;
+    
+    console.log(circumference);
+}
+```
+V předchozím příkladu byla použita proměnná `circumference` pouze v kontextu
+`if`, dávalo by tedy smysl deklarovat tuto proměnnou pouze uvnitř `if` bloku.
+Kde deklarujeme proměnnou však není při použití `var` relevantní, protože vždy
+náleží vnějšímu rozsahu. Ukázka představuje falešný blokový rozsah použitý ze
+stylistických důvodů spoléhající na sebekázeň nepoužít náhodně proměnnou v tomto
+rozsahu.
+
+Blokový rozsah je nástroj pro rožšíření dříve uvedeného _principu nejnižších
+oprávnění_ od skrývání informací ve funkcích k skrývání informací v blocích
+kódu.
