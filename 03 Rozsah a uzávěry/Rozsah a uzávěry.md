@@ -760,13 +760,13 @@ Blokový rozsah je nástroj pro rožšíření dříve uvedeného _principu nejn
 oprávnění_ od skrývání informací ve funkcích k skrývání informací v blocích
 kódu.
 
-Mějmě opět příklad se smyčkou `for`:
+Mějme opět příklad s `for`:
 ```JavaScript
 for (var i = 0; i < 10; i++) {
     console.log(i);
 }
 ```
-Proč zaneřádit celý rozsah funkce proměnnou `i`, která je (nebo správně měla by
+Proč zaneřádit celý rozsah funkce proměnnou `i`, která je (nebo správně, měla by
 být), použita pouze ve `for` cyklu?
 
 Programátoři mohou upřednostňovat sebekontrolu před náhodným opětovným použitím
