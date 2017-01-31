@@ -769,3 +769,13 @@ for (var i = 0; i < 10; i++) {
 Proč zaneřádit celý rozsah funkce proměnnou `i`, která je (nebo správně měla by
 být), použita pouze ve `for` cyklu?
 
+Programátoři mohou upřednostňovat sebekontrolu před náhodným opětovným použitím
+proměnné mimo její zamyšlený účel obdržením chyby o použití neznámé proměnné.
+Blokový rozsah (pokud by byl k dispozici), by proměnnou `i` zpřístupnil pouze
+pro smyčku `for`, způsobujíce chybu, pokud by byla dotazována odjinud. To
+zabraňuje používání proměnných neočekávaným způsobem.
+
+Smutnou skutečností je, že JS nemá blokový rozsah.
+
+To je třeba vědět, než se vrhnete dále.
+###with
