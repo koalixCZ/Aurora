@@ -779,3 +779,6 @@ Smutnou skutečností je, že JS nemá blokový rozsah.
 
 To je třeba vědět, než se vrhnete dále.
 ###with
+Ačkoliv je `with` dnes již zastaralým konstruktem, představuje ukázku blokového
+rozsahu, v němž rozsah vytvořený z objektu existuje pouze po dobu příkazu `with`
+a ne ve vnějším rozsahu.
