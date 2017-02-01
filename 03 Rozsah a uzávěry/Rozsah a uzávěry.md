@@ -782,3 +782,16 @@ To je třeba vědět, než se vrhnete dále.
 Ačkoliv je `with` dnes již zastaralým konstruktem, představuje ukázku blokového
 rozsahu, v němž rozsah vytvořený z objektu existuje pouze po dobu příkazu `with`
 a ne ve vnějším rozsahu.
+
+###try/catch
+Je málo známým faktem, že ve specifikaci ES3 je proměnná deklarovaná v `catch`
+klauzuli viditelná pouze pro `catch` blok.
+```JavaScript
+try {
+    r();
+} catch (error) {
+    console.log(error);
+}
+
+console.log(error);         //  ReferenceError: error is not defined
+```
