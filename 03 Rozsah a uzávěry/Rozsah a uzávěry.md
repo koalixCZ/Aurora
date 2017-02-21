@@ -795,3 +795,22 @@ try {
 
 console.log(error);         //  ReferenceError: error is not defined
 ```
+
+###let
+ES6 přináší nové klíčové slovo `let` nacházející se po boku `var` jako jiný
+způsob deklarace proměnných.
+
+Klíčové slovo `let` připojuje deklaraci proměnné k rozsahu jakéhokoliv bloku
+(obvykle páru `{...}`), v němž je obsaženo. Jinými slovy, `let` se implicitně
+zmocní jakéhokoliv blokového rozsahu pro svoji deklaraci proměnné.
+```JavaScript
+var r = 2;
+
+if (r > 0) {
+    let circumference = 2 * 3.14159 * r;
+    
+    console.log(circumference);
+}
+
+console.log(circumference);     ReferenceError
+```
