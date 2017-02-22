@@ -817,7 +817,7 @@ console.log(circumference);     ReferenceError
 Připojení proměnné do existujícího bloku je při použití `let` implicitní. Jak se
 mění kód, může snadno dojít k omylu, kterému bloku proměnná náleží. Explicitní
 kód je více žádoucí než implicitní, či rafinovaný. Dosáhnout stylu
-zvýrazňujícího blokové rozsahy je snadné a přirozeně pasuje s tím jak pracují
+zvýrazňujícího blokové rozsahy je snadné a přirozeně funguje s tím, jak pracují
 blokové rozsahy v jiných jazycích:
 ```JavaScript
 var r = 2;
