@@ -814,3 +814,21 @@ if (r > 0) {
 
 console.log(circumference);     ReferenceError
 ```
+Připojení proměnné do existujícího bloku je při použití `let` implicitní. Jak se
+mění kód, může snadno dojít k omylu, kterému bloku proměnná náleží. Explicitní
+kód je více žádoucí než implicitní, či rafinovaný. Dosáhnout stylu
+zvýrazňujícího blokové rozsahy je snadné a přirozeně pasuje s tím jak pracují
+blokové rozsahy v jiných jazycích:
+```JavaScript
+var r = 2;
+
+if (r > 0) {
+    {   // <- vytvoří explicitní blok
+        let circumference = 2 * 3.14159 * r;
+
+        console.log(circumference);
+    }
+}
+
+console.log(circumference);     ReferenceError
+```
