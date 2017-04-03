@@ -832,3 +832,16 @@ if (r > 0) {
 
 console.log(circumference);     ReferenceError
 ```
+Můžeme vytvořit blok pro zachycení `let` jednoduchým vložením `{..}`. V tomto
+případě vytvoříme explicitní blok uvnitř `if`, který může být v budoucnu,
+v případě refaktoringu, snadno přesunut bez dopadu na obalující `if`.
+
+Deklarace pomocí `let` nejsou přesouvány na začátek bloku v němž se nachází.
+Naopak, nebude v bloku "existovat" až do svého výskytu.
+```JavaScript
+{
+    console.log(r);     // ReferenceError!
+    let r = 2;
+}
+```
+####Úklid paměti
