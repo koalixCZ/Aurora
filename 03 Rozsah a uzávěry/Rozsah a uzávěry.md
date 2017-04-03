@@ -866,3 +866,23 @@ Ačkoliv funkce `click` zpracovávající stejnojmennou událost nepotřebuje
 proměnnou `bigData` (a ta by mohla být po zavolání funkce `a` uvolněna z
 paměti), přesto bude (v závislosti na implementaci JS stroje) držena v paměti
 tak dlouho, dokud bude mít funkce `click` uzávěru přes celý rozsah.
+
+Blokový rozsah může tento problém vyřešit upřesněním, že proměnnou není třeba
+dále držet.
+```JavaScript
+function a (data) {
+    // do some stuff
+}
+
+{
+    let bigData = {};
+    
+    a(bigData);
+}
+
+var button = document.getElementById("button");
+
+button.addEventListener("click", function click (event) {
+	// do some other stuff
+}, false);
+```
