@@ -1,5 +1,5 @@
-#Rozsah a uzávěry
-##Co je _rozsah_
+# Rozsah a uzávěry
+## Co je _rozsah_
 Jedním z paradigmat téměř všech programovacích jazyků je schopnost ukládat
 hodnoty v proměnných a později je použít. Tato činnost vytváří _stav_ programu.
 
