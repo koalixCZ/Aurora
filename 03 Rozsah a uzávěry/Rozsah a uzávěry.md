@@ -845,3 +845,24 @@ Naopak, nebude v bloku "existovat" až do svého výskytu.
 }
 ```
 #### Úklid paměti
+Další důvod užitečnosti blokového rozsahu se váže k uzávěrám a uvolňování
+paměti. V stručnosti uvažujme:
+```JavaScript
+function a (data) {
+    // do some stuff
+}
+
+var bigData = {};
+
+a(bigData);
+
+var button = document.getElementById("button");
+
+button.addEventListener("click", function click (event) {
+	// do some other stuff
+}, false);
+```
+Ačkoliv funkce `click` zpracovávající stejnojmennou událost nepotřebuje
+proměnnou `bigData` (a ta by mohla být po zavolání funkce `a` uvolněna z
+paměti), přesto bude (v závislosti na implementaci JS stroje) držena v paměti
+tak dlouho, dokud bude mít funkce `click` uzávěru přes celý rozsah.
