@@ -1,4 +1,4 @@
-#Vzhůru do programování
+# Vzhůru do programování
 Zdrojový kód se skládá ze sady instrukcí zpracovávaných počítačem. V případě 
 JavaScriptu jsou přímo vykonávány - interpretovány. 
 
@@ -38,7 +38,7 @@ použití je _call expression statement_ - zavolání funkce.
 ```JavaScript
 circumference(r);
 ```
-##Spuštění programu
+## Spuštění programu
 JavaScript je interpretovaný jazyk. Pro spuštění tak vyžaduje běhové prostředí.
 Tím může být webový prohlížeč (Internet Explorer, Firefox, Chrome...), nebo 
 jiné běhové prostředí, např. [Node.js](https://nodejs.org/).
@@ -55,7 +55,7 @@ lze získat funkcí `console.log()`.
 
 ![Vložení hodnoty](img2.png)
 
-##Operátory
+## Operátory
 Operátory představují akce s proměnnými, nebo hodnotami. Operátor rovnítko `=`
 se používá pro přiřazení hodnoty na pravé straně do proměnné uvedené na levé
 straně.
@@ -80,7 +80,7 @@ Priorita operátorů určuje, v jakém pořadí jsou aplikovány, viz
 Pro úplný výčet operátorů s příklady viz 
 [MDN - Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators).
 
-##Hodnoty a typy
+## Hodnoty a typy
 Každá hodnota, s níž se v kódu pracuje, má typ. Ten pomáhá k upřesnění operací,
 jež lze s danou hodnotou provádět. I v reálném životě se sčítají a odčítají
 čísla, tvoří slova pomocí předpon a přípon, či odpovídá prostým ano/ne.
@@ -101,7 +101,7 @@ animal = "wombat";
 ```
 Kromě primitivních hodnot pracuje JS také s komplexními typy (pole, objekty,
 funkce...), které budou popsány dále.
-##Konverze typů
+## Konverze typů
 Konverze typů umoňuje převádět hodnoty do formy, která je nutná pro další
 operace. Vrátíme-li se k ukázce získání vstupu  (poloměr koule) od uživatele,
 ```JavaScript
@@ -158,7 +158,7 @@ Hodnota | `number` | `string` | `boolean`
 `null` | `0` | `"null"` | `false`
 `undefined` | `NaN` | `"undefined"` | `false`
 
-##Komentáře v kódu
+## Komentáře v kódu
 Kód se jednou píše a stokrát čte. Ačkoliv se názory na komentáře v kódu různí,
 pravdou je, že kód se píše pro lidi. Čas od času i sebelepší programátor
 potřebuje pochopit _proč_ je to právě tak. Komentáře jsou součástí kódu.
@@ -179,7 +179,7 @@ surface = 4 * 3.14159 * r * r;
 ```
 Interpret komentáře ignoruje, tedy cokoliv co je uvedeno uvnitř nemá vliv na běh
 programu.
-##Proměnné
+## Proměnné
 Proměnné slouží k uložení a přenosu hodnoty. Lze na ně jednoduše pohlížet jako
 na symbolický pojmenovaný kontejner. Vzhledem k tomu, že JS je dynamicky
 typovaný jazyk, může proměnná v čase obsahovat různé typy hodnot. Naopak ve
@@ -202,13 +202,13 @@ var r = prompt("Zadej poloměr");
 r = parseInt(r);
 console.log(typeof r);    // 'number'
 ```
-##Bloky
+## Bloky
 Bloky představují sadu příkazů uzavřených ve složených závorkách `{...}`, které 
 jsou vykonáváný společně. V JS se samostatně nepoužívají, neboť nevytváří obor
 platnosti (o tom bude pojednádno dále), ale svoje uplatnění nachází například u
 podmínek nebo cyklů.
 
-##Podmínky
+## Podmínky
 Rozhodování (větvení kódu) se děje pomocí podmínek. Nejběžněji se vyskytuje
 konstrukce `if`, která vyžaduje logický výraz s výsledkem ano/ne (`true`,
 `false`). Pokud je výraz vyhodnocen jako pravdivý (`true`), provede se
@@ -255,7 +255,7 @@ default:
     break
 }
 ```
-##Smyčky
+## Smyčky
 Projít seznam prvků, provést výpočet pro množinu čísel; smyčky slouží k
 opakování sady operací, dokud není splněna podmínka. JS disponuje několika
 způsoby jak takovou smyčku provést. Jednou z nich je konstrukce, kde se za
@@ -309,7 +309,7 @@ for (r = 1; r < 10; r++) {
 ```
 Z kódu je zřejmé, že `for` cyklus je co do zápisu nejkompaktnější, běžně se
 užívá například při procházení polí.
-##Funkce
+## Funkce
 Dosud byl náš kód sérií postupně vykonávaných příkazů. Pokud bychom chtěli
 tutéž část použít vícekrát, byli bychom nuceni ji napsat znovu. Tím by utrpěla
 čitelnost i udržovatelnost. Funkce umožňuje vytvoření pojmenovaného bloku kódu,
@@ -344,7 +344,7 @@ V ukázce jsme také vytvořili další funkci `power`, jejímž úkolem je vypo
 druhou mocninu čísla předaného jako paramter. Funkce neslouží pouze k odstranění
 duplicit v kódu, ale obecněji k jeho strukturování. Správné rozdělení
 odpovědnosti vede k čitelnějšímu kódu.
-#Rozsah
+# Rozsah
 Rozsah lze pojmout jako hřiště. Na turnaji může hrát více týmů, ale každá hra se
 odehrává na jednom konkrétním hřišti. V programování se tomuto konceptu říká
 rozsah (_scope_), technicky lexikální rozsah (_lexical scope_). V JS má každá
@@ -394,7 +394,7 @@ function sphere() {
 }
 sphere();
 ```
-##Shrnutí
+## Shrnutí
 Sebevíce komplexní program se skládá z dílků, zde jsou základní z nich: 
 
  * _operátory_ - provádějí akce

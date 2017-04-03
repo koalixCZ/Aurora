@@ -31,7 +31,7 @@ Ačkoliv by bylo jednodušší udělat překlad, anebo přímo odkázat, cílem 
 kompletní průvodce, nýbrž co nejstručnější (a přitom dostatečný) pohled na
 JS, protože stále platí - kdo se chce naučit psát, musí psát.
 
-##Obsah
+## Obsah
 * [Vzhůru do programování](01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md)
 * [Vzhůru do JavaScriptu](02%20Vzh%C5%AFru%20do%20JavaScriptu/Vzh%C5%AFru%20do%20JavaScriptu.md)
 * [Rozsah a uzávěry](03%20Rozsah%20a%20uzávěry/Rozsah%20a%20uzávěry.md)

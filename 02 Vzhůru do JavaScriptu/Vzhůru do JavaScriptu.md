@@ -1,5 +1,5 @@
-#Vzhůru do JavaScriptu
-##Hodnoty a typy
+# Vzhůru do JavaScriptu
+## Hodnoty a typy
 V [úvodní kapitole](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#hodnoty-a-typy)
 bylo zmíněno, že v JS mají hodnoty typ. Základními (vestavěnými) typy jsou:
  * `string`
@@ -36,7 +36,7 @@ console.log(typeof a);      // "object"
 a = {b: "c"};
 console.log(typeof a);      // "object"
 ```
-##Objekty
+## Objekty
 Typ `object` odkazuje na hodnotu, v níž je možné nastavovat vlastnosti a
 každá vlastnost může držet hodnotu libovolného typu.
 ```JavaScript
@@ -66,7 +66,7 @@ var obj = {
 var b = "a";
 console.log(obj[b]);        // Ahoj sluníčko
 ```
-###Pole
+### Pole
 Pole (_array_) je typ objektu, v němž jsou hodnoty libovolného typu uloženy na
 číselně indexovaných pozicích.
 ```JavaScript
@@ -103,7 +103,7 @@ console.log(Array.isArray([]));     // true
 V JS je objekt _asociativní_ pole. Bylo by proto možné použít jména vlastností
 numerické hodnoty (`0, 1, 2`), nicméně přirozený způsob používání je takový, že
 `object` se používá pro pojmenované vlastnosti a `array` pro číselně pozicované.
-###Mazání prvků - operátor `delete`
+### Mazání prvků - operátor `delete`
 Odstranit prvek z objektu, nebo pole, je možné pomocí operátoru `delete`.
 ```JavaScript
 var obj = {
@@ -157,7 +157,7 @@ console.log(array.length);      // 0
 array[9] = "j";
 console.log(array.length);      // 10
 ```
-###Funkce
+### Funkce
 Dalším podtypem typu `object` je funkce (`function`). Operátor `typeof` vrací v
 jejím případě správně `"function"`.
 ```JavaScript
@@ -178,7 +178,7 @@ Objekt typu `object` je vhodný k ukládání struktur nebo jako mapa
 (prvky pole je také možné řadit). Funkce slouží coby pojmenovaný blok kódu,
 práci s jejími vlastnostmi je spíše doménou řízení toku programu než ukládání
 uživatelských dat.
-##Metody vestavěných typů
+## Metody vestavěných typů
 Vestavěné typy mají k dispozici metody a vlastnosti umožňující operace nad daty.
 ```JavaScript
 var a = "Ahoj sluníčko :)";
@@ -194,11 +194,11 @@ primitivní typ (`number`, `string`, `boolean`) má odpovídající objektovou o
 s primitvní hodnotou začne pracovat jako s objektem, JS ji automaticky převede
 do konkrétního objektového protějšku a poté, co je metoda zavolána, ji vrátí
 zpět do jejího literálního typu.
-##Porovnávání hodnot
+## Porovnávání hodnot
 Dva hlavní typy porovnávání jsou ověřovíní na _rovnost_ a _nerovnost_. Výsledkem
 provnávání je, bez ohledu na typ porovnávaných hodnot, logická (`boolean`)
 hodnota (`true`, nebo `false`).
-###Typová konverze (přetypování)
+### Typová konverze (přetypování)
 V první kapitole již byla [typová konverze](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#konverze-typů)
 stručně zmíněna. V JS se vyskytuje dvojí, a to _implicitní_ a _explicitní_.
 Explicitní typová konverze znamená, že z kódu je jasně čitelné z jakého typu na
@@ -219,7 +219,7 @@ var b = a * 2;
 console.log(typeof a);      // "string"
 console.log(typeof b);      // "number"
 ```
-###Pravdivé & nepravdivé
+### Pravdivé & nepravdivé
 V [první kapitole](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#konverze-typů)
 se v tabulce implicitních konverzí objevila pravdivá a nepravdivá (_truthy_ a
 _falsy_) povaha hodnot, tedy jakým způsobem jsou v logických operacích chápány
@@ -232,7 +232,7 @@ Kráce lze vyjádřit, že v JS jsou hodnoty:
  * `false`
 považovány jako nepravdivé (_falsy_), všechny ostatní jako pravdivé (_truthy_).
 
-##Rovnost
+## Rovnost
 JS poskytuje čtyři operátory rovnosti, a to: `==`, `===`, `!=`,
 `!==`, kde znak `!` představuje negaci (_ne-rovnost_, nezaměňovat s nerovností).
 
@@ -289,7 +289,7 @@ Standardně je `array` při porovnávání s primitivní hodnotou převedena na 
 se zdát, že dvě identická pole se v tom případě budou navzájem rovnat, ale není
 tomu tak. Důvodem je ověřování referencí objektů.
 
-##Nerovnost
+## Nerovnost
 Relační operátory `<`, `>`, `<=` a `>=` se typicky používají pro porovnávání
 ordinální hodnot - čísel (`3 < 4`).
 
@@ -316,7 +316,7 @@ console.log(a == b);        // false
 ```
 Porovnáné `==` selže, protože ani `1 == NaN`, ani `"1" == "ahoj"` není pravdivé.
 
-##Pojmenování proměnných
+## Pojmenování proměnných
 V JS musí být jména proměnných (a funkcí) validními identifikátory. Při zahrnutí
 netradičních znaků z Unicode sady jsou pravidla komplexní, pokud uvažujeme pouze
 typické ASCII alfanumerické znaky, musí identifikátor začínat `a-z`, `A-Z`, `$`,
@@ -325,11 +325,11 @@ nebo `_` a obsahovat může kterýkoliv z těchto znaků včetně číslic `0-9`
 Stejná pravidla platí i pro názvy vlastností s tou výjimkou, že zatímco název
 vlastnosti může být i klíčové slovo (např. `for`, `in`, `delete`...), stejně
 jako `null`, `true`, `false`, název proměnné nikoliv.
-##Rozsahy funkce
+## Rozsahy funkce
 Klíčovým slovem `var` se deklaruje proměnná, která patří do aktuálního oboru
 funkce, nebo do globálního, je-li vně jakékoliv funkce.
 
-###Vyzvedávání deklarace
+### Vyzvedávání deklarace
 Kdekoliv se objeví deklarace `var`, je vztažena k aktuálnímu rozsahu a je v něm
 odkudkoliv dostupná. Tomuto chování, kdy je deklarace `var` "přesunuta" na
 vrchol obalujícího rozsahu, se říká vyzvedávání (_hoisting_).
@@ -351,7 +351,7 @@ Je zvykem při psaní kódu, že by deklarace měla být uvedena před prvním p
 V předchozím případě byly v globálním rozsahu definovány proměnná `r = 2` a
 funkce `circumference()`. Ta byla zavolána před vlastní deklarací a stejně tak i
 v ní byla použita proměnná `r = 1` deklarovaná na konci funkce.
-##Vnořené rozsahy
+## Vnořené rozsahy
 S rozsahy jsme se setkali již v
 [první kapitole](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#rozsah).
 Proměnná je dostupná kdekoliv uvnitř rozsahu, v němž je deklarována, a ve všech
@@ -385,7 +385,7 @@ chování v závislosti na použití
 [`"strict mode"`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 V případě `"strict mode"` nastane chyba, jinak se proměnná stává globální
 proměnnou (chyba!), proto je nutné ji vždy formálně deklarovat.
-##Podmínky
+## Podmínky
 Stručný úvod do podmínek přinesla
 [první kapitola](../01%20Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD/Vzh%C5%AFru%20do%20programov%C3%A1n%C3%AD.md#podmínky),
 v níž byly zmíněny konstrukce `if` - `else`, `switch` a [podmínkový (_ternární_)
@@ -451,7 +451,7 @@ var o = r > 0 ? circumference(r) : 0;
 //    o = 0;
 // }
 ```
-##Strict mode
+## Strict mode
 Od verze jazyka ES5 je v JS dostupný ["strict mode"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 Jedná se o režim, kdy jsou aktivní některé restrikce, jejichž úkolem je pomáhat
 držet kód bezpečnější a snáze optimalizovatelný pro běhové prostředí.
@@ -501,7 +501,7 @@ circumference();
 ```
 Používejte "strict mode". Není to jen další prostředek k lepšímu a rychlejšímu
 kódu, je také předzvěstí budoucího směru jazyka, kam se bude rozvíjet.
-##Funkce jako hodnota
+## Funkce jako hodnota
 Zatím bylo o funkci v JS pojednáno jako o pojmenovaném opakovatelně volaném
 bloku kódu, který vytváří vlastní rozsah platnosti. Doposud jsme také
 deklarovali funkci následujícím způsobem:
@@ -533,7 +533,7 @@ Ačkoliv je _anonymous function expression_ běžný a používá se velmi čast
 doporučuje se používat _named function expression_, a to například z důvodu
 lepší čitelnosti výpisu volání (_callstack_) při ladění programu. Pojmenování
 funkce také usnadňuje některé pokročilé programovací techniky.
-###Immediately Invoked Function Expression (IIFE)
+### Immediately Invoked Function Expression (IIFE)
 Pod pojmem IIFE se rozumí výraz, v němž je funkce provedena ihned poté, co byla
 definována. V předchozích případech, pokud jsme chtěli vykonat funkci, bylo
 nutné vložit například `circumference()`.
@@ -575,7 +575,7 @@ function circumference(r) {
     return 2 * PI * r;
 }
 ```
-##Uzávěra
+## Uzávěra
 Uzávěra je důležitý koncept v JS přirovnatelný k časové schránce. Je to způsob,
 jak si _"zapamatovat"_ a umožnit přístup k proměnným z rozsahu funkce, a to
 dokonce i poté, kdy tato funkce ukončila svůj běh.
@@ -605,7 +605,7 @@ Jakkoliv může vypadat předcházející příklad složitě, koncept uzávěry
 jednoduchý a souvisí s rozsahem (_scope_), respektive jejich řetězem
 (_scope chain_). Ten je dán při definici a vytváří se tak ještě před zavoláním
 funkce.
-##`this`
+## `this`
 Dalším důležitým a stejně tak i málo pochopeným konceptem v JS je `this`.
 
 Klíčové slovo `this` představuje referenci na objekt, v jehož kontextu funkce
@@ -677,7 +677,7 @@ var mySphere = Sphere(1);
 console.log(mySphere);          // undefined
 console.log(r);                 // 1
 ```
-##Prototypy
+## Prototypy
 Mechanismus prototypu slouží v JS k sdílení vlastností mezi objekty, proto se v
 této souvislosti hovoří také o _prototypové dědičnosti_.
 
@@ -708,14 +708,14 @@ b.z = 6;
 
 console.log(b.z);               // 6
 ```
-##Vývoj jazyka
+## Vývoj jazyka
 JavaScript je jednou z implementací skriptovacího jazyka ECMAScript, který je
 průběžně vyvíjen a následně standardizován v jednotlivých edicích. V současnosti
 je plně podporována verze ES5.1 a existuje specifikace ES6, jejíž podpora se
 implementuje. Již nyní však lze používat některé nové rysy jazyka, a to pomocí
 dvou technik - polyfily (_polyfilling_) a transpilace (_transpilling_).
 
-###Polyfily
+### Polyfily
 Technika polyfilů spočívá v převzetí definice nové funkcionality a její
 přenesení do staršího běhového prostředí JS. Příkladem budiž metoda
 `Number.isNaN()` z ES6, která nahrazuje původní `isNaN()`.
@@ -731,7 +731,7 @@ vlastnost je tímto způsobem plně zastupitelná, mohou se vyskytovat rozdíly.
 Pro jednoduchost lze využít například existující
 [ES5-Shim](https://github.com/es-shims/es5-shim) a
 [ES6-Shim](https://github.com/es-shims/es6-shim).
-###Transpilace
+### Transpilace
 Možnosti polyfilů jsou limitovány novou syntaxí. Řešením jak ji umožnit v kódu
 používat _transpilace_ (transformace + kompilace), kdy nástroj (_transpiler_)
 převede kód napsaný novou syntaxí do staré, aby byl srozumitelný pro běhové
@@ -745,7 +745,7 @@ Důvody proč používat novou syntaxi jsou:
 
 Populárními transpilery jsou dnes například [Babel](https://babeljs.io/) nebo
 [Traceur](https://github.com/google/traceur-compiler).
-##Globální objekt a hostující prostředí
+## Globální objekt a hostující prostředí
 JS kód musí být obsažen uvnitř objektu, proto běhové prostředí na pozadí vytváří
 globální objekt. Jeho součástí je i tzv. _hostující_ objekt pro interakci mezi
 vlastním JS strojem a zbytkem světa.
@@ -759,7 +759,7 @@ pro práci s DOM (_Document Object Model_). Technicky vzato je to
 hostujícího prostředí patří také `console.log()`. Tyto metody nejsou součástí JS
 stroje ani specifikace jazyka. Vyskytují se však v každém kódu, který budete
 psát.
-##Statická kontrola kódu
+## Statická kontrola kódu
 Důležitým pomocníkem je nástroj pro statickou kontrolu kódu (_linter_), jehož
 úkolem je upozorňovat na potencionální chyby a odchylky od dohodnutého stylu,
 které sice nemusí vést přímo k chybě, ale mohou podstatným způsobem snižovat
@@ -767,7 +767,7 @@ které sice nemusí vést přímo k chybě, ale mohou podstatným způsobem sni�
 
 Mezi populární dnes patří například [ESLint](http://eslint.org/).
 
-##Shrnutí
+## Shrnutí
 Tato část prošla základní rysy JS
  * Typy, hodnoty a jejich porovnávání
  * Rozsahy funkce a předávání funkce jako hodnoty

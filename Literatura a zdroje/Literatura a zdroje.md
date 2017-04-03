@@ -1,4 +1,4 @@
-#Literatura a zdroje
+# Literatura a zdroje
 ## Literatura
 
 * [SIMPSON, Kyle: _You don't know JS: Scope & closures_, 2014](http://shop.oreilly.com/product/0636920026327.do)

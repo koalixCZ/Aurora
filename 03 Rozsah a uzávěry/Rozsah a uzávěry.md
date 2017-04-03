@@ -5,7 +5,7 @@ hodnoty v proměnných a později je použít. Tato činnost vytváří _stav_ p
 
 Zařazení proměnných do jazyka otevírá problém - kde jsou uloženy a jak je
 nalézt - což hovoří pro potřebu sady pravidel, kterou nazýváme _rozsah_.
-###Teorie kompilátoru
+### Teorie kompilátoru
 JS je _dynamický_, nebo také _interpretovaný_ jazyk. Znamená to, že při každém
 spuštění provede JS stroj několik kroků, aby porozuměl tomu, co má vykonat.
 
@@ -20,7 +20,7 @@ dohromady představují gramatickou strukturu programu - AST strom
 
 Všechny tyto operace dohromady zaberou JS stroji mikrosekundy.
 
-###Porozumění _rozsahu_
+### Porozumění _rozsahu_
 Vezměme následující příklad:
 ```JavaScript
 var a = 2;
@@ -45,7 +45,7 @@ Shrnutí: pro přiřazení hpdnoty proměnné se vykonají dvě odlišné akce.
 2. _Stroj_ vyhledá proměnnou v aktuálním rozsahu a je-li nalezena, přiřadí ji
 hodnotu.
 
-###V řeči kompilátoru
+### V řeči kompilátoru
 Když _stroj_ provádí kód vyprodukovaný _kompilátorem_, musí vyhledat proměnnou
 `a`, aby ověřil, zda byla deklarována. Způsob vyhledávání ovlivňuje výsledek.
 
@@ -92,7 +92,7 @@ potřebuje RHS referenci pro objekt `console` a další pro jeho metodu `log`.
 4. Konečně je zde také LHS/RHS výměna předávané hodnoty `2` do metody `log`,
 uvnitř jejíž nativní implementace lze předpokládat přiřazení hodnoty `2` do
 nějakého parametru (například `arg1`).
-###Vnořený rozsah
+### Vnořený rozsah
 Tak jako může být blok nebo funkce vnořena uvnitř jiného bloku nebo funkce,
 může být vnořen i rozsah uvnitř jiného rozsahu. Tedy, není-li proměnná nalezena
 v bezprostředním rozsahu, ověřuje _stroj_ další nadřazený (vnější)
@@ -116,7 +116,7 @@ aktuálně vykonávaném rozsahu, kde hledá proměnnou. Není-li nalezena, pokr
 nadřazeném a takto postupuje, dokud není dosažen globální rozsah. Zde končí bez
 ohledu na to, zda byla proměnná nalezena, nebo ne.
 
-###Chyby
+### Chyby
 Proč je důležité, jestli voláme LHS, nebo RHS?
 
 Neboť oba principy se zachovají odlišně v případě, kdy proměnná nebyla
@@ -177,7 +177,7 @@ Nenaplněná RHS vrací `ReferenceError`. Nenaplněná LHS vrací automatickou, 
 globálním rozsahu vytvořenou referenci toho jména (není-li "strict mode"),
 nebo `ReferenceError` (v případě "strict mode").
 
-##Lexikální rozsah
+## Lexikální rozsah
 V [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah) jsme
 definovali _"rozsah"_ jako sadu pravidel určujících jak _stroj_ vyhledává
 proměnnou podle jejího jména buď v aktuálním rozsahu, nebo v některém
@@ -187,7 +187,7 @@ Existují dva hlavní modely fungování rozsahu. První z nich, používaný v�
 programovacích jazyků, se nazývá _lexikální rozsah_, druhý se nazývá _dynamický
 rozsah_. My se zaměříme na _lexikální rozsah_, který je používán JavaScriptem.
 
-###Čas lexingu
+### Čas lexingu
 Jak bylo řečeno v [první kapitole](./Rozsah%20a%20uz%C3%A1v%C4%9Bry.md#co-je-rozsah),
 první tradiční fáze standardního překladače se nazývá _lexing_ (také
 _tokenizace_). Pro zopakování, _lexing_ přezkoumá textové řetězce zdrojového
@@ -246,7 +246,7 @@ třídy (_first class citizens_), jako je `a`, `b` a `c`. Existuje-li v nějaké
 nalezení identifikátoru `x`. Jakmile je nalezen, jsou pro `y` a `z` aplikována
 pravidla pro pro přístup k vlastnostem.
 
-###Podvádění lexikálního rozsahu
+### Podvádění lexikálního rozsahu
 Je-li lexikální rozsah definován pouze tam, kde je deklarována funkce, což je
 pouze v době autorova návrhu, jak je možné podvádět lexikální rozsah za běhu?
 
@@ -254,7 +254,7 @@ JS má dva takové mechanismy, oba jsou velkou částí komunity přijímány s
 nelibostí coby špatný zvyk. Typický protiargument však obvykle postrádá pointu -
 podvádění lexikálního rozsahu vede k horšímu výkonu kódu.
 
-####eval
+#### eval
 Funkce `eval()` dostává jako argument textový řetězec a s jeho obsahem zachází
 tak, jako by to byl programátorem zapsaný kus kódu. Jinými slovy, je možné
 generovat kód uvnitř napsaného kódu a spouštět jej, jako by vznikl již v době
@@ -317,7 +317,7 @@ v kódu také vyhýbat.
 Případy použití dynamicky generovaného kódu v programu jsou vzácné, jelikož
 dopad na výkon za tuto schopnost téměř nikdy nestojí.
 
-####with
+#### with
 Další dnes již zastaralou konstrukcí v JS švindlující s lexikálním rozsahem je
 klíčové slovo `with`.
 
@@ -397,7 +397,7 @@ Je to poněkud zvláštní vidět `with` měnící za běhu programu objekt a je
 vlastnosti do rozsahu s identifikátory, ovšem je to nejsrozumitelnější
 vysvětlení toho, co lze prakticky sledovat.
 
-###Výkon
+### Výkon
 Oba - `eval()` i `with` podvádí lexikální rozsah modifikací, nebo rovnou
 vytvořením nového lexikálního rozsahu za běhu programu.
 
@@ -421,7 +421,7 @@ Kód má tendenci běžet pomaleji pouze samotnnou přítomností `eval()` nebo 
 a nezáleží na tom jak chytrý může být stroj ve zkoušení omezovat vedlejší efekty
 pesimistických předpokladů.
 
-###Shrnutí
+### Shrnutí
 Lexikální rozsah znamená rozsah definovaný v době vzniku kódu na základě
 rozhodnutí jeho autora, kde jsou funkce deklarovány. Lexikální fáze kompilace
 (_lexing_) je schopná poznat kde a jak jsou identifikátory deklarovány, a tak
@@ -442,7 +442,7 @@ pomaleji. Jednoznačné doporučení je tyto kosntrukce nepoužívat.
 Co vytváří nový rozsah? Je to pouze funkce, nebo mohou i další struktury v JS
 vytvářet nový rozsah?
 
-###Rozsah od funkcí
+### Rozsah od funkcí
 Nejběžnější odpoveď na tuto otázku je, že JavaScript má na funkcích založený
 rozsah, tedy každá deklarovaná funkce pro sebe vytváří svůj vlastní rozsah.
 Není to však úplně pravda.
@@ -477,7 +477,7 @@ funkci a mohou být využity v celém jejím rozsahu. Tento přístup na jedné 
 umožňuje využít dynamických vlastností jazyka, na druhou stranu existence
 proměnných v celé funkci může vést k nečekaným pastem.
 
-###Skrývání v rozsahu
+### Skrývání v rozsahu
 Tradiční pojetí funkcí spočívá v tom, že ji deklarujete a následně napíšete její
 kód. Opačné myšlení je srovnatelně silné a užitečné; vezměte část kódu, který
 jste napsali a zabalte jej do funkce. Praktickým dopadem je vytvoření nového
@@ -533,7 +533,7 @@ Nyní jsou `b` i `y()` ukryté před vnějšími vlivy a jsou kontrolovány pouz
 funkcí `x`. Funkcionalita ani výsledek nejsou dotčeny, ale návrh udržuje
 soukromé informace ukryté, což je považováno za lepší řešení.
 
-###Vyhýbání se kolizím
+### Vyhýbání se kolizím
 Další výhodou skrývání proměnných a funkcí uvnitř rozsahu je vyhýbání se
 bezděčným kolizím mezi dvěma identifikátory se stejným názvem, ale různě
 zamýšleným použitím. Kolize ústí v často neočekávané přepisování hodnot.
@@ -588,7 +588,7 @@ Důvodem je, že v funkci `fibonacci` dojde k "neočekávanému" přepsání pro
 buď nová deklarace proměnné `var i;` uvnitř funkce `fibonacci`, čímž dojde k
 jejímu překrytí, nebo pojmenování proměnné jiným identifikátorem.
 
-###Globální jmenné prostory
+### Globální jmenné prostory
 Ukázkovým místem kolize názvů se může stát globální rozsah, kde mohou různé
 knihovny použité v programu snadno navzájem kolidovat, pokud vhodně neskryjí
 svoje vnitřní funkce a proměnné.
@@ -609,7 +609,7 @@ var MathLibrary = {
     }
 }
 ```
-##Funkce jako rozsahy
+## Funkce jako rozsahy
 Obalením jakékoliv části kódu funkcí ukryje deklarace proměnných nebo funkcí z
 vnějšího rozsahu do vnitřního rozsahu funkce.
 ```JavaScript
@@ -656,7 +656,7 @@ znamená, že nedochází k zanášení vnějšího rozsahu.
 Nejjednodušší cesta jak rozlišit mezi deklarací a výrazem je pozice slova
 `function` v příkazu (nikoliv na řádku). Je-li `function` první věc v příkazu,
 jde o deklaraci, jinak se jedná o výraz.
-###Anonymní versus pojmenované
+### Anonymní versus pojmenované
 Pravděpodobně vám není cizí _function expression_ použitý jako parametr pro
 zpětné volání:
 ```JavaScript
@@ -684,7 +684,7 @@ setTimeout(function timeoutHandler() {
     console.log("Počkali jste jednu minutu a... svět se změnil.");
 }, 60000);
 ```
-###Bezprostřední vykonání výrazu funkce
+### Bezprostřední vykonání výrazu funkce
 Zabalením výrazu funkce do závorek `( )` je možné funkci provést přidáním
 dalšího páru `()` na konec.
 ```JavaScript
@@ -719,7 +719,7 @@ var x = 1;
     console.log(global.x);      // 1
 })(window);
 ```
-##Bloky jako rozsahy
+## Bloky jako rozsahy
 Ačkoliv jsou funkce nejrozšířenějšími jednotkami rozsahu, existují i další a
 jejich použití může vést dokonce k lepšímu kódu.
 
@@ -778,12 +778,12 @@ zabraňuje používání proměnných neočekávaným způsobem.
 Smutnou skutečností je, že JS nemá blokový rozsah.
 
 To je třeba vědět, než se vrhnete dále.
-###with
+### with
 Ačkoliv je `with` dnes již zastaralým konstruktem, představuje ukázku blokového
 rozsahu, v němž rozsah vytvořený z objektu existuje pouze po dobu příkazu `with`
 a ne ve vnějším rozsahu.
 
-###try/catch
+### try/catch
 Je málo známým faktem, že ve specifikaci ES3 je proměnná deklarovaná v `catch`
 klauzuli viditelná pouze pro `catch` blok.
 ```JavaScript
@@ -796,7 +796,7 @@ try {
 console.log(error);         //  ReferenceError: error is not defined
 ```
 
-###let
+### let
 ES6 přináší nové klíčové slovo `let` nacházející se po boku `var` jako jiný
 způsob deklarace proměnných.
 
@@ -844,4 +844,4 @@ Naopak, nebude v bloku "existovat" až do svého výskytu.
     let r = 2;
 }
 ```
-####Úklid paměti
+#### Úklid paměti
