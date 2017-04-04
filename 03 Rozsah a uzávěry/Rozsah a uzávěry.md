@@ -886,3 +886,57 @@ button.addEventListener("click", function click (event) {
 	// do some other stuff
 }, false);
 ```
+#### let - smyčky
+Konkrétní ukázkou výhod `let` je použití v `for` cyklu. Nejenom, že proměnná `i`
+je deklarováno pouze pro `for` cyklus, ale dokonce je vytvářena opakovaně při
+každém průchodu.
+```JavaScript
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+console.log(i);     // ReferenceError
+```
+Jelikož je `let` vázán spíše k bloku než k rozsahu funkce, je třeba při
+nahrazování deklarací `var` za `let` dávat pozor na situace, kdy se skrytě
+spoléhá na viditelnost proměnných deklarovaných pomocí `var`.
+```JavaScript
+var isTrue = true,
+    x = 1;
+
+if (isTrue) {
+    var y = 3;
+    
+    if (x > y) {
+        // do some funny stuff
+    }
+}
+```
+Může být přepracován takto::
+```JavaScript
+var isTrue = true,
+    x = 1;
+
+if (isTrue) {
+    var y = 3;
+}
+
+if (x > y) {
+    // do some funny stuff
+}
+```
+Při použití blokových proměnných je však třeba dávat pozor:
+```JavaScript
+var isTrue = true,
+    x = 1;
+
+if (isTrue) {
+    let y = 3;
+    
+    if (x > y) {    // Při přesunu nezapomenout na proměnnou y!
+        // do some funny stuff
+    }
+}
+```
+### const
+
