@@ -812,7 +812,7 @@ if (r > 0) {
     console.log(circumference);
 }
 
-console.log(circumference);     ReferenceError
+console.log(circumference);     // ReferenceError
 ```
 Připojení proměnné do existujícího bloku je při použití `let` implicitní. Jak se
 mění kód, může snadno dojít k omylu, kterému bloku proměnná náleží. Explicitní
@@ -830,7 +830,7 @@ if (r > 0) {
     }
 }
 
-console.log(circumference);     ReferenceError
+console.log(circumference);     // ReferenceError
 ```
 Můžeme vytvořit blok pro zachycení `let` jednoduchým vložením `{..}`. V tomto
 případě vytvoříme explicitní blok uvnitř `if`, který může být v budoucnu,
