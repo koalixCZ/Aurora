@@ -956,3 +956,6 @@ console.log(x);     // 2
 console.log(y);     // ReferenceError
 ```
 ## Shrnutí
+Funkce jsou nejobvyklejší jednotkou rozsahu v JS. Proměnné a funkce deklarované
+uvnitř funkcí jsou ukryté před ostatními z obalujícího rozsahu, což je záměrná
+konstrukce dobře navrženého programu.
