@@ -939,4 +939,20 @@ if (isTrue) {
 }
 ```
 ### const
+ES6 přináší klíčové slovo `const`, které vytváří blokovou proměnnou s konstantní
+hodnotou. Při pokusu o její změnu hodnoty nastává chyba.
+```JavaScript
+var isTrue = true;
 
+if (isTrue) {
+    var x = 1;
+    const y = 3;
+    
+    x = 2;
+    y = 4;          // error
+}
+
+console.log(x);     // 2
+console.log(y);     // ReferenceError
+```
+## Shrnutí
