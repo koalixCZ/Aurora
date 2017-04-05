@@ -955,7 +955,21 @@ if (isTrue) {
 console.log(x);     // 2
 console.log(y);     // ReferenceError
 ```
-## Shrnutí
+### Shrnutí
 Funkce jsou nejobvyklejší jednotkou rozsahu v JS. Proměnné a funkce deklarované
 uvnitř funkcí jsou ukryté před ostatními z obalujícího rozsahu, což je záměrná
-konstrukce dobře navrženého programu.
+konstrukce dobře navrženého software.
+
+Funkce ovšem nejsou jedinou jednotkou rozsahu, blokový rozsah odkazuje na
+myšlenku, že proměnné a funkce mohou náležet jakémukoliv bloku reprezentovanému
+dvojicí `{}` než jenom obalující funkci.
+
+Počínaje ES3 má `catch` klauzule vlastní blokový rozsah.
+ 
+Klíčové sloto `let` uvedené od ES6 umožňuje deklarovat proměnnou v libovolném
+bloku kódu.
+
+Vhodná kombinace obou typů rozsahů (blokový, funkční) pomáhá vytvářet lépe
+čitelný a udržovatelný kód.
+
+## Vyzvedávání
